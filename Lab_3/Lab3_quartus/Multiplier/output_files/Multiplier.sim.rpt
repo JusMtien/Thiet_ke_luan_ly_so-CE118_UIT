@@ -1,0 +1,444 @@
+Simulator report for Multiplier
+Sun Nov 02 20:44:22 2025
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. Coverage Summary
+  6. Complete 1/0-Value Coverage
+  7. Missing 1-Value Coverage
+  8. Missing 0-Value Coverage
+  9. Simulator INI Usage
+ 10. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------+
+; Simulator Summary                          ;
++-----------------------------+--------------+
+; Type                        ; Value        ;
++-----------------------------+--------------+
+; Simulation Start Time       ; 0 ps         ;
+; Simulation End Time         ; 1.0 us       ;
+; Simulation Netlist Size     ; 182 nodes    ;
+; Simulation Coverage         ;      37.91 % ;
+; Total Number of Transitions ; 353          ;
+; Simulation Breakpoints      ; 0            ;
+; Family                      ; Cyclone II   ;
++-----------------------------+--------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                                                      ;
++--------------------------------------------------------------------------------------------+--------------------------------------------+---------------+
+; Option                                                                                     ; Setting                                    ; Default Value ;
++--------------------------------------------------------------------------------------------+--------------------------------------------+---------------+
+; Simulation mode                                                                            ; Functional                                 ; Timing        ;
+; Start time                                                                                 ; 0 ns                                       ; 0 ns          ;
+; Simulation results format                                                                  ; VWF                                        ;               ;
+; Vector input source                                                                        ; D:/TKLLS/Lab3/Multiplier/DATAPATH_TEST.vwf ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On                                         ; On            ;
+; Check outputs                                                                              ; Off                                        ; Off           ;
+; Report simulation coverage                                                                 ; On                                         ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On                                         ; On            ;
+; Display missing 1-value coverage report                                                    ; On                                         ; On            ;
+; Display missing 0-value coverage report                                                    ; On                                         ; On            ;
+; Detect setup and hold time violations                                                      ; Off                                        ; Off           ;
+; Detect glitches                                                                            ; Off                                        ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off                                        ; Off           ;
+; Generate Signal Activity File                                                              ; Off                                        ; Off           ;
+; Generate VCD File for PowerPlay Power Analyzer                                             ; Off                                        ; Off           ;
+; Group bus channels in simulation results                                                   ; Off                                        ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On                                         ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE                                 ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off                                        ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; Off                                        ;               ;
+; Perform Glitch Filtering in Timing Simulation                                              ; Auto                                       ; Auto          ;
++--------------------------------------------------------------------------------------------+--------------------------------------------+---------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II 64-Bit to view the waveform report data.
+
+
++--------------------------------------------------------------------+
+; Coverage Summary                                                   ;
++-----------------------------------------------------+--------------+
+; Type                                                ; Value        ;
++-----------------------------------------------------+--------------+
+; Total coverage as a percentage                      ;      37.91 % ;
+; Total nodes checked                                 ; 182          ;
+; Total output ports checked                          ; 182          ;
+; Total output ports with complete 1/0-value coverage ; 69           ;
+; Total output ports with no 1/0-value coverage       ; 94           ;
+; Total output ports with no 1-value coverage         ; 101          ;
+; Total output ports with no 0-value coverage         ; 106          ;
++-----------------------------------------------------+--------------+
+
+
+The following table displays output ports that toggle between 1 and 0 during simulation.
++--------------------------------------------------------------------------------------------------------------------------------+
+; Complete 1/0-Value Coverage                                                                                                    ;
++------------------------------------------------------+------------------------------------------------------+------------------+
+; Node Name                                            ; Output Port Name                                     ; Output Port Type ;
++------------------------------------------------------+------------------------------------------------------+------------------+
+; |datapath|REGB                                       ; |datapath|REGB                                       ; pin_out          ;
+; |datapath|CLK                                        ; |datapath|CLK                                        ; out              ;
+; |datapath|SB[1]                                      ; |datapath|SB[1]                                      ; out              ;
+; |datapath|SB[0]                                      ; |datapath|SB[0]                                      ; out              ;
+; |datapath|Q[0]                                       ; |datapath|Q[0]                                       ; pin_out          ;
+; |datapath|AOUT[3]                                    ; |datapath|AOUT[3]                                    ; pin_out          ;
+; |datapath|AOUT[2]                                    ; |datapath|AOUT[2]                                    ; pin_out          ;
+; |datapath|SA[1]                                      ; |datapath|SA[1]                                      ; out              ;
+; |datapath|BOUT[1]                                    ; |datapath|BOUT[1]                                    ; pin_out          ;
+; |datapath|BOUT[0]                                    ; |datapath|BOUT[0]                                    ; pin_out          ;
+; |datapath|out[3]                                     ; |datapath|out[3]                                     ; pin_out          ;
+; |datapath|SPRODUCT                                   ; |datapath|SPRODUCT                                   ; out              ;
+; |datapath|SMUX                                       ; |datapath|SMUX                                       ; out              ;
+; |datapath|add_8bits:DDD|Full_adder_1bit:inst7|inst6  ; |datapath|add_8bits:DDD|Full_adder_1bit:inst7|inst6  ; out0             ;
+; |datapath|add_8bits:DDD|Full_adder_1bit:inst6|inst4  ; |datapath|add_8bits:DDD|Full_adder_1bit:inst6|inst4  ; out0             ;
+; |datapath|add_8bits:DDD|Full_adder_1bit:inst6|inst1  ; |datapath|add_8bits:DDD|Full_adder_1bit:inst6|inst1  ; out0             ;
+; |datapath|add_8bits:DDD|Full_adder_1bit:inst6|inst6  ; |datapath|add_8bits:DDD|Full_adder_1bit:inst6|inst6  ; out0             ;
+; |datapath|add_8bits:DDD|Full_adder_1bit:inst6|inst5  ; |datapath|add_8bits:DDD|Full_adder_1bit:inst6|inst5  ; out0             ;
+; |datapath|add_8bits:DDD|Full_adder_1bit:inst5|inst4  ; |datapath|add_8bits:DDD|Full_adder_1bit:inst5|inst4  ; out0             ;
+; |datapath|add_8bits:DDD|Full_adder_1bit:inst5|inst2  ; |datapath|add_8bits:DDD|Full_adder_1bit:inst5|inst2  ; out0             ;
+; |datapath|add_8bits:DDD|Full_adder_1bit:inst5|inst6  ; |datapath|add_8bits:DDD|Full_adder_1bit:inst5|inst6  ; out0             ;
+; |datapath|add_8bits:DDD|Full_adder_1bit:inst3|inst4  ; |datapath|add_8bits:DDD|Full_adder_1bit:inst3|inst4  ; out0             ;
+; |datapath|add_8bits:DDD|Full_adder_1bit:inst3|inst1  ; |datapath|add_8bits:DDD|Full_adder_1bit:inst3|inst1  ; out0             ;
+; |datapath|add_8bits:DDD|Full_adder_1bit:inst3|inst2  ; |datapath|add_8bits:DDD|Full_adder_1bit:inst3|inst2  ; out0             ;
+; |datapath|add_8bits:DDD|Full_adder_1bit:inst3|inst   ; |datapath|add_8bits:DDD|Full_adder_1bit:inst3|inst   ; out0             ;
+; |datapath|add_8bits:DDD|Full_adder_1bit:inst3|inst6  ; |datapath|add_8bits:DDD|Full_adder_1bit:inst3|inst6  ; out0             ;
+; |datapath|add_8bits:DDD|Full_adder_1bit:inst3|inst5  ; |datapath|add_8bits:DDD|Full_adder_1bit:inst3|inst5  ; out0             ;
+; |datapath|add_8bits:DDD|Full_adder_1bit:inst2|inst4  ; |datapath|add_8bits:DDD|Full_adder_1bit:inst2|inst4  ; out0             ;
+; |datapath|add_8bits:DDD|Full_adder_1bit:inst2|inst   ; |datapath|add_8bits:DDD|Full_adder_1bit:inst2|inst   ; out0             ;
+; |datapath|add_8bits:DDD|Full_adder_1bit:inst2|inst6  ; |datapath|add_8bits:DDD|Full_adder_1bit:inst2|inst6  ; out0             ;
+; |datapath|add_8bits:DDD|Full_adder_1bit:inst2|inst5  ; |datapath|add_8bits:DDD|Full_adder_1bit:inst2|inst5  ; out0             ;
+; |datapath|MUX_8BITS:inst1|mux2-1bit:inst5|inst       ; |datapath|MUX_8BITS:inst1|mux2-1bit:inst5|inst       ; out0             ;
+; |datapath|MUX_8BITS:inst1|mux2-1bit:inst4|inst       ; |datapath|MUX_8BITS:inst1|mux2-1bit:inst4|inst       ; out0             ;
+; |datapath|MUX_8BITS:inst1|mux2-1bit:inst3|inst       ; |datapath|MUX_8BITS:inst1|mux2-1bit:inst3|inst       ; out0             ;
+; |datapath|MUX_8BITS:inst1|mux2-1bit:inst2|inst       ; |datapath|MUX_8BITS:inst1|mux2-1bit:inst2|inst       ; out0             ;
+; |datapath|MUX_8BITS:inst1|mux2-1bit:inst1|inst       ; |datapath|MUX_8BITS:inst1|mux2-1bit:inst1|inst       ; out0             ;
+; |datapath|RegProduct:inst2|inst5                     ; |datapath|RegProduct:inst2|inst5                     ; regout           ;
+; |datapath|RegProduct:inst2|mux2-1bit:inst13|5        ; |datapath|RegProduct:inst2|mux2-1bit:inst13|5        ; out0             ;
+; |datapath|RegProduct:inst2|mux2-1bit:inst13|6        ; |datapath|RegProduct:inst2|mux2-1bit:inst13|6        ; out0             ;
+; |datapath|RegProduct:inst2|mux2-1bit:inst13|inst     ; |datapath|RegProduct:inst2|mux2-1bit:inst13|inst     ; out0             ;
+; |datapath|RegProduct:inst2|mux2-1bit:inst12|5        ; |datapath|RegProduct:inst2|mux2-1bit:inst12|5        ; out0             ;
+; |datapath|RegProduct:inst2|mux2-1bit:inst12|6        ; |datapath|RegProduct:inst2|mux2-1bit:inst12|6        ; out0             ;
+; |datapath|RegProduct:inst2|mux2-1bit:inst12|inst     ; |datapath|RegProduct:inst2|mux2-1bit:inst12|inst     ; out0             ;
+; |datapath|RegProduct:inst2|mux2-1bit:inst11|5        ; |datapath|RegProduct:inst2|mux2-1bit:inst11|5        ; out0             ;
+; |datapath|RegProduct:inst2|mux2-1bit:inst11|inst     ; |datapath|RegProduct:inst2|mux2-1bit:inst11|inst     ; out0             ;
+; |datapath|RegProduct:inst2|mux2-1bit:inst10|5        ; |datapath|RegProduct:inst2|mux2-1bit:inst10|5        ; out0             ;
+; |datapath|RegProduct:inst2|mux2-1bit:inst10|inst     ; |datapath|RegProduct:inst2|mux2-1bit:inst10|inst     ; out0             ;
+; |datapath|RegProduct:inst2|mux2-1bit:inst9|5         ; |datapath|RegProduct:inst2|mux2-1bit:inst9|5         ; out0             ;
+; |datapath|RegProduct:inst2|mux2-1bit:inst9|inst      ; |datapath|RegProduct:inst2|mux2-1bit:inst9|inst      ; out0             ;
+; |datapath|Multiplier:inst|1bit_shifter:inst25|inst   ; |datapath|Multiplier:inst|1bit_shifter:inst25|inst   ; regout           ;
+; |datapath|Multiplier:inst|1bit_shifter:inst25|inst11 ; |datapath|Multiplier:inst|1bit_shifter:inst25|inst11 ; out0             ;
+; |datapath|Multiplier:inst|1bit_shifter:inst24|inst   ; |datapath|Multiplier:inst|1bit_shifter:inst24|inst   ; regout           ;
+; |datapath|Multiplier:inst|1bit_shifter:inst24|inst15 ; |datapath|Multiplier:inst|1bit_shifter:inst24|inst15 ; out0             ;
+; |datapath|Multiplier:inst|1bit_shifter:inst24|inst11 ; |datapath|Multiplier:inst|1bit_shifter:inst24|inst11 ; out0             ;
+; |datapath|Multiplier:inst|1bit_shifter:inst24|inst13 ; |datapath|Multiplier:inst|1bit_shifter:inst24|inst13 ; out0             ;
+; |datapath|Multiplier:inst|1bit_shifter:inst27|inst15 ; |datapath|Multiplier:inst|1bit_shifter:inst27|inst15 ; out0             ;
+; |datapath|Multiplier:inst|1bit_shifter:inst27|inst11 ; |datapath|Multiplier:inst|1bit_shifter:inst27|inst11 ; out0             ;
+; |datapath|Multiplier:inst|1bit_shifter:inst27|inst13 ; |datapath|Multiplier:inst|1bit_shifter:inst27|inst13 ; out0             ;
+; |datapath|Multiplier:inst|1bit_shifter:inst23|inst15 ; |datapath|Multiplier:inst|1bit_shifter:inst23|inst15 ; out0             ;
+; |datapath|Multiplier:inst|1bit_shifter:inst23|inst13 ; |datapath|Multiplier:inst|1bit_shifter:inst23|inst13 ; out0             ;
+; |datapath|Multiplier:inst|1bit_shifter:inst22|inst15 ; |datapath|Multiplier:inst|1bit_shifter:inst22|inst15 ; out0             ;
+; |datapath|Multiplier:inst|1bit_shifter:inst22|inst13 ; |datapath|Multiplier:inst|1bit_shifter:inst22|inst13 ; out0             ;
+; |datapath|4BIT_SHIFT:1111|1bit_shifter:inst3|inst    ; |datapath|4BIT_SHIFT:1111|1bit_shifter:inst3|inst    ; regout           ;
+; |datapath|4BIT_SHIFT:1111|1bit_shifter:inst3|inst15  ; |datapath|4BIT_SHIFT:1111|1bit_shifter:inst3|inst15  ; out0             ;
+; |datapath|4BIT_SHIFT:1111|1bit_shifter:inst3|inst11  ; |datapath|4BIT_SHIFT:1111|1bit_shifter:inst3|inst11  ; out0             ;
+; |datapath|4BIT_SHIFT:1111|1bit_shifter:inst3|inst14  ; |datapath|4BIT_SHIFT:1111|1bit_shifter:inst3|inst14  ; out0             ;
+; |datapath|4BIT_SHIFT:1111|1bit_shifter:inst2|inst    ; |datapath|4BIT_SHIFT:1111|1bit_shifter:inst2|inst    ; regout           ;
+; |datapath|4BIT_SHIFT:1111|1bit_shifter:inst2|inst11  ; |datapath|4BIT_SHIFT:1111|1bit_shifter:inst2|inst11  ; out0             ;
+; |datapath|OE_select:09|inst                          ; |datapath|OE_select:09|inst                          ; out0             ;
++------------------------------------------------------+------------------------------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 1 during simulation.
++--------------------------------------------------------------------------------------------------------------------------------+
+; Missing 1-Value Coverage                                                                                                       ;
++------------------------------------------------------+------------------------------------------------------+------------------+
+; Node Name                                            ; Output Port Name                                     ; Output Port Type ;
++------------------------------------------------------+------------------------------------------------------+------------------+
+; |datapath|B[3]                                       ; |datapath|B[3]                                       ; out              ;
+; |datapath|B[2]                                       ; |datapath|B[2]                                       ; out              ;
+; |datapath|B[1]                                       ; |datapath|B[1]                                       ; out              ;
+; |datapath|B[0]                                       ; |datapath|B[0]                                       ; out              ;
+; |datapath|AOUT[7]                                    ; |datapath|AOUT[7]                                    ; pin_out          ;
+; |datapath|AOUT[6]                                    ; |datapath|AOUT[6]                                    ; pin_out          ;
+; |datapath|AOUT[1]                                    ; |datapath|AOUT[1]                                    ; pin_out          ;
+; |datapath|AOUT[0]                                    ; |datapath|AOUT[0]                                    ; pin_out          ;
+; |datapath|A[3]                                       ; |datapath|A[3]                                       ; out              ;
+; |datapath|A[2]                                       ; |datapath|A[2]                                       ; out              ;
+; |datapath|A[1]                                       ; |datapath|A[1]                                       ; out              ;
+; |datapath|A[0]                                       ; |datapath|A[0]                                       ; out              ;
+; |datapath|SA[0]                                      ; |datapath|SA[0]                                      ; out              ;
+; |datapath|BOUT[3]                                    ; |datapath|BOUT[3]                                    ; pin_out          ;
+; |datapath|BOUT[2]                                    ; |datapath|BOUT[2]                                    ; pin_out          ;
+; |datapath|out[7]                                     ; |datapath|out[7]                                     ; pin_out          ;
+; |datapath|out[6]                                     ; |datapath|out[6]                                     ; pin_out          ;
+; |datapath|out[4]                                     ; |datapath|out[4]                                     ; pin_out          ;
+; |datapath|out[1]                                     ; |datapath|out[1]                                     ; pin_out          ;
+; |datapath|out[0]                                     ; |datapath|out[0]                                     ; pin_out          ;
+; |datapath|add_8bits:DDD|Full_adder_1bit:inst8|inst6  ; |datapath|add_8bits:DDD|Full_adder_1bit:inst8|inst6  ; out0             ;
+; |datapath|add_8bits:DDD|Full_adder_1bit:inst8|inst5  ; |datapath|add_8bits:DDD|Full_adder_1bit:inst8|inst5  ; out0             ;
+; |datapath|add_8bits:DDD|Full_adder_1bit:inst7|inst4  ; |datapath|add_8bits:DDD|Full_adder_1bit:inst7|inst4  ; out0             ;
+; |datapath|add_8bits:DDD|Full_adder_1bit:inst7|inst1  ; |datapath|add_8bits:DDD|Full_adder_1bit:inst7|inst1  ; out0             ;
+; |datapath|add_8bits:DDD|Full_adder_1bit:inst7|inst2  ; |datapath|add_8bits:DDD|Full_adder_1bit:inst7|inst2  ; out0             ;
+; |datapath|add_8bits:DDD|Full_adder_1bit:inst7|inst   ; |datapath|add_8bits:DDD|Full_adder_1bit:inst7|inst   ; out0             ;
+; |datapath|add_8bits:DDD|Full_adder_1bit:inst7|inst5  ; |datapath|add_8bits:DDD|Full_adder_1bit:inst7|inst5  ; out0             ;
+; |datapath|add_8bits:DDD|Full_adder_1bit:inst6|inst2  ; |datapath|add_8bits:DDD|Full_adder_1bit:inst6|inst2  ; out0             ;
+; |datapath|add_8bits:DDD|Full_adder_1bit:inst5|inst1  ; |datapath|add_8bits:DDD|Full_adder_1bit:inst5|inst1  ; out0             ;
+; |datapath|add_8bits:DDD|Full_adder_1bit:inst5|inst   ; |datapath|add_8bits:DDD|Full_adder_1bit:inst5|inst   ; out0             ;
+; |datapath|add_8bits:DDD|Full_adder_1bit:inst2|inst1  ; |datapath|add_8bits:DDD|Full_adder_1bit:inst2|inst1  ; out0             ;
+; |datapath|add_8bits:DDD|Full_adder_1bit:inst2|inst2  ; |datapath|add_8bits:DDD|Full_adder_1bit:inst2|inst2  ; out0             ;
+; |datapath|add_8bits:DDD|Full_adder_1bit:inst1|inst4  ; |datapath|add_8bits:DDD|Full_adder_1bit:inst1|inst4  ; out0             ;
+; |datapath|add_8bits:DDD|Full_adder_1bit:inst1|inst1  ; |datapath|add_8bits:DDD|Full_adder_1bit:inst1|inst1  ; out0             ;
+; |datapath|add_8bits:DDD|Full_adder_1bit:inst1|inst2  ; |datapath|add_8bits:DDD|Full_adder_1bit:inst1|inst2  ; out0             ;
+; |datapath|add_8bits:DDD|Full_adder_1bit:inst1|inst   ; |datapath|add_8bits:DDD|Full_adder_1bit:inst1|inst   ; out0             ;
+; |datapath|add_8bits:DDD|Full_adder_1bit:inst1|inst6  ; |datapath|add_8bits:DDD|Full_adder_1bit:inst1|inst6  ; out0             ;
+; |datapath|add_8bits:DDD|Full_adder_1bit:inst1|inst5  ; |datapath|add_8bits:DDD|Full_adder_1bit:inst1|inst5  ; out0             ;
+; |datapath|add_8bits:DDD|Full_adder_1bit:inst|inst    ; |datapath|add_8bits:DDD|Full_adder_1bit:inst|inst    ; out0             ;
+; |datapath|add_8bits:DDD|Full_adder_1bit:inst|inst5   ; |datapath|add_8bits:DDD|Full_adder_1bit:inst|inst5   ; out0             ;
+; |datapath|MUX_8BITS:inst1|mux2-1bit:inst7|inst       ; |datapath|MUX_8BITS:inst1|mux2-1bit:inst7|inst       ; out0             ;
+; |datapath|MUX_8BITS:inst1|mux2-1bit:inst6|inst       ; |datapath|MUX_8BITS:inst1|mux2-1bit:inst6|inst       ; out0             ;
+; |datapath|MUX_8BITS:inst1|mux2-1bit:inst|inst        ; |datapath|MUX_8BITS:inst1|mux2-1bit:inst|inst        ; out0             ;
+; |datapath|RegProduct:inst2|inst1                     ; |datapath|RegProduct:inst2|inst1                     ; regout           ;
+; |datapath|RegProduct:inst2|inst2                     ; |datapath|RegProduct:inst2|inst2                     ; regout           ;
+; |datapath|RegProduct:inst2|inst4                     ; |datapath|RegProduct:inst2|inst4                     ; regout           ;
+; |datapath|RegProduct:inst2|inst7                     ; |datapath|RegProduct:inst2|inst7                     ; regout           ;
+; |datapath|RegProduct:inst2|inst                      ; |datapath|RegProduct:inst2|inst                      ; regout           ;
+; |datapath|RegProduct:inst2|mux2-1bit:inst14|5        ; |datapath|RegProduct:inst2|mux2-1bit:inst14|5        ; out0             ;
+; |datapath|RegProduct:inst2|mux2-1bit:inst14|6        ; |datapath|RegProduct:inst2|mux2-1bit:inst14|6        ; out0             ;
+; |datapath|RegProduct:inst2|mux2-1bit:inst14|inst     ; |datapath|RegProduct:inst2|mux2-1bit:inst14|inst     ; out0             ;
+; |datapath|RegProduct:inst2|mux2-1bit:inst15|5        ; |datapath|RegProduct:inst2|mux2-1bit:inst15|5        ; out0             ;
+; |datapath|RegProduct:inst2|mux2-1bit:inst15|6        ; |datapath|RegProduct:inst2|mux2-1bit:inst15|6        ; out0             ;
+; |datapath|RegProduct:inst2|mux2-1bit:inst15|inst     ; |datapath|RegProduct:inst2|mux2-1bit:inst15|inst     ; out0             ;
+; |datapath|RegProduct:inst2|mux2-1bit:inst11|6        ; |datapath|RegProduct:inst2|mux2-1bit:inst11|6        ; out0             ;
+; |datapath|RegProduct:inst2|mux2-1bit:inst9|6         ; |datapath|RegProduct:inst2|mux2-1bit:inst9|6         ; out0             ;
+; |datapath|RegProduct:inst2|mux2-1bit:inst8|5         ; |datapath|RegProduct:inst2|mux2-1bit:inst8|5         ; out0             ;
+; |datapath|RegProduct:inst2|mux2-1bit:inst8|6         ; |datapath|RegProduct:inst2|mux2-1bit:inst8|6         ; out0             ;
+; |datapath|RegProduct:inst2|mux2-1bit:inst8|inst      ; |datapath|RegProduct:inst2|mux2-1bit:inst8|inst      ; out0             ;
+; |datapath|Multiplier:inst|1bit_shifter:inst29|inst   ; |datapath|Multiplier:inst|1bit_shifter:inst29|inst   ; regout           ;
+; |datapath|Multiplier:inst|1bit_shifter:inst29|inst15 ; |datapath|Multiplier:inst|1bit_shifter:inst29|inst15 ; out0             ;
+; |datapath|Multiplier:inst|1bit_shifter:inst29|inst11 ; |datapath|Multiplier:inst|1bit_shifter:inst29|inst11 ; out0             ;
+; |datapath|Multiplier:inst|1bit_shifter:inst29|inst14 ; |datapath|Multiplier:inst|1bit_shifter:inst29|inst14 ; out0             ;
+; |datapath|Multiplier:inst|1bit_shifter:inst29|inst12 ; |datapath|Multiplier:inst|1bit_shifter:inst29|inst12 ; out0             ;
+; |datapath|Multiplier:inst|1bit_shifter:inst26|inst   ; |datapath|Multiplier:inst|1bit_shifter:inst26|inst   ; regout           ;
+; |datapath|Multiplier:inst|1bit_shifter:inst26|inst15 ; |datapath|Multiplier:inst|1bit_shifter:inst26|inst15 ; out0             ;
+; |datapath|Multiplier:inst|1bit_shifter:inst26|inst11 ; |datapath|Multiplier:inst|1bit_shifter:inst26|inst11 ; out0             ;
+; |datapath|Multiplier:inst|1bit_shifter:inst26|inst13 ; |datapath|Multiplier:inst|1bit_shifter:inst26|inst13 ; out0             ;
+; |datapath|Multiplier:inst|1bit_shifter:inst26|inst14 ; |datapath|Multiplier:inst|1bit_shifter:inst26|inst14 ; out0             ;
+; |datapath|Multiplier:inst|1bit_shifter:inst26|inst12 ; |datapath|Multiplier:inst|1bit_shifter:inst26|inst12 ; out0             ;
+; |datapath|Multiplier:inst|1bit_shifter:inst25|inst15 ; |datapath|Multiplier:inst|1bit_shifter:inst25|inst15 ; out0             ;
+; |datapath|Multiplier:inst|1bit_shifter:inst25|inst13 ; |datapath|Multiplier:inst|1bit_shifter:inst25|inst13 ; out0             ;
+; |datapath|Multiplier:inst|1bit_shifter:inst25|inst14 ; |datapath|Multiplier:inst|1bit_shifter:inst25|inst14 ; out0             ;
+; |datapath|Multiplier:inst|1bit_shifter:inst25|inst12 ; |datapath|Multiplier:inst|1bit_shifter:inst25|inst12 ; out0             ;
+; |datapath|Multiplier:inst|1bit_shifter:inst|inst     ; |datapath|Multiplier:inst|1bit_shifter:inst|inst     ; regout           ;
+; |datapath|Multiplier:inst|1bit_shifter:inst|inst15   ; |datapath|Multiplier:inst|1bit_shifter:inst|inst15   ; out0             ;
+; |datapath|Multiplier:inst|1bit_shifter:inst|inst11   ; |datapath|Multiplier:inst|1bit_shifter:inst|inst11   ; out0             ;
+; |datapath|Multiplier:inst|1bit_shifter:inst|inst13   ; |datapath|Multiplier:inst|1bit_shifter:inst|inst13   ; out0             ;
+; |datapath|Multiplier:inst|1bit_shifter:inst24|inst14 ; |datapath|Multiplier:inst|1bit_shifter:inst24|inst14 ; out0             ;
+; |datapath|Multiplier:inst|1bit_shifter:inst24|inst12 ; |datapath|Multiplier:inst|1bit_shifter:inst24|inst12 ; out0             ;
+; |datapath|Multiplier:inst|1bit_shifter:inst27|inst14 ; |datapath|Multiplier:inst|1bit_shifter:inst27|inst14 ; out0             ;
+; |datapath|Multiplier:inst|1bit_shifter:inst23|inst14 ; |datapath|Multiplier:inst|1bit_shifter:inst23|inst14 ; out0             ;
+; |datapath|Multiplier:inst|1bit_shifter:inst22|inst   ; |datapath|Multiplier:inst|1bit_shifter:inst22|inst   ; regout           ;
+; |datapath|Multiplier:inst|1bit_shifter:inst22|inst11 ; |datapath|Multiplier:inst|1bit_shifter:inst22|inst11 ; out0             ;
+; |datapath|Multiplier:inst|1bit_shifter:inst22|inst14 ; |datapath|Multiplier:inst|1bit_shifter:inst22|inst14 ; out0             ;
+; |datapath|4BIT_SHIFT:1111|1bit_shifter:inst3|inst12  ; |datapath|4BIT_SHIFT:1111|1bit_shifter:inst3|inst12  ; out0             ;
+; |datapath|4BIT_SHIFT:1111|1bit_shifter:inst2|inst15  ; |datapath|4BIT_SHIFT:1111|1bit_shifter:inst2|inst15  ; out0             ;
+; |datapath|4BIT_SHIFT:1111|1bit_shifter:inst2|inst13  ; |datapath|4BIT_SHIFT:1111|1bit_shifter:inst2|inst13  ; out0             ;
+; |datapath|4BIT_SHIFT:1111|1bit_shifter:inst2|inst14  ; |datapath|4BIT_SHIFT:1111|1bit_shifter:inst2|inst14  ; out0             ;
+; |datapath|4BIT_SHIFT:1111|1bit_shifter:inst2|inst12  ; |datapath|4BIT_SHIFT:1111|1bit_shifter:inst2|inst12  ; out0             ;
+; |datapath|4BIT_SHIFT:1111|1bit_shifter:inst1|inst    ; |datapath|4BIT_SHIFT:1111|1bit_shifter:inst1|inst    ; regout           ;
+; |datapath|4BIT_SHIFT:1111|1bit_shifter:inst1|inst15  ; |datapath|4BIT_SHIFT:1111|1bit_shifter:inst1|inst15  ; out0             ;
+; |datapath|4BIT_SHIFT:1111|1bit_shifter:inst1|inst11  ; |datapath|4BIT_SHIFT:1111|1bit_shifter:inst1|inst11  ; out0             ;
+; |datapath|4BIT_SHIFT:1111|1bit_shifter:inst1|inst13  ; |datapath|4BIT_SHIFT:1111|1bit_shifter:inst1|inst13  ; out0             ;
+; |datapath|4BIT_SHIFT:1111|1bit_shifter:inst1|inst14  ; |datapath|4BIT_SHIFT:1111|1bit_shifter:inst1|inst14  ; out0             ;
+; |datapath|4BIT_SHIFT:1111|1bit_shifter:inst1|inst12  ; |datapath|4BIT_SHIFT:1111|1bit_shifter:inst1|inst12  ; out0             ;
+; |datapath|4BIT_SHIFT:1111|1bit_shifter:inst|inst     ; |datapath|4BIT_SHIFT:1111|1bit_shifter:inst|inst     ; regout           ;
+; |datapath|4BIT_SHIFT:1111|1bit_shifter:inst|inst15   ; |datapath|4BIT_SHIFT:1111|1bit_shifter:inst|inst15   ; out0             ;
+; |datapath|4BIT_SHIFT:1111|1bit_shifter:inst|inst11   ; |datapath|4BIT_SHIFT:1111|1bit_shifter:inst|inst11   ; out0             ;
+; |datapath|4BIT_SHIFT:1111|1bit_shifter:inst|inst13   ; |datapath|4BIT_SHIFT:1111|1bit_shifter:inst|inst13   ; out0             ;
+; |datapath|4BIT_SHIFT:1111|1bit_shifter:inst|inst12   ; |datapath|4BIT_SHIFT:1111|1bit_shifter:inst|inst12   ; out0             ;
++------------------------------------------------------+------------------------------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 0 during simulation.
++--------------------------------------------------------------------------------------------------------------------------------+
+; Missing 0-Value Coverage                                                                                                       ;
++------------------------------------------------------+------------------------------------------------------+------------------+
+; Node Name                                            ; Output Port Name                                     ; Output Port Type ;
++------------------------------------------------------+------------------------------------------------------+------------------+
+; |datapath|B[3]                                       ; |datapath|B[3]                                       ; out              ;
+; |datapath|B[2]                                       ; |datapath|B[2]                                       ; out              ;
+; |datapath|B[1]                                       ; |datapath|B[1]                                       ; out              ;
+; |datapath|B[0]                                       ; |datapath|B[0]                                       ; out              ;
+; |datapath|AOUT[7]                                    ; |datapath|AOUT[7]                                    ; pin_out          ;
+; |datapath|AOUT[6]                                    ; |datapath|AOUT[6]                                    ; pin_out          ;
+; |datapath|AOUT[5]                                    ; |datapath|AOUT[5]                                    ; pin_out          ;
+; |datapath|AOUT[4]                                    ; |datapath|AOUT[4]                                    ; pin_out          ;
+; |datapath|AOUT[1]                                    ; |datapath|AOUT[1]                                    ; pin_out          ;
+; |datapath|AOUT[0]                                    ; |datapath|AOUT[0]                                    ; pin_out          ;
+; |datapath|A[3]                                       ; |datapath|A[3]                                       ; out              ;
+; |datapath|A[2]                                       ; |datapath|A[2]                                       ; out              ;
+; |datapath|A[1]                                       ; |datapath|A[1]                                       ; out              ;
+; |datapath|A[0]                                       ; |datapath|A[0]                                       ; out              ;
+; |datapath|BOUT[3]                                    ; |datapath|BOUT[3]                                    ; pin_out          ;
+; |datapath|BOUT[2]                                    ; |datapath|BOUT[2]                                    ; pin_out          ;
+; |datapath|out[7]                                     ; |datapath|out[7]                                     ; pin_out          ;
+; |datapath|out[6]                                     ; |datapath|out[6]                                     ; pin_out          ;
+; |datapath|out[5]                                     ; |datapath|out[5]                                     ; pin_out          ;
+; |datapath|out[4]                                     ; |datapath|out[4]                                     ; pin_out          ;
+; |datapath|out[2]                                     ; |datapath|out[2]                                     ; pin_out          ;
+; |datapath|out[1]                                     ; |datapath|out[1]                                     ; pin_out          ;
+; |datapath|out[0]                                     ; |datapath|out[0]                                     ; pin_out          ;
+; |datapath|add_8bits:DDD|Full_adder_1bit:inst8|inst6  ; |datapath|add_8bits:DDD|Full_adder_1bit:inst8|inst6  ; out0             ;
+; |datapath|add_8bits:DDD|Full_adder_1bit:inst8|inst5  ; |datapath|add_8bits:DDD|Full_adder_1bit:inst8|inst5  ; out0             ;
+; |datapath|add_8bits:DDD|Full_adder_1bit:inst7|inst4  ; |datapath|add_8bits:DDD|Full_adder_1bit:inst7|inst4  ; out0             ;
+; |datapath|add_8bits:DDD|Full_adder_1bit:inst7|inst1  ; |datapath|add_8bits:DDD|Full_adder_1bit:inst7|inst1  ; out0             ;
+; |datapath|add_8bits:DDD|Full_adder_1bit:inst7|inst2  ; |datapath|add_8bits:DDD|Full_adder_1bit:inst7|inst2  ; out0             ;
+; |datapath|add_8bits:DDD|Full_adder_1bit:inst7|inst   ; |datapath|add_8bits:DDD|Full_adder_1bit:inst7|inst   ; out0             ;
+; |datapath|add_8bits:DDD|Full_adder_1bit:inst7|inst5  ; |datapath|add_8bits:DDD|Full_adder_1bit:inst7|inst5  ; out0             ;
+; |datapath|add_8bits:DDD|Full_adder_1bit:inst6|inst2  ; |datapath|add_8bits:DDD|Full_adder_1bit:inst6|inst2  ; out0             ;
+; |datapath|add_8bits:DDD|Full_adder_1bit:inst6|inst   ; |datapath|add_8bits:DDD|Full_adder_1bit:inst6|inst   ; out0             ;
+; |datapath|add_8bits:DDD|Full_adder_1bit:inst5|inst1  ; |datapath|add_8bits:DDD|Full_adder_1bit:inst5|inst1  ; out0             ;
+; |datapath|add_8bits:DDD|Full_adder_1bit:inst5|inst   ; |datapath|add_8bits:DDD|Full_adder_1bit:inst5|inst   ; out0             ;
+; |datapath|add_8bits:DDD|Full_adder_1bit:inst5|inst5  ; |datapath|add_8bits:DDD|Full_adder_1bit:inst5|inst5  ; out0             ;
+; |datapath|add_8bits:DDD|Full_adder_1bit:inst2|inst1  ; |datapath|add_8bits:DDD|Full_adder_1bit:inst2|inst1  ; out0             ;
+; |datapath|add_8bits:DDD|Full_adder_1bit:inst2|inst2  ; |datapath|add_8bits:DDD|Full_adder_1bit:inst2|inst2  ; out0             ;
+; |datapath|add_8bits:DDD|Full_adder_1bit:inst1|inst4  ; |datapath|add_8bits:DDD|Full_adder_1bit:inst1|inst4  ; out0             ;
+; |datapath|add_8bits:DDD|Full_adder_1bit:inst1|inst1  ; |datapath|add_8bits:DDD|Full_adder_1bit:inst1|inst1  ; out0             ;
+; |datapath|add_8bits:DDD|Full_adder_1bit:inst1|inst2  ; |datapath|add_8bits:DDD|Full_adder_1bit:inst1|inst2  ; out0             ;
+; |datapath|add_8bits:DDD|Full_adder_1bit:inst1|inst   ; |datapath|add_8bits:DDD|Full_adder_1bit:inst1|inst   ; out0             ;
+; |datapath|add_8bits:DDD|Full_adder_1bit:inst1|inst6  ; |datapath|add_8bits:DDD|Full_adder_1bit:inst1|inst6  ; out0             ;
+; |datapath|add_8bits:DDD|Full_adder_1bit:inst1|inst5  ; |datapath|add_8bits:DDD|Full_adder_1bit:inst1|inst5  ; out0             ;
+; |datapath|add_8bits:DDD|Full_adder_1bit:inst|inst    ; |datapath|add_8bits:DDD|Full_adder_1bit:inst|inst    ; out0             ;
+; |datapath|add_8bits:DDD|Full_adder_1bit:inst|inst5   ; |datapath|add_8bits:DDD|Full_adder_1bit:inst|inst5   ; out0             ;
+; |datapath|MUX_8BITS:inst1|mux2-1bit:inst7|inst       ; |datapath|MUX_8BITS:inst1|mux2-1bit:inst7|inst       ; out0             ;
+; |datapath|MUX_8BITS:inst1|mux2-1bit:inst6|inst       ; |datapath|MUX_8BITS:inst1|mux2-1bit:inst6|inst       ; out0             ;
+; |datapath|MUX_8BITS:inst1|mux2-1bit:inst|inst        ; |datapath|MUX_8BITS:inst1|mux2-1bit:inst|inst        ; out0             ;
+; |datapath|RegProduct:inst2|inst1                     ; |datapath|RegProduct:inst2|inst1                     ; regout           ;
+; |datapath|RegProduct:inst2|inst2                     ; |datapath|RegProduct:inst2|inst2                     ; regout           ;
+; |datapath|RegProduct:inst2|inst3                     ; |datapath|RegProduct:inst2|inst3                     ; regout           ;
+; |datapath|RegProduct:inst2|inst4                     ; |datapath|RegProduct:inst2|inst4                     ; regout           ;
+; |datapath|RegProduct:inst2|inst6                     ; |datapath|RegProduct:inst2|inst6                     ; regout           ;
+; |datapath|RegProduct:inst2|inst7                     ; |datapath|RegProduct:inst2|inst7                     ; regout           ;
+; |datapath|RegProduct:inst2|inst                      ; |datapath|RegProduct:inst2|inst                      ; regout           ;
+; |datapath|RegProduct:inst2|mux2-1bit:inst14|5        ; |datapath|RegProduct:inst2|mux2-1bit:inst14|5        ; out0             ;
+; |datapath|RegProduct:inst2|mux2-1bit:inst14|6        ; |datapath|RegProduct:inst2|mux2-1bit:inst14|6        ; out0             ;
+; |datapath|RegProduct:inst2|mux2-1bit:inst14|inst     ; |datapath|RegProduct:inst2|mux2-1bit:inst14|inst     ; out0             ;
+; |datapath|RegProduct:inst2|mux2-1bit:inst15|5        ; |datapath|RegProduct:inst2|mux2-1bit:inst15|5        ; out0             ;
+; |datapath|RegProduct:inst2|mux2-1bit:inst15|6        ; |datapath|RegProduct:inst2|mux2-1bit:inst15|6        ; out0             ;
+; |datapath|RegProduct:inst2|mux2-1bit:inst15|inst     ; |datapath|RegProduct:inst2|mux2-1bit:inst15|inst     ; out0             ;
+; |datapath|RegProduct:inst2|mux2-1bit:inst11|6        ; |datapath|RegProduct:inst2|mux2-1bit:inst11|6        ; out0             ;
+; |datapath|RegProduct:inst2|mux2-1bit:inst10|6        ; |datapath|RegProduct:inst2|mux2-1bit:inst10|6        ; out0             ;
+; |datapath|RegProduct:inst2|mux2-1bit:inst9|6         ; |datapath|RegProduct:inst2|mux2-1bit:inst9|6         ; out0             ;
+; |datapath|RegProduct:inst2|mux2-1bit:inst8|5         ; |datapath|RegProduct:inst2|mux2-1bit:inst8|5         ; out0             ;
+; |datapath|RegProduct:inst2|mux2-1bit:inst8|6         ; |datapath|RegProduct:inst2|mux2-1bit:inst8|6         ; out0             ;
+; |datapath|RegProduct:inst2|mux2-1bit:inst8|inst      ; |datapath|RegProduct:inst2|mux2-1bit:inst8|inst      ; out0             ;
+; |datapath|Multiplier:inst|1bit_shifter:inst29|inst   ; |datapath|Multiplier:inst|1bit_shifter:inst29|inst   ; regout           ;
+; |datapath|Multiplier:inst|1bit_shifter:inst29|inst15 ; |datapath|Multiplier:inst|1bit_shifter:inst29|inst15 ; out0             ;
+; |datapath|Multiplier:inst|1bit_shifter:inst29|inst11 ; |datapath|Multiplier:inst|1bit_shifter:inst29|inst11 ; out0             ;
+; |datapath|Multiplier:inst|1bit_shifter:inst29|inst14 ; |datapath|Multiplier:inst|1bit_shifter:inst29|inst14 ; out0             ;
+; |datapath|Multiplier:inst|1bit_shifter:inst29|inst12 ; |datapath|Multiplier:inst|1bit_shifter:inst29|inst12 ; out0             ;
+; |datapath|Multiplier:inst|1bit_shifter:inst26|inst   ; |datapath|Multiplier:inst|1bit_shifter:inst26|inst   ; regout           ;
+; |datapath|Multiplier:inst|1bit_shifter:inst26|inst15 ; |datapath|Multiplier:inst|1bit_shifter:inst26|inst15 ; out0             ;
+; |datapath|Multiplier:inst|1bit_shifter:inst26|inst11 ; |datapath|Multiplier:inst|1bit_shifter:inst26|inst11 ; out0             ;
+; |datapath|Multiplier:inst|1bit_shifter:inst26|inst13 ; |datapath|Multiplier:inst|1bit_shifter:inst26|inst13 ; out0             ;
+; |datapath|Multiplier:inst|1bit_shifter:inst26|inst14 ; |datapath|Multiplier:inst|1bit_shifter:inst26|inst14 ; out0             ;
+; |datapath|Multiplier:inst|1bit_shifter:inst26|inst12 ; |datapath|Multiplier:inst|1bit_shifter:inst26|inst12 ; out0             ;
+; |datapath|Multiplier:inst|1bit_shifter:inst25|inst13 ; |datapath|Multiplier:inst|1bit_shifter:inst25|inst13 ; out0             ;
+; |datapath|Multiplier:inst|1bit_shifter:inst25|inst14 ; |datapath|Multiplier:inst|1bit_shifter:inst25|inst14 ; out0             ;
+; |datapath|Multiplier:inst|1bit_shifter:inst|inst     ; |datapath|Multiplier:inst|1bit_shifter:inst|inst     ; regout           ;
+; |datapath|Multiplier:inst|1bit_shifter:inst|inst15   ; |datapath|Multiplier:inst|1bit_shifter:inst|inst15   ; out0             ;
+; |datapath|Multiplier:inst|1bit_shifter:inst|inst11   ; |datapath|Multiplier:inst|1bit_shifter:inst|inst11   ; out0             ;
+; |datapath|Multiplier:inst|1bit_shifter:inst|inst13   ; |datapath|Multiplier:inst|1bit_shifter:inst|inst13   ; out0             ;
+; |datapath|Multiplier:inst|1bit_shifter:inst24|inst14 ; |datapath|Multiplier:inst|1bit_shifter:inst24|inst14 ; out0             ;
+; |datapath|Multiplier:inst|1bit_shifter:inst27|inst   ; |datapath|Multiplier:inst|1bit_shifter:inst27|inst   ; regout           ;
+; |datapath|Multiplier:inst|1bit_shifter:inst27|inst14 ; |datapath|Multiplier:inst|1bit_shifter:inst27|inst14 ; out0             ;
+; |datapath|Multiplier:inst|1bit_shifter:inst23|inst   ; |datapath|Multiplier:inst|1bit_shifter:inst23|inst   ; regout           ;
+; |datapath|Multiplier:inst|1bit_shifter:inst23|inst11 ; |datapath|Multiplier:inst|1bit_shifter:inst23|inst11 ; out0             ;
+; |datapath|Multiplier:inst|1bit_shifter:inst23|inst14 ; |datapath|Multiplier:inst|1bit_shifter:inst23|inst14 ; out0             ;
+; |datapath|Multiplier:inst|1bit_shifter:inst22|inst   ; |datapath|Multiplier:inst|1bit_shifter:inst22|inst   ; regout           ;
+; |datapath|Multiplier:inst|1bit_shifter:inst22|inst11 ; |datapath|Multiplier:inst|1bit_shifter:inst22|inst11 ; out0             ;
+; |datapath|Multiplier:inst|1bit_shifter:inst22|inst14 ; |datapath|Multiplier:inst|1bit_shifter:inst22|inst14 ; out0             ;
+; |datapath|4BIT_SHIFT:1111|1bit_shifter:inst2|inst13  ; |datapath|4BIT_SHIFT:1111|1bit_shifter:inst2|inst13  ; out0             ;
+; |datapath|4BIT_SHIFT:1111|1bit_shifter:inst2|inst14  ; |datapath|4BIT_SHIFT:1111|1bit_shifter:inst2|inst14  ; out0             ;
+; |datapath|4BIT_SHIFT:1111|1bit_shifter:inst1|inst    ; |datapath|4BIT_SHIFT:1111|1bit_shifter:inst1|inst    ; regout           ;
+; |datapath|4BIT_SHIFT:1111|1bit_shifter:inst1|inst15  ; |datapath|4BIT_SHIFT:1111|1bit_shifter:inst1|inst15  ; out0             ;
+; |datapath|4BIT_SHIFT:1111|1bit_shifter:inst1|inst11  ; |datapath|4BIT_SHIFT:1111|1bit_shifter:inst1|inst11  ; out0             ;
+; |datapath|4BIT_SHIFT:1111|1bit_shifter:inst1|inst13  ; |datapath|4BIT_SHIFT:1111|1bit_shifter:inst1|inst13  ; out0             ;
+; |datapath|4BIT_SHIFT:1111|1bit_shifter:inst1|inst14  ; |datapath|4BIT_SHIFT:1111|1bit_shifter:inst1|inst14  ; out0             ;
+; |datapath|4BIT_SHIFT:1111|1bit_shifter:inst1|inst12  ; |datapath|4BIT_SHIFT:1111|1bit_shifter:inst1|inst12  ; out0             ;
+; |datapath|4BIT_SHIFT:1111|1bit_shifter:inst|inst     ; |datapath|4BIT_SHIFT:1111|1bit_shifter:inst|inst     ; regout           ;
+; |datapath|4BIT_SHIFT:1111|1bit_shifter:inst|inst15   ; |datapath|4BIT_SHIFT:1111|1bit_shifter:inst|inst15   ; out0             ;
+; |datapath|4BIT_SHIFT:1111|1bit_shifter:inst|inst11   ; |datapath|4BIT_SHIFT:1111|1bit_shifter:inst|inst11   ; out0             ;
+; |datapath|4BIT_SHIFT:1111|1bit_shifter:inst|inst13   ; |datapath|4BIT_SHIFT:1111|1bit_shifter:inst|inst13   ; out0             ;
+; |datapath|4BIT_SHIFT:1111|1bit_shifter:inst|inst12   ; |datapath|4BIT_SHIFT:1111|1bit_shifter:inst|inst12   ; out0             ;
++------------------------------------------------------+------------------------------------------------------+------------------+
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Simulator
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Sun Nov 02 20:44:21 2025
+Info: Command: quartus_sim --simulation_results_format=VWF Multiplier -c Multiplier
+Info (324025): Using vector source file "D:/TKLLS/Lab3/Multiplier/DATAPATH_TEST.vwf"
+Info (310003): Option to preserve fewer signal transitions to reduce memory requirements is enabled
+    Info (310004): Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
+Warning (324036): Found clock-sensitive change during active clock edge at time 210.0 ns on register "|datapath|Multiplier:inst|1bit_shifter:inst25|inst"
+Warning (324036): Found clock-sensitive change during active clock edge at time 210.0 ns on register "|datapath|Multiplier:inst|1bit_shifter:inst24|inst"
+Warning (324036): Found clock-sensitive change during active clock edge at time 210.0 ns on register "|datapath|Multiplier:inst|1bit_shifter:inst27|inst"
+Warning (324036): Found clock-sensitive change during active clock edge at time 210.0 ns on register "|datapath|4BIT_SHIFT:1111|1bit_shifter:inst3|inst"
+Warning (324036): Found clock-sensitive change during active clock edge at time 210.0 ns on register "|datapath|4BIT_SHIFT:1111|1bit_shifter:inst2|inst"
+Warning (324036): Found clock-sensitive change during active clock edge at time 230.0 ns on register "|datapath|Multiplier:inst|1bit_shifter:inst23|inst"
+Info (310002): Simulation partitioned into 1 sub-simulations
+Info (328053): Simulation coverage is      37.91 %
+Info (328052): Number of transitions in simulation is 353
+Info (324045): Vector file Multiplier.sim.vwf is saved in VWF text format. You can compress it into CVWF format in order to reduce file size. For more details please refer to the Quartus II Help.
+Info: Quartus II 64-Bit Simulator was successful. 0 errors, 6 warnings
+    Info: Peak virtual memory: 4446 megabytes
+    Info: Processing ended: Sun Nov 02 20:44:22 2025
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:00
+
+

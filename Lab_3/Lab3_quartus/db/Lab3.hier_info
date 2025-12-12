@@ -1,0 +1,739 @@
+|ALU
+FAOVF <= Arithmetic:inst.faovf
+A[0] => Arithmetic:inst.A[0]
+A[0] => LOGIC:inst1.A[0]
+A[1] => Arithmetic:inst.A[1]
+A[1] => LOGIC:inst1.A[1]
+A[2] => Arithmetic:inst.A[2]
+A[2] => LOGIC:inst1.A[2]
+A[3] => Arithmetic:inst.A[3]
+A[3] => LOGIC:inst1.A[3]
+B[0] => Arithmetic:inst.B[0]
+B[0] => LOGIC:inst1.B[0]
+B[1] => Arithmetic:inst.B[1]
+B[1] => LOGIC:inst1.B[1]
+B[2] => Arithmetic:inst.B[2]
+B[2] => LOGIC:inst1.B[2]
+B[3] => Arithmetic:inst.B[3]
+B[3] => LOGIC:inst1.B[3]
+AD1OVF <= Arithmetic:inst.adovf
+FSOVF <= Arithmetic:inst.fullsubovf
+SU1OVF <= Arithmetic:inst.subovf
+OUT[0] <= 4BIT_MUX8_1:inst6.O[0]
+OUT[1] <= 4BIT_MUX8_1:inst6.O[1]
+OUT[2] <= 4BIT_MUX8_1:inst6.O[2]
+OUT[3] <= 4BIT_MUX8_1:inst6.O[3]
+S[0] => 4BIT_MUX8_1:inst6.S[0]
+S[1] => 4BIT_MUX8_1:inst6.S[1]
+S[2] => 4BIT_MUX8_1:inst6.S[2]
+
+
+|ALU|Arithmetic:inst
+adovf <= adder_1:inst1.OVF
+A[0] => adder_1:inst1.A[0]
+A[0] => FA_4bits:inst2.A[0]
+A[0] => SUB_4bits:inst.A[0]
+A[0] => sub_1:inst6.A[0]
+A[1] => adder_1:inst1.A[1]
+A[1] => FA_4bits:inst2.A[1]
+A[1] => SUB_4bits:inst.A[1]
+A[1] => sub_1:inst6.A[1]
+A[2] => adder_1:inst1.A[2]
+A[2] => FA_4bits:inst2.A[2]
+A[2] => SUB_4bits:inst.A[2]
+A[2] => sub_1:inst6.A[2]
+A[3] => adder_1:inst1.A[3]
+A[3] => FA_4bits:inst2.A[3]
+A[3] => SUB_4bits:inst.A[3]
+A[3] => sub_1:inst6.A[3]
+B[0] => adder_1:inst1.B[0]
+B[0] => FA_4bits:inst2.B[0]
+B[0] => SUB_4bits:inst.B[0]
+B[0] => sub_1:inst6.B[0]
+B[1] => adder_1:inst1.B[1]
+B[1] => FA_4bits:inst2.B[1]
+B[1] => SUB_4bits:inst.B[1]
+B[1] => sub_1:inst6.B[1]
+B[2] => adder_1:inst1.B[2]
+B[2] => FA_4bits:inst2.B[2]
+B[2] => SUB_4bits:inst.B[2]
+B[2] => sub_1:inst6.B[2]
+B[3] => adder_1:inst1.B[3]
+B[3] => FA_4bits:inst2.B[3]
+B[3] => SUB_4bits:inst.B[3]
+B[3] => sub_1:inst6.B[3]
+faovf <= FA_4bits:inst2.OVF
+fullsubovf <= SUB_4bits:inst.OVF
+subovf <= sub_1:inst6.OVF
+ADD1[0] <= adder_1:inst1.O[0]
+ADD1[1] <= adder_1:inst1.O[1]
+ADD1[2] <= adder_1:inst1.O[2]
+ADD1[3] <= adder_1:inst1.O[3]
+FA[0] <= FA_4bits:inst2.O[0]
+FA[1] <= FA_4bits:inst2.O[1]
+FA[2] <= FA_4bits:inst2.O[2]
+FA[3] <= FA_4bits:inst2.O[3]
+FS[0] <= SUB_4bits:inst.O[0]
+FS[1] <= SUB_4bits:inst.O[1]
+FS[2] <= SUB_4bits:inst.O[2]
+FS[3] <= SUB_4bits:inst.O[3]
+SUB1[0] <= sub_1:inst6.O[0]
+SUB1[1] <= sub_1:inst6.O[1]
+SUB1[2] <= sub_1:inst6.O[2]
+SUB1[3] <= sub_1:inst6.O[3]
+
+
+|ALU|Arithmetic:inst|adder_1:inst1
+OVF <= inst6.DB_MAX_OUTPUT_PORT_TYPE
+A[0] => full_adder:inst.A
+A[1] => full_adder:inst1.A
+A[2] => full_adder:inst2.A
+A[3] => full_adder:inst3.A
+O[0] <= full_adder:inst.S
+O[1] <= full_adder:inst1.S
+O[2] <= full_adder:inst2.S
+O[3] <= full_adder:inst3.S
+B[0] => ~NO_FANOUT~
+B[1] => ~NO_FANOUT~
+B[2] => ~NO_FANOUT~
+B[3] => ~NO_FANOUT~
+
+
+|ALU|Arithmetic:inst|adder_1:inst1|full_adder:inst2
+Cout <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+B => inst2.IN0
+B => inst1.IN1
+B => XOR3:inst.IN2
+A => inst2.IN1
+A => inst1.IN0
+A => XOR3:inst.IN1
+Cin => inst3.IN1
+Cin => XOR3:inst.IN3
+S <= XOR3:inst.OUT
+
+
+|ALU|Arithmetic:inst|adder_1:inst1|full_adder:inst2|XOR3:inst
+OUT <= 1.DB_MAX_OUTPUT_PORT_TYPE
+IN1 => 1.IN0
+IN2 => 3.IN0
+IN3 => 3.IN1
+
+
+|ALU|Arithmetic:inst|adder_1:inst1|full_adder:inst1
+Cout <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+B => inst2.IN0
+B => inst1.IN1
+B => XOR3:inst.IN2
+A => inst2.IN1
+A => inst1.IN0
+A => XOR3:inst.IN1
+Cin => inst3.IN1
+Cin => XOR3:inst.IN3
+S <= XOR3:inst.OUT
+
+
+|ALU|Arithmetic:inst|adder_1:inst1|full_adder:inst1|XOR3:inst
+OUT <= 1.DB_MAX_OUTPUT_PORT_TYPE
+IN1 => 1.IN0
+IN2 => 3.IN0
+IN3 => 3.IN1
+
+
+|ALU|Arithmetic:inst|adder_1:inst1|full_adder:inst
+Cout <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+B => inst2.IN0
+B => inst1.IN1
+B => XOR3:inst.IN2
+A => inst2.IN1
+A => inst1.IN0
+A => XOR3:inst.IN1
+Cin => inst3.IN1
+Cin => XOR3:inst.IN3
+S <= XOR3:inst.OUT
+
+
+|ALU|Arithmetic:inst|adder_1:inst1|full_adder:inst|XOR3:inst
+OUT <= 1.DB_MAX_OUTPUT_PORT_TYPE
+IN1 => 1.IN0
+IN2 => 3.IN0
+IN3 => 3.IN1
+
+
+|ALU|Arithmetic:inst|adder_1:inst1|full_adder:inst3
+Cout <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+B => inst2.IN0
+B => inst1.IN1
+B => XOR3:inst.IN2
+A => inst2.IN1
+A => inst1.IN0
+A => XOR3:inst.IN1
+Cin => inst3.IN1
+Cin => XOR3:inst.IN3
+S <= XOR3:inst.OUT
+
+
+|ALU|Arithmetic:inst|adder_1:inst1|full_adder:inst3|XOR3:inst
+OUT <= 1.DB_MAX_OUTPUT_PORT_TYPE
+IN1 => 1.IN0
+IN2 => 3.IN0
+IN3 => 3.IN1
+
+
+|ALU|Arithmetic:inst|FA_4bits:inst2
+OVF <= inst6.DB_MAX_OUTPUT_PORT_TYPE
+A[0] => full_adder:inst.A
+A[1] => full_adder:inst1.A
+A[2] => full_adder:inst2.A
+A[3] => full_adder:inst3.A
+B[0] => full_adder:inst.B
+B[1] => full_adder:inst1.B
+B[2] => full_adder:inst2.B
+B[3] => full_adder:inst3.B
+O[0] <= full_adder:inst.S
+O[1] <= full_adder:inst1.S
+O[2] <= full_adder:inst2.S
+O[3] <= full_adder:inst3.S
+
+
+|ALU|Arithmetic:inst|FA_4bits:inst2|full_adder:inst2
+Cout <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+B => inst2.IN0
+B => inst1.IN1
+B => XOR3:inst.IN2
+A => inst2.IN1
+A => inst1.IN0
+A => XOR3:inst.IN1
+Cin => inst3.IN1
+Cin => XOR3:inst.IN3
+S <= XOR3:inst.OUT
+
+
+|ALU|Arithmetic:inst|FA_4bits:inst2|full_adder:inst2|XOR3:inst
+OUT <= 1.DB_MAX_OUTPUT_PORT_TYPE
+IN1 => 1.IN0
+IN2 => 3.IN0
+IN3 => 3.IN1
+
+
+|ALU|Arithmetic:inst|FA_4bits:inst2|full_adder:inst1
+Cout <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+B => inst2.IN0
+B => inst1.IN1
+B => XOR3:inst.IN2
+A => inst2.IN1
+A => inst1.IN0
+A => XOR3:inst.IN1
+Cin => inst3.IN1
+Cin => XOR3:inst.IN3
+S <= XOR3:inst.OUT
+
+
+|ALU|Arithmetic:inst|FA_4bits:inst2|full_adder:inst1|XOR3:inst
+OUT <= 1.DB_MAX_OUTPUT_PORT_TYPE
+IN1 => 1.IN0
+IN2 => 3.IN0
+IN3 => 3.IN1
+
+
+|ALU|Arithmetic:inst|FA_4bits:inst2|full_adder:inst
+Cout <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+B => inst2.IN0
+B => inst1.IN1
+B => XOR3:inst.IN2
+A => inst2.IN1
+A => inst1.IN0
+A => XOR3:inst.IN1
+Cin => inst3.IN1
+Cin => XOR3:inst.IN3
+S <= XOR3:inst.OUT
+
+
+|ALU|Arithmetic:inst|FA_4bits:inst2|full_adder:inst|XOR3:inst
+OUT <= 1.DB_MAX_OUTPUT_PORT_TYPE
+IN1 => 1.IN0
+IN2 => 3.IN0
+IN3 => 3.IN1
+
+
+|ALU|Arithmetic:inst|FA_4bits:inst2|full_adder:inst3
+Cout <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+B => inst2.IN0
+B => inst1.IN1
+B => XOR3:inst.IN2
+A => inst2.IN1
+A => inst1.IN0
+A => XOR3:inst.IN1
+Cin => inst3.IN1
+Cin => XOR3:inst.IN3
+S <= XOR3:inst.OUT
+
+
+|ALU|Arithmetic:inst|FA_4bits:inst2|full_adder:inst3|XOR3:inst
+OUT <= 1.DB_MAX_OUTPUT_PORT_TYPE
+IN1 => 1.IN0
+IN2 => 3.IN0
+IN3 => 3.IN1
+
+
+|ALU|Arithmetic:inst|SUB_4bits:inst
+OVF <= inst6.DB_MAX_OUTPUT_PORT_TYPE
+A[0] => full_adder:inst.A
+A[1] => full_adder:inst1.A
+A[2] => full_adder:inst2.A
+A[3] => full_adder:inst3.A
+B[0] => inst7.IN0
+B[1] => inst8.IN0
+B[2] => inst9.IN0
+B[3] => inst10.IN0
+O[0] <= full_adder:inst.S
+O[1] <= full_adder:inst1.S
+O[2] <= full_adder:inst2.S
+O[3] <= full_adder:inst3.S
+
+
+|ALU|Arithmetic:inst|SUB_4bits:inst|full_adder:inst2
+Cout <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+B => inst2.IN0
+B => inst1.IN1
+B => XOR3:inst.IN2
+A => inst2.IN1
+A => inst1.IN0
+A => XOR3:inst.IN1
+Cin => inst3.IN1
+Cin => XOR3:inst.IN3
+S <= XOR3:inst.OUT
+
+
+|ALU|Arithmetic:inst|SUB_4bits:inst|full_adder:inst2|XOR3:inst
+OUT <= 1.DB_MAX_OUTPUT_PORT_TYPE
+IN1 => 1.IN0
+IN2 => 3.IN0
+IN3 => 3.IN1
+
+
+|ALU|Arithmetic:inst|SUB_4bits:inst|full_adder:inst1
+Cout <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+B => inst2.IN0
+B => inst1.IN1
+B => XOR3:inst.IN2
+A => inst2.IN1
+A => inst1.IN0
+A => XOR3:inst.IN1
+Cin => inst3.IN1
+Cin => XOR3:inst.IN3
+S <= XOR3:inst.OUT
+
+
+|ALU|Arithmetic:inst|SUB_4bits:inst|full_adder:inst1|XOR3:inst
+OUT <= 1.DB_MAX_OUTPUT_PORT_TYPE
+IN1 => 1.IN0
+IN2 => 3.IN0
+IN3 => 3.IN1
+
+
+|ALU|Arithmetic:inst|SUB_4bits:inst|full_adder:inst
+Cout <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+B => inst2.IN0
+B => inst1.IN1
+B => XOR3:inst.IN2
+A => inst2.IN1
+A => inst1.IN0
+A => XOR3:inst.IN1
+Cin => inst3.IN1
+Cin => XOR3:inst.IN3
+S <= XOR3:inst.OUT
+
+
+|ALU|Arithmetic:inst|SUB_4bits:inst|full_adder:inst|XOR3:inst
+OUT <= 1.DB_MAX_OUTPUT_PORT_TYPE
+IN1 => 1.IN0
+IN2 => 3.IN0
+IN3 => 3.IN1
+
+
+|ALU|Arithmetic:inst|SUB_4bits:inst|full_adder:inst3
+Cout <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+B => inst2.IN0
+B => inst1.IN1
+B => XOR3:inst.IN2
+A => inst2.IN1
+A => inst1.IN0
+A => XOR3:inst.IN1
+Cin => inst3.IN1
+Cin => XOR3:inst.IN3
+S <= XOR3:inst.OUT
+
+
+|ALU|Arithmetic:inst|SUB_4bits:inst|full_adder:inst3|XOR3:inst
+OUT <= 1.DB_MAX_OUTPUT_PORT_TYPE
+IN1 => 1.IN0
+IN2 => 3.IN0
+IN3 => 3.IN1
+
+
+|ALU|Arithmetic:inst|sub_1:inst6
+OVF <= inst6.DB_MAX_OUTPUT_PORT_TYPE
+A[0] => full_adder:inst.A
+A[1] => full_adder:inst1.A
+A[2] => full_adder:inst2.A
+A[3] => full_adder:inst3.A
+O[0] <= full_adder:inst.S
+O[1] <= full_adder:inst1.S
+O[2] <= full_adder:inst2.S
+O[3] <= full_adder:inst3.S
+B[0] => ~NO_FANOUT~
+B[1] => ~NO_FANOUT~
+B[2] => ~NO_FANOUT~
+B[3] => ~NO_FANOUT~
+
+
+|ALU|Arithmetic:inst|sub_1:inst6|full_adder:inst2
+Cout <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+B => inst2.IN0
+B => inst1.IN1
+B => XOR3:inst.IN2
+A => inst2.IN1
+A => inst1.IN0
+A => XOR3:inst.IN1
+Cin => inst3.IN1
+Cin => XOR3:inst.IN3
+S <= XOR3:inst.OUT
+
+
+|ALU|Arithmetic:inst|sub_1:inst6|full_adder:inst2|XOR3:inst
+OUT <= 1.DB_MAX_OUTPUT_PORT_TYPE
+IN1 => 1.IN0
+IN2 => 3.IN0
+IN3 => 3.IN1
+
+
+|ALU|Arithmetic:inst|sub_1:inst6|full_adder:inst1
+Cout <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+B => inst2.IN0
+B => inst1.IN1
+B => XOR3:inst.IN2
+A => inst2.IN1
+A => inst1.IN0
+A => XOR3:inst.IN1
+Cin => inst3.IN1
+Cin => XOR3:inst.IN3
+S <= XOR3:inst.OUT
+
+
+|ALU|Arithmetic:inst|sub_1:inst6|full_adder:inst1|XOR3:inst
+OUT <= 1.DB_MAX_OUTPUT_PORT_TYPE
+IN1 => 1.IN0
+IN2 => 3.IN0
+IN3 => 3.IN1
+
+
+|ALU|Arithmetic:inst|sub_1:inst6|full_adder:inst
+Cout <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+B => inst2.IN0
+B => inst1.IN1
+B => XOR3:inst.IN2
+A => inst2.IN1
+A => inst1.IN0
+A => XOR3:inst.IN1
+Cin => inst3.IN1
+Cin => XOR3:inst.IN3
+S <= XOR3:inst.OUT
+
+
+|ALU|Arithmetic:inst|sub_1:inst6|full_adder:inst|XOR3:inst
+OUT <= 1.DB_MAX_OUTPUT_PORT_TYPE
+IN1 => 1.IN0
+IN2 => 3.IN0
+IN3 => 3.IN1
+
+
+|ALU|Arithmetic:inst|sub_1:inst6|full_adder:inst3
+Cout <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+B => inst2.IN0
+B => inst1.IN1
+B => XOR3:inst.IN2
+A => inst2.IN1
+A => inst1.IN0
+A => XOR3:inst.IN1
+Cin => inst3.IN1
+Cin => XOR3:inst.IN3
+S <= XOR3:inst.OUT
+
+
+|ALU|Arithmetic:inst|sub_1:inst6|full_adder:inst3|XOR3:inst
+OUT <= 1.DB_MAX_OUTPUT_PORT_TYPE
+IN1 => 1.IN0
+IN2 => 3.IN0
+IN3 => 3.IN1
+
+
+|ALU|4BIT_MUX8_1:inst6
+O[0] <= MUX8_1:inst.O
+O[1] <= MUX8_1:inst1.O
+O[2] <= MUX8_1:inst2.O
+O[3] <= MUX8_1:inst3.O
+A[0] => MUX8_1:inst.I0
+A[1] => MUX8_1:inst1.I0
+A[2] => MUX8_1:inst2.I0
+A[3] => MUX8_1:inst3.I0
+B[0] => MUX8_1:inst.I1
+B[1] => MUX8_1:inst1.I1
+B[2] => MUX8_1:inst2.I1
+B[3] => MUX8_1:inst3.I1
+C[0] => MUX8_1:inst.I2
+C[1] => MUX8_1:inst1.I2
+C[2] => MUX8_1:inst2.I2
+C[3] => MUX8_1:inst3.I2
+D[0] => MUX8_1:inst.I3
+D[1] => MUX8_1:inst1.I3
+D[2] => MUX8_1:inst2.I3
+D[3] => MUX8_1:inst3.I3
+E[0] => MUX8_1:inst.I4
+E[1] => MUX8_1:inst1.I4
+E[2] => MUX8_1:inst2.I4
+E[3] => MUX8_1:inst3.I4
+F[0] => MUX8_1:inst.I5
+F[1] => MUX8_1:inst1.I5
+F[2] => MUX8_1:inst2.I5
+F[3] => MUX8_1:inst3.I5
+G[0] => MUX8_1:inst.I6
+G[1] => MUX8_1:inst1.I6
+G[2] => MUX8_1:inst2.I6
+G[3] => MUX8_1:inst3.I6
+H[0] => MUX8_1:inst.I7
+H[1] => MUX8_1:inst1.I7
+H[2] => MUX8_1:inst2.I7
+H[3] => MUX8_1:inst3.I7
+S[0] => MUX8_1:inst.S[0]
+S[0] => MUX8_1:inst1.S[0]
+S[0] => MUX8_1:inst2.S[0]
+S[0] => MUX8_1:inst3.S[0]
+S[1] => MUX8_1:inst.S[1]
+S[1] => MUX8_1:inst1.S[1]
+S[1] => MUX8_1:inst2.S[1]
+S[1] => MUX8_1:inst3.S[1]
+S[2] => MUX8_1:inst.S[2]
+S[2] => MUX8_1:inst1.S[2]
+S[2] => MUX8_1:inst2.S[2]
+S[2] => MUX8_1:inst3.S[2]
+
+
+|ALU|4BIT_MUX8_1:inst6|MUX8_1:inst
+O <= inst11.DB_MAX_OUTPUT_PORT_TYPE
+S[0] => inst3.IN0
+S[0] => inst4.IN2
+S[0] => inst6.IN2
+S[0] => inst8.IN2
+S[0] => inst10.IN2
+S[1] => inst2.IN0
+S[1] => inst5.IN1
+S[1] => inst6.IN1
+S[1] => inst9.IN1
+S[1] => inst10.IN0
+S[2] => inst1.IN0
+S[2] => inst8.IN0
+S[2] => inst7.IN0
+S[2] => inst9.IN0
+S[2] => inst10.IN1
+I0 => inst.IN3
+I2 => inst5.IN3
+I1 => inst4.IN3
+I3 => inst6.IN3
+I5 => inst8.IN3
+I4 => inst7.IN3
+I6 => inst9.IN3
+I7 => inst10.IN3
+
+
+|ALU|4BIT_MUX8_1:inst6|MUX8_1:inst1
+O <= inst11.DB_MAX_OUTPUT_PORT_TYPE
+S[0] => inst3.IN0
+S[0] => inst4.IN2
+S[0] => inst6.IN2
+S[0] => inst8.IN2
+S[0] => inst10.IN2
+S[1] => inst2.IN0
+S[1] => inst5.IN1
+S[1] => inst6.IN1
+S[1] => inst9.IN1
+S[1] => inst10.IN0
+S[2] => inst1.IN0
+S[2] => inst8.IN0
+S[2] => inst7.IN0
+S[2] => inst9.IN0
+S[2] => inst10.IN1
+I0 => inst.IN3
+I2 => inst5.IN3
+I1 => inst4.IN3
+I3 => inst6.IN3
+I5 => inst8.IN3
+I4 => inst7.IN3
+I6 => inst9.IN3
+I7 => inst10.IN3
+
+
+|ALU|4BIT_MUX8_1:inst6|MUX8_1:inst2
+O <= inst11.DB_MAX_OUTPUT_PORT_TYPE
+S[0] => inst3.IN0
+S[0] => inst4.IN2
+S[0] => inst6.IN2
+S[0] => inst8.IN2
+S[0] => inst10.IN2
+S[1] => inst2.IN0
+S[1] => inst5.IN1
+S[1] => inst6.IN1
+S[1] => inst9.IN1
+S[1] => inst10.IN0
+S[2] => inst1.IN0
+S[2] => inst8.IN0
+S[2] => inst7.IN0
+S[2] => inst9.IN0
+S[2] => inst10.IN1
+I0 => inst.IN3
+I2 => inst5.IN3
+I1 => inst4.IN3
+I3 => inst6.IN3
+I5 => inst8.IN3
+I4 => inst7.IN3
+I6 => inst9.IN3
+I7 => inst10.IN3
+
+
+|ALU|4BIT_MUX8_1:inst6|MUX8_1:inst3
+O <= inst11.DB_MAX_OUTPUT_PORT_TYPE
+S[0] => inst3.IN0
+S[0] => inst4.IN2
+S[0] => inst6.IN2
+S[0] => inst8.IN2
+S[0] => inst10.IN2
+S[1] => inst2.IN0
+S[1] => inst5.IN1
+S[1] => inst6.IN1
+S[1] => inst9.IN1
+S[1] => inst10.IN0
+S[2] => inst1.IN0
+S[2] => inst8.IN0
+S[2] => inst7.IN0
+S[2] => inst9.IN0
+S[2] => inst10.IN1
+I0 => inst.IN3
+I2 => inst5.IN3
+I1 => inst4.IN3
+I3 => inst6.IN3
+I5 => inst8.IN3
+I4 => inst7.IN3
+I6 => inst9.IN3
+I7 => inst10.IN3
+
+
+|ALU|LOGIC:inst1
+AND[0] <= and_logic:inst.O[0]
+AND[1] <= and_logic:inst.O[1]
+AND[2] <= and_logic:inst.O[2]
+AND[3] <= and_logic:inst.O[3]
+A[0] => and_logic:inst.A[0]
+A[0] => nand_logic:inst1.A[0]
+A[0] => or_logic:inst2.A[0]
+A[0] => xor_logic:inst3.A[0]
+A[1] => and_logic:inst.A[1]
+A[1] => nand_logic:inst1.A[1]
+A[1] => or_logic:inst2.A[1]
+A[1] => xor_logic:inst3.A[1]
+A[2] => and_logic:inst.A[2]
+A[2] => nand_logic:inst1.A[2]
+A[2] => or_logic:inst2.A[2]
+A[2] => xor_logic:inst3.A[2]
+A[3] => and_logic:inst.A[3]
+A[3] => nand_logic:inst1.A[3]
+A[3] => or_logic:inst2.A[3]
+A[3] => xor_logic:inst3.A[3]
+B[0] => and_logic:inst.B[0]
+B[0] => nand_logic:inst1.B[0]
+B[0] => or_logic:inst2.B[0]
+B[0] => xor_logic:inst3.B[0]
+B[1] => and_logic:inst.B[1]
+B[1] => nand_logic:inst1.B[1]
+B[1] => or_logic:inst2.B[1]
+B[1] => xor_logic:inst3.B[1]
+B[2] => and_logic:inst.B[2]
+B[2] => nand_logic:inst1.B[2]
+B[2] => or_logic:inst2.B[2]
+B[2] => xor_logic:inst3.B[2]
+B[3] => and_logic:inst.B[3]
+B[3] => nand_logic:inst1.B[3]
+B[3] => or_logic:inst2.B[3]
+B[3] => xor_logic:inst3.B[3]
+NAND[0] <= nand_logic:inst1.O[0]
+NAND[1] <= nand_logic:inst1.O[1]
+NAND[2] <= nand_logic:inst1.O[2]
+NAND[3] <= nand_logic:inst1.O[3]
+OR[0] <= or_logic:inst2.O[0]
+OR[1] <= or_logic:inst2.O[1]
+OR[2] <= or_logic:inst2.O[2]
+OR[3] <= or_logic:inst2.O[3]
+XOR[0] <= xor_logic:inst3.O[0]
+XOR[1] <= xor_logic:inst3.O[1]
+XOR[2] <= xor_logic:inst3.O[2]
+XOR[3] <= xor_logic:inst3.O[3]
+
+
+|ALU|LOGIC:inst1|and_logic:inst
+O[0] <= inst[0].DB_MAX_OUTPUT_PORT_TYPE
+O[1] <= inst[1].DB_MAX_OUTPUT_PORT_TYPE
+O[2] <= inst[2].DB_MAX_OUTPUT_PORT_TYPE
+O[3] <= inst[3].DB_MAX_OUTPUT_PORT_TYPE
+A[0] => inst[0].IN0
+A[1] => inst[1].IN0
+A[2] => inst[2].IN0
+A[3] => inst[3].IN0
+B[0] => inst[0].IN1
+B[1] => inst[1].IN1
+B[2] => inst[2].IN1
+B[3] => inst[3].IN1
+
+
+|ALU|LOGIC:inst1|nand_logic:inst1
+O[0] <= inst[0].DB_MAX_OUTPUT_PORT_TYPE
+O[1] <= inst[1].DB_MAX_OUTPUT_PORT_TYPE
+O[2] <= inst[2].DB_MAX_OUTPUT_PORT_TYPE
+O[3] <= inst[3].DB_MAX_OUTPUT_PORT_TYPE
+B[0] => inst[0].IN0
+B[1] => inst[1].IN0
+B[2] => inst[2].IN0
+B[3] => inst[3].IN0
+A[0] => inst[0].IN1
+A[1] => inst[1].IN1
+A[2] => inst[2].IN1
+A[3] => inst[3].IN1
+
+
+|ALU|LOGIC:inst1|or_logic:inst2
+O[0] <= inst[0].DB_MAX_OUTPUT_PORT_TYPE
+O[1] <= inst[1].DB_MAX_OUTPUT_PORT_TYPE
+O[2] <= inst[2].DB_MAX_OUTPUT_PORT_TYPE
+O[3] <= inst[3].DB_MAX_OUTPUT_PORT_TYPE
+B[0] => inst[0].IN0
+B[1] => inst[1].IN0
+B[2] => inst[2].IN0
+B[3] => inst[3].IN0
+A[0] => inst[0].IN1
+A[1] => inst[1].IN1
+A[2] => inst[2].IN1
+A[3] => inst[3].IN1
+
+
+|ALU|LOGIC:inst1|xor_logic:inst3
+O[0] <= inst[0].DB_MAX_OUTPUT_PORT_TYPE
+O[1] <= inst[1].DB_MAX_OUTPUT_PORT_TYPE
+O[2] <= inst[2].DB_MAX_OUTPUT_PORT_TYPE
+O[3] <= inst[3].DB_MAX_OUTPUT_PORT_TYPE
+A[0] => inst[0].IN0
+A[1] => inst[1].IN0
+A[2] => inst[2].IN0
+A[3] => inst[3].IN0
+B[0] => inst[0].IN1
+B[1] => inst[1].IN1
+B[2] => inst[2].IN1
+B[3] => inst[3].IN1
+
+

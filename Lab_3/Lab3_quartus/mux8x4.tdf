@@ -1,0 +1,25 @@
+SUBDESIGN mux8x4
+(
+    data0[3..0] : INPUT;
+    data1[3..0] : INPUT;
+    data2[3..0] : INPUT;
+    data3[3..0] : INPUT;
+    data4[3..0] : INPUT;
+    data5[3..0] : INPUT;
+    data6[3..0] : INPUT;
+    data7[3..0] : INPUT;
+    sel[2..0]   : INPUT;
+    result[3..0]: OUTPUT;
+)
+BEGIN
+    CASE sel IS
+        WHEN 0 => result = data0;
+        WHEN 1 => result = data1;
+        WHEN 2 => result = data2;
+        WHEN 3 => result = data3;
+        WHEN 4 => result = data4;
+        WHEN 5 => result = data5;
+        WHEN 6 => result = data6;
+        WHEN OTHERS => result = data7;
+    END CASE;
+END;

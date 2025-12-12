@@ -1,0 +1,613 @@
+|datapath
+REGB <= OE_select:09.OE
+CLK => 4BIT_SHIFT:1111.CLK
+CLK => Multiplier:inst.CLK
+CLK => RegProduct:inst2.CLK
+B[0] => 4BIT_SHIFT:1111.I[0]
+B[1] => 4BIT_SHIFT:1111.I[1]
+B[2] => 4BIT_SHIFT:1111.I[2]
+B[3] => 4BIT_SHIFT:1111.I[3]
+SB[0] => 4BIT_SHIFT:1111.S[0]
+SB[1] => 4BIT_SHIFT:1111.S[1]
+Q[0] <= 4BIT_SHIFT:1111.Q[0]
+AOUT[0] <= Multiplier:inst.Q[0]
+AOUT[1] <= Multiplier:inst.Q[1]
+AOUT[2] <= Multiplier:inst.Q[2]
+AOUT[3] <= Multiplier:inst.Q[3]
+AOUT[4] <= Multiplier:inst.Q[4]
+AOUT[5] <= Multiplier:inst.Q[5]
+AOUT[6] <= Multiplier:inst.Q[6]
+AOUT[7] <= Multiplier:inst.Q[7]
+A[0] => Multiplier:inst.I[0]
+A[1] => Multiplier:inst.I[1]
+A[2] => Multiplier:inst.I[2]
+A[3] => Multiplier:inst.I[3]
+SA[0] => Multiplier:inst.S[0]
+SA[1] => Multiplier:inst.S[1]
+BOUT[0] <= 4BIT_SHIFT:1111.Q[0]
+BOUT[1] <= Q1.DB_MAX_OUTPUT_PORT_TYPE
+BOUT[2] <= Q2.DB_MAX_OUTPUT_PORT_TYPE
+BOUT[3] <= Q3.DB_MAX_OUTPUT_PORT_TYPE
+out[0] <= RegProduct:inst2.Q[0]
+out[1] <= RegProduct:inst2.Q[1]
+out[2] <= RegProduct:inst2.Q[2]
+out[3] <= RegProduct:inst2.Q[3]
+out[4] <= RegProduct:inst2.Q[4]
+out[5] <= RegProduct:inst2.Q[5]
+out[6] <= RegProduct:inst2.Q[6]
+out[7] <= RegProduct:inst2.Q[7]
+SPRODUCT => RegProduct:inst2.S
+SMUX => MUX_8BITS:inst1.S
+
+
+|datapath|OE_select:09
+OE <= inst.DB_MAX_OUTPUT_PORT_TYPE
+I[0] => inst.IN2
+I[1] => inst.IN1
+I[2] => inst.IN3
+I[3] => inst.IN0
+
+
+|datapath|4BIT_SHIFT:1111
+Q[0] <= 1bit_shifter:inst3.Q
+Q[1] <= 1bit_shifter:inst2.Q
+Q[2] <= 1bit_shifter:inst1.Q
+Q[3] <= 1bit_shifter:inst.Q
+CLK => 1bit_shifter:inst.CLK
+CLK => 1bit_shifter:inst1.CLK
+CLK => 1bit_shifter:inst2.CLK
+CLK => 1bit_shifter:inst3.CLK
+S[0] => 1bit_shifter:inst.S0
+S[0] => 1bit_shifter:inst1.S0
+S[0] => 1bit_shifter:inst2.S0
+S[0] => 1bit_shifter:inst3.S0
+S[1] => 1bit_shifter:inst.S1
+S[1] => 1bit_shifter:inst1.S1
+S[1] => 1bit_shifter:inst2.S1
+S[1] => 1bit_shifter:inst3.S1
+I[0] => 1bit_shifter:inst3.I
+I[1] => 1bit_shifter:inst2.I
+I[2] => 1bit_shifter:inst1.I
+I[3] => 1bit_shifter:inst.I
+IL => 1bit_shifter:inst.IL
+IR => 1bit_shifter:inst3.Qp
+
+
+|datapath|4BIT_SHIFT:1111|1bit_shifter:inst
+Q <= inst.DB_MAX_OUTPUT_PORT_TYPE
+CLK => inst.CLK
+S1 => inst16.IN0
+S1 => inst13.IN1
+S1 => inst14.IN1
+S0 => inst17.IN0
+S0 => inst14.IN2
+S0 => inst12.IN2
+Qp => inst13.IN0
+IL => inst14.IN0
+I => inst12.IN0
+
+
+|datapath|4BIT_SHIFT:1111|1bit_shifter:inst1
+Q <= inst.DB_MAX_OUTPUT_PORT_TYPE
+CLK => inst.CLK
+S1 => inst16.IN0
+S1 => inst13.IN1
+S1 => inst14.IN1
+S0 => inst17.IN0
+S0 => inst14.IN2
+S0 => inst12.IN2
+Qp => inst13.IN0
+IL => inst14.IN0
+I => inst12.IN0
+
+
+|datapath|4BIT_SHIFT:1111|1bit_shifter:inst2
+Q <= inst.DB_MAX_OUTPUT_PORT_TYPE
+CLK => inst.CLK
+S1 => inst16.IN0
+S1 => inst13.IN1
+S1 => inst14.IN1
+S0 => inst17.IN0
+S0 => inst14.IN2
+S0 => inst12.IN2
+Qp => inst13.IN0
+IL => inst14.IN0
+I => inst12.IN0
+
+
+|datapath|4BIT_SHIFT:1111|1bit_shifter:inst3
+Q <= inst.DB_MAX_OUTPUT_PORT_TYPE
+CLK => inst.CLK
+S1 => inst16.IN0
+S1 => inst13.IN1
+S1 => inst14.IN1
+S0 => inst17.IN0
+S0 => inst14.IN2
+S0 => inst12.IN2
+Qp => inst13.IN0
+IL => inst14.IN0
+I => inst12.IN0
+
+
+|datapath|Multiplier:inst
+Q[0] <= 1bit_shifter:inst29.Q
+Q[1] <= 1bit_shifter:inst26.Q
+Q[2] <= 1bit_shifter:inst25.Q
+Q[3] <= 1bit_shifter:inst24.Q
+Q[4] <= 1bit_shifter:inst27.Q
+Q[5] <= 1bit_shifter:inst23.Q
+Q[6] <= 1bit_shifter:inst22.Q
+Q[7] <= 1bit_shifter:inst.Q
+CLK => 1bit_shifter:inst22.CLK
+CLK => 1bit_shifter:inst23.CLK
+CLK => 1bit_shifter:inst27.CLK
+CLK => 1bit_shifter:inst24.CLK
+CLK => 1bit_shifter:inst.CLK
+CLK => 1bit_shifter:inst25.CLK
+CLK => 1bit_shifter:inst26.CLK
+CLK => 1bit_shifter:inst29.CLK
+S[0] => 1bit_shifter:inst22.S0
+S[0] => 1bit_shifter:inst23.S0
+S[0] => 1bit_shifter:inst27.S0
+S[0] => 1bit_shifter:inst24.S0
+S[0] => 1bit_shifter:inst.S0
+S[0] => 1bit_shifter:inst25.S0
+S[0] => 1bit_shifter:inst26.S0
+S[0] => 1bit_shifter:inst29.S0
+S[1] => 1bit_shifter:inst22.S1
+S[1] => 1bit_shifter:inst23.S1
+S[1] => 1bit_shifter:inst27.S1
+S[1] => 1bit_shifter:inst24.S1
+S[1] => 1bit_shifter:inst.S1
+S[1] => 1bit_shifter:inst25.S1
+S[1] => 1bit_shifter:inst26.S1
+S[1] => 1bit_shifter:inst29.S1
+I[0] => 1bit_shifter:inst29.I
+I[1] => 1bit_shifter:inst26.I
+I[2] => 1bit_shifter:inst25.I
+I[3] => 1bit_shifter:inst24.I
+IL => 1bit_shifter:inst.IL
+IR => 1bit_shifter:inst29.Qp
+
+
+|datapath|Multiplier:inst|1bit_shifter:inst22
+Q <= inst.DB_MAX_OUTPUT_PORT_TYPE
+CLK => inst.CLK
+S1 => inst16.IN0
+S1 => inst13.IN1
+S1 => inst14.IN1
+S0 => inst17.IN0
+S0 => inst14.IN2
+S0 => inst12.IN2
+Qp => inst13.IN0
+IL => inst14.IN0
+I => inst12.IN0
+
+
+|datapath|Multiplier:inst|1bit_shifter:inst23
+Q <= inst.DB_MAX_OUTPUT_PORT_TYPE
+CLK => inst.CLK
+S1 => inst16.IN0
+S1 => inst13.IN1
+S1 => inst14.IN1
+S0 => inst17.IN0
+S0 => inst14.IN2
+S0 => inst12.IN2
+Qp => inst13.IN0
+IL => inst14.IN0
+I => inst12.IN0
+
+
+|datapath|Multiplier:inst|1bit_shifter:inst27
+Q <= inst.DB_MAX_OUTPUT_PORT_TYPE
+CLK => inst.CLK
+S1 => inst16.IN0
+S1 => inst13.IN1
+S1 => inst14.IN1
+S0 => inst17.IN0
+S0 => inst14.IN2
+S0 => inst12.IN2
+Qp => inst13.IN0
+IL => inst14.IN0
+I => inst12.IN0
+
+
+|datapath|Multiplier:inst|1bit_shifter:inst24
+Q <= inst.DB_MAX_OUTPUT_PORT_TYPE
+CLK => inst.CLK
+S1 => inst16.IN0
+S1 => inst13.IN1
+S1 => inst14.IN1
+S0 => inst17.IN0
+S0 => inst14.IN2
+S0 => inst12.IN2
+Qp => inst13.IN0
+IL => inst14.IN0
+I => inst12.IN0
+
+
+|datapath|Multiplier:inst|1bit_shifter:inst
+Q <= inst.DB_MAX_OUTPUT_PORT_TYPE
+CLK => inst.CLK
+S1 => inst16.IN0
+S1 => inst13.IN1
+S1 => inst14.IN1
+S0 => inst17.IN0
+S0 => inst14.IN2
+S0 => inst12.IN2
+Qp => inst13.IN0
+IL => inst14.IN0
+I => inst12.IN0
+
+
+|datapath|Multiplier:inst|1bit_shifter:inst25
+Q <= inst.DB_MAX_OUTPUT_PORT_TYPE
+CLK => inst.CLK
+S1 => inst16.IN0
+S1 => inst13.IN1
+S1 => inst14.IN1
+S0 => inst17.IN0
+S0 => inst14.IN2
+S0 => inst12.IN2
+Qp => inst13.IN0
+IL => inst14.IN0
+I => inst12.IN0
+
+
+|datapath|Multiplier:inst|1bit_shifter:inst26
+Q <= inst.DB_MAX_OUTPUT_PORT_TYPE
+CLK => inst.CLK
+S1 => inst16.IN0
+S1 => inst13.IN1
+S1 => inst14.IN1
+S0 => inst17.IN0
+S0 => inst14.IN2
+S0 => inst12.IN2
+Qp => inst13.IN0
+IL => inst14.IN0
+I => inst12.IN0
+
+
+|datapath|Multiplier:inst|1bit_shifter:inst29
+Q <= inst.DB_MAX_OUTPUT_PORT_TYPE
+CLK => inst.CLK
+S1 => inst16.IN0
+S1 => inst13.IN1
+S1 => inst14.IN1
+S0 => inst17.IN0
+S0 => inst14.IN2
+S0 => inst12.IN2
+Qp => inst13.IN0
+IL => inst14.IN0
+I => inst12.IN0
+
+
+|datapath|RegProduct:inst2
+Q[0] <= inst7.DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= inst.DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= inst6.DB_MAX_OUTPUT_PORT_TYPE
+Q[3] <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+Q[4] <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+Q[5] <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+Q[6] <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+Q[7] <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+CLK => inst1.CLK
+CLK => inst2.CLK
+CLK => inst3.CLK
+CLK => inst4.CLK
+CLK => inst5.CLK
+CLK => inst6.CLK
+CLK => inst7.CLK
+CLK => inst.CLK
+I[0] => mux2-1bit:inst15.B
+I[1] => mux2-1bit:inst14.B
+I[2] => mux2-1bit:inst13.B
+I[3] => mux2-1bit:inst12.B
+I[4] => mux2-1bit:inst11.B
+I[5] => mux2-1bit:inst10.B
+I[6] => mux2-1bit:inst9.B
+I[7] => mux2-1bit:inst8.B
+S => mux2-1bit:inst8.S
+S => mux2-1bit:inst9.S
+S => mux2-1bit:inst10.S
+S => mux2-1bit:inst11.S
+S => mux2-1bit:inst12.S
+S => mux2-1bit:inst13.S
+S => mux2-1bit:inst15.S
+S => mux2-1bit:inst14.S
+
+
+|datapath|RegProduct:inst2|mux2-1bit:inst8
+Y <= 5.DB_MAX_OUTPUT_PORT_TYPE
+A => 6.IN0
+S => inst1.IN0
+S => inst.IN1
+B => inst.IN0
+
+
+|datapath|RegProduct:inst2|mux2-1bit:inst9
+Y <= 5.DB_MAX_OUTPUT_PORT_TYPE
+A => 6.IN0
+S => inst1.IN0
+S => inst.IN1
+B => inst.IN0
+
+
+|datapath|RegProduct:inst2|mux2-1bit:inst10
+Y <= 5.DB_MAX_OUTPUT_PORT_TYPE
+A => 6.IN0
+S => inst1.IN0
+S => inst.IN1
+B => inst.IN0
+
+
+|datapath|RegProduct:inst2|mux2-1bit:inst11
+Y <= 5.DB_MAX_OUTPUT_PORT_TYPE
+A => 6.IN0
+S => inst1.IN0
+S => inst.IN1
+B => inst.IN0
+
+
+|datapath|RegProduct:inst2|mux2-1bit:inst12
+Y <= 5.DB_MAX_OUTPUT_PORT_TYPE
+A => 6.IN0
+S => inst1.IN0
+S => inst.IN1
+B => inst.IN0
+
+
+|datapath|RegProduct:inst2|mux2-1bit:inst13
+Y <= 5.DB_MAX_OUTPUT_PORT_TYPE
+A => 6.IN0
+S => inst1.IN0
+S => inst.IN1
+B => inst.IN0
+
+
+|datapath|RegProduct:inst2|mux2-1bit:inst15
+Y <= 5.DB_MAX_OUTPUT_PORT_TYPE
+A => 6.IN0
+S => inst1.IN0
+S => inst.IN1
+B => inst.IN0
+
+
+|datapath|RegProduct:inst2|mux2-1bit:inst14
+Y <= 5.DB_MAX_OUTPUT_PORT_TYPE
+A => 6.IN0
+S => inst1.IN0
+S => inst.IN1
+B => inst.IN0
+
+
+|datapath|MUX_8BITS:inst1
+OUT[0] <= mux2-1bit:inst7.Y
+OUT[1] <= mux2-1bit:inst6.Y
+OUT[2] <= mux2-1bit:inst5.Y
+OUT[3] <= mux2-1bit:inst4.Y
+OUT[4] <= mux2-1bit:inst3.Y
+OUT[5] <= mux2-1bit:inst2.Y
+OUT[6] <= mux2-1bit:inst1.Y
+OUT[7] <= mux2-1bit:inst.Y
+I[0] => mux2-1bit:inst7.B
+I[1] => mux2-1bit:inst6.B
+I[2] => mux2-1bit:inst5.B
+I[3] => mux2-1bit:inst4.B
+I[4] => mux2-1bit:inst3.B
+I[5] => mux2-1bit:inst2.B
+I[6] => mux2-1bit:inst1.B
+I[7] => mux2-1bit:inst.B
+S => mux2-1bit:inst.S
+S => mux2-1bit:inst1.S
+S => mux2-1bit:inst2.S
+S => mux2-1bit:inst3.S
+S => mux2-1bit:inst4.S
+S => mux2-1bit:inst5.S
+S => mux2-1bit:inst6.S
+S => mux2-1bit:inst7.S
+
+
+|datapath|MUX_8BITS:inst1|mux2-1bit:inst
+Y <= 5.DB_MAX_OUTPUT_PORT_TYPE
+A => 6.IN0
+S => inst1.IN0
+S => inst.IN1
+B => inst.IN0
+
+
+|datapath|MUX_8BITS:inst1|mux2-1bit:inst1
+Y <= 5.DB_MAX_OUTPUT_PORT_TYPE
+A => 6.IN0
+S => inst1.IN0
+S => inst.IN1
+B => inst.IN0
+
+
+|datapath|MUX_8BITS:inst1|mux2-1bit:inst2
+Y <= 5.DB_MAX_OUTPUT_PORT_TYPE
+A => 6.IN0
+S => inst1.IN0
+S => inst.IN1
+B => inst.IN0
+
+
+|datapath|MUX_8BITS:inst1|mux2-1bit:inst3
+Y <= 5.DB_MAX_OUTPUT_PORT_TYPE
+A => 6.IN0
+S => inst1.IN0
+S => inst.IN1
+B => inst.IN0
+
+
+|datapath|MUX_8BITS:inst1|mux2-1bit:inst4
+Y <= 5.DB_MAX_OUTPUT_PORT_TYPE
+A => 6.IN0
+S => inst1.IN0
+S => inst.IN1
+B => inst.IN0
+
+
+|datapath|MUX_8BITS:inst1|mux2-1bit:inst5
+Y <= 5.DB_MAX_OUTPUT_PORT_TYPE
+A => 6.IN0
+S => inst1.IN0
+S => inst.IN1
+B => inst.IN0
+
+
+|datapath|MUX_8BITS:inst1|mux2-1bit:inst6
+Y <= 5.DB_MAX_OUTPUT_PORT_TYPE
+A => 6.IN0
+S => inst1.IN0
+S => inst.IN1
+B => inst.IN0
+
+
+|datapath|MUX_8BITS:inst1|mux2-1bit:inst7
+Y <= 5.DB_MAX_OUTPUT_PORT_TYPE
+A => 6.IN0
+S => inst1.IN0
+S => inst.IN1
+B => inst.IN0
+
+
+|datapath|add_8bits:DDD
+O[0] <= Full_adder_1bit:inst.Tong
+O[1] <= Full_adder_1bit:inst1.Tong
+O[2] <= Full_adder_1bit:inst2.Tong
+O[3] <= Full_adder_1bit:inst3.Tong
+O[4] <= Full_adder_1bit:inst5.Tong
+O[5] <= Full_adder_1bit:inst6.Tong
+O[6] <= Full_adder_1bit:inst7.Tong
+O[7] <= Full_adder_1bit:inst8.Tong
+A[0] => Full_adder_1bit:inst.A
+A[1] => Full_adder_1bit:inst1.A
+A[2] => Full_adder_1bit:inst2.A
+A[3] => Full_adder_1bit:inst3.A
+A[4] => Full_adder_1bit:inst5.A
+A[5] => Full_adder_1bit:inst6.A
+A[6] => Full_adder_1bit:inst7.A
+A[7] => Full_adder_1bit:inst8.A
+B[0] => Full_adder_1bit:inst.B
+B[1] => Full_adder_1bit:inst1.B
+B[2] => Full_adder_1bit:inst2.B
+B[3] => Full_adder_1bit:inst3.B
+B[4] => Full_adder_1bit:inst5.B
+B[5] => Full_adder_1bit:inst6.B
+B[6] => Full_adder_1bit:inst7.B
+B[7] => Full_adder_1bit:inst8.B
+
+
+|datapath|add_8bits:DDD|Full_adder_1bit:inst
+Cout <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+B => inst1.IN0
+B => inst.IN1
+B => inst5.IN1
+Cin => inst1.IN1
+Cin => inst2.IN1
+Cin => inst6.IN1
+A => inst2.IN0
+A => inst.IN0
+A => inst5.IN0
+Tong <= inst6.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|datapath|add_8bits:DDD|Full_adder_1bit:inst1
+Cout <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+B => inst1.IN0
+B => inst.IN1
+B => inst5.IN1
+Cin => inst1.IN1
+Cin => inst2.IN1
+Cin => inst6.IN1
+A => inst2.IN0
+A => inst.IN0
+A => inst5.IN0
+Tong <= inst6.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|datapath|add_8bits:DDD|Full_adder_1bit:inst2
+Cout <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+B => inst1.IN0
+B => inst.IN1
+B => inst5.IN1
+Cin => inst1.IN1
+Cin => inst2.IN1
+Cin => inst6.IN1
+A => inst2.IN0
+A => inst.IN0
+A => inst5.IN0
+Tong <= inst6.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|datapath|add_8bits:DDD|Full_adder_1bit:inst3
+Cout <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+B => inst1.IN0
+B => inst.IN1
+B => inst5.IN1
+Cin => inst1.IN1
+Cin => inst2.IN1
+Cin => inst6.IN1
+A => inst2.IN0
+A => inst.IN0
+A => inst5.IN0
+Tong <= inst6.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|datapath|add_8bits:DDD|Full_adder_1bit:inst5
+Cout <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+B => inst1.IN0
+B => inst.IN1
+B => inst5.IN1
+Cin => inst1.IN1
+Cin => inst2.IN1
+Cin => inst6.IN1
+A => inst2.IN0
+A => inst.IN0
+A => inst5.IN0
+Tong <= inst6.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|datapath|add_8bits:DDD|Full_adder_1bit:inst6
+Cout <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+B => inst1.IN0
+B => inst.IN1
+B => inst5.IN1
+Cin => inst1.IN1
+Cin => inst2.IN1
+Cin => inst6.IN1
+A => inst2.IN0
+A => inst.IN0
+A => inst5.IN0
+Tong <= inst6.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|datapath|add_8bits:DDD|Full_adder_1bit:inst7
+Cout <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+B => inst1.IN0
+B => inst.IN1
+B => inst5.IN1
+Cin => inst1.IN1
+Cin => inst2.IN1
+Cin => inst6.IN1
+A => inst2.IN0
+A => inst.IN0
+A => inst5.IN0
+Tong <= inst6.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|datapath|add_8bits:DDD|Full_adder_1bit:inst8
+Cout <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+B => inst1.IN0
+B => inst.IN1
+B => inst5.IN1
+Cin => inst1.IN1
+Cin => inst2.IN1
+Cin => inst6.IN1
+A => inst2.IN0
+A => inst.IN0
+A => inst5.IN0
+Tong <= inst6.DB_MAX_OUTPUT_PORT_TYPE
+
+

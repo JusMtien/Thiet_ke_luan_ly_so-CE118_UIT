@@ -1,0 +1,509 @@
+Simulator report for lab4_5
+Thu Nov 13 10:17:38 2025
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. Coverage Summary
+  6. Complete 1/0-Value Coverage
+  7. Missing 1-Value Coverage
+  8. Missing 0-Value Coverage
+  9. Simulator INI Usage
+ 10. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------+
+; Simulator Summary                          ;
++-----------------------------+--------------+
+; Type                        ; Value        ;
++-----------------------------+--------------+
+; Simulation Start Time       ; 0 ps         ;
+; Simulation End Time         ; 1.0 us       ;
+; Simulation Netlist Size     ; 223 nodes    ;
+; Simulation Coverage         ;      32.29 % ;
+; Total Number of Transitions ; 488          ;
+; Simulation Breakpoints      ; 0            ;
+; Family                      ; Cyclone II   ;
++-----------------------------+--------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                                                      ;
++--------------------------------------------------------------------------------------------+--------------------------------------------+---------------+
+; Option                                                                                     ; Setting                                    ; Default Value ;
++--------------------------------------------------------------------------------------------+--------------------------------------------+---------------+
+; Simulation mode                                                                            ; Functional                                 ; Timing        ;
+; Start time                                                                                 ; 0 ns                                       ; 0 ns          ;
+; Simulation results format                                                                  ; VWF                                        ;               ;
+; Vector input source                                                                        ; D:/TKLLS/Lab4_5/output_files/Waveform4.vwf ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On                                         ; On            ;
+; Check outputs                                                                              ; Off                                        ; Off           ;
+; Report simulation coverage                                                                 ; On                                         ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On                                         ; On            ;
+; Display missing 1-value coverage report                                                    ; On                                         ; On            ;
+; Display missing 0-value coverage report                                                    ; On                                         ; On            ;
+; Detect setup and hold time violations                                                      ; Off                                        ; Off           ;
+; Detect glitches                                                                            ; Off                                        ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off                                        ; Off           ;
+; Generate Signal Activity File                                                              ; Off                                        ; Off           ;
+; Generate VCD File for PowerPlay Power Analyzer                                             ; Off                                        ; Off           ;
+; Group bus channels in simulation results                                                   ; Off                                        ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On                                         ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE                                 ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off                                        ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; Off                                        ;               ;
+; Perform Glitch Filtering in Timing Simulation                                              ; Auto                                       ; Auto          ;
++--------------------------------------------------------------------------------------------+--------------------------------------------+---------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II 64-Bit to view the waveform report data.
+
+
++--------------------------------------------------------------------+
+; Coverage Summary                                                   ;
++-----------------------------------------------------+--------------+
+; Type                                                ; Value        ;
++-----------------------------------------------------+--------------+
+; Total coverage as a percentage                      ;      32.29 % ;
+; Total nodes checked                                 ; 223          ;
+; Total output ports checked                          ; 223          ;
+; Total output ports with complete 1/0-value coverage ; 72           ;
+; Total output ports with no 1/0-value coverage       ; 124          ;
+; Total output ports with no 1-value coverage         ; 138          ;
+; Total output ports with no 0-value coverage         ; 137          ;
++-----------------------------------------------------+--------------+
+
+
+The following table displays output ports that toggle between 1 and 0 during simulation.
++------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Complete 1/0-Value Coverage                                                                                                                                ;
++--------------------------------------------------------------------+--------------------------------------------------------------------+------------------+
+; Node Name                                                          ; Output Port Name                                                   ; Output Port Type ;
++--------------------------------------------------------------------+--------------------------------------------------------------------+------------------+
+; |MAIN|check                                                        ; |MAIN|check                                                        ; pin_out          ;
+; |MAIN|CLK                                                          ; |MAIN|CLK                                                          ; out              ;
+; |MAIN|Done                                                         ; |MAIN|Done                                                         ; pin_out          ;
+; |MAIN|HEX0[6]                                                      ; |MAIN|HEX0[6]                                                      ; pin_out          ;
+; |MAIN|HEX0[5]                                                      ; |MAIN|HEX0[5]                                                      ; pin_out          ;
+; |MAIN|HEX0[4]                                                      ; |MAIN|HEX0[4]                                                      ; pin_out          ;
+; |MAIN|HEX0[3]                                                      ; |MAIN|HEX0[3]                                                      ; pin_out          ;
+; |MAIN|HEX0[2]                                                      ; |MAIN|HEX0[2]                                                      ; pin_out          ;
+; |MAIN|HEX0[0]                                                      ; |MAIN|HEX0[0]                                                      ; pin_out          ;
+; |MAIN|STATE[2]                                                     ; |MAIN|STATE[2]                                                     ; pin_out          ;
+; |MAIN|STATE[1]                                                     ; |MAIN|STATE[1]                                                     ; pin_out          ;
+; |MAIN|STATE[0]                                                     ; |MAIN|STATE[0]                                                     ; pin_out          ;
+; |MAIN|Q[1]                                                         ; |MAIN|Q[1]                                                         ; pin_out          ;
+; |MAIN|Q[0]                                                         ; |MAIN|Q[0]                                                         ; pin_out          ;
+; |MAIN|7447:inst2|87                                                ; |MAIN|7447:inst2|87                                                ; out0             ;
+; |MAIN|7447:inst2|38                                                ; |MAIN|7447:inst2|38                                                ; out0             ;
+; |MAIN|7447:inst2|86                                                ; |MAIN|7447:inst2|86                                                ; out0             ;
+; |MAIN|7447:inst2|31                                                ; |MAIN|7447:inst2|31                                                ; out0             ;
+; |MAIN|7447:inst2|2                                                 ; |MAIN|7447:inst2|2                                                 ; out0             ;
+; |MAIN|7447:inst2|30                                                ; |MAIN|7447:inst2|30                                                ; out0             ;
+; |MAIN|7447:inst2|85                                                ; |MAIN|7447:inst2|85                                                ; out0             ;
+; |MAIN|7447:inst2|32                                                ; |MAIN|7447:inst2|32                                                ; out0             ;
+; |MAIN|7447:inst2|84                                                ; |MAIN|7447:inst2|84                                                ; out0             ;
+; |MAIN|7447:inst2|5                                                 ; |MAIN|7447:inst2|5                                                 ; out0             ;
+; |MAIN|7447:inst2|4                                                 ; |MAIN|7447:inst2|4                                                 ; out0             ;
+; |MAIN|7447:inst2|6                                                 ; |MAIN|7447:inst2|6                                                 ; out0             ;
+; |MAIN|7447:inst2|81                                                ; |MAIN|7447:inst2|81                                                ; out0             ;
+; |MAIN|7447:inst2|39                                                ; |MAIN|7447:inst2|39                                                ; out0             ;
+; |MAIN|7447:inst2|35                                                ; |MAIN|7447:inst2|35                                                ; out0             ;
+; |MAIN|CONTROLLLER2:inst5|inst86                                    ; |MAIN|CONTROLLLER2:inst5|inst86                                    ; out0             ;
+; |MAIN|CONTROLLLER2:inst5|inst                                      ; |MAIN|CONTROLLLER2:inst5|inst                                      ; regout           ;
+; |MAIN|CONTROLLLER2:inst5|inst6                                     ; |MAIN|CONTROLLLER2:inst5|inst6                                     ; out0             ;
+; |MAIN|CONTROLLLER2:inst5|inst1                                     ; |MAIN|CONTROLLLER2:inst5|inst1                                     ; regout           ;
+; |MAIN|CONTROLLLER2:inst5|inst15                                    ; |MAIN|CONTROLLLER2:inst5|inst15                                    ; out0             ;
+; |MAIN|CONTROLLLER2:inst5|inst10                                    ; |MAIN|CONTROLLLER2:inst5|inst10                                    ; out0             ;
+; |MAIN|CONTROLLLER2:inst5|inst16                                    ; |MAIN|CONTROLLLER2:inst5|inst16                                    ; out0             ;
+; |MAIN|CONTROLLLER2:inst5|inst2                                     ; |MAIN|CONTROLLLER2:inst5|inst2                                     ; regout           ;
+; |MAIN|CONTROLLLER2:inst5|inst12                                    ; |MAIN|CONTROLLLER2:inst5|inst12                                    ; out0             ;
+; |MAIN|CONTROLLLER2:inst5|inst13                                    ; |MAIN|CONTROLLLER2:inst5|inst13                                    ; out0             ;
+; |MAIN|CONTROLLLER2:inst5|inst22                                    ; |MAIN|CONTROLLLER2:inst5|inst22                                    ; out0             ;
+; |MAIN|CONTROLLLER2:inst5|inst17                                    ; |MAIN|CONTROLLLER2:inst5|inst17                                    ; out0             ;
+; |MAIN|CONTROLLLER2:inst5|inst20                                    ; |MAIN|CONTROLLLER2:inst5|inst20                                    ; out0             ;
+; |MAIN|CONTROLLLER2:inst5|inst21                                    ; |MAIN|CONTROLLLER2:inst5|inst21                                    ; out0             ;
+; |MAIN|DATAPATH:inst|inst10                                         ; |MAIN|DATAPATH:inst|inst10                                         ; out0             ;
+; |MAIN|DATAPATH:inst|RegSum:inst|mux2-1bit:inst16|inst              ; |MAIN|DATAPATH:inst|RegSum:inst|mux2-1bit:inst16|inst              ; out0             ;
+; |MAIN|DATAPATH:inst|RegSum:inst|mux2-1bit:inst15|6                 ; |MAIN|DATAPATH:inst|RegSum:inst|mux2-1bit:inst15|6                 ; out0             ;
+; |MAIN|DATAPATH:inst|RegSum:inst|mux2-1bit:inst15|inst              ; |MAIN|DATAPATH:inst|RegSum:inst|mux2-1bit:inst15|inst              ; out0             ;
+; |MAIN|DATAPATH:inst|SUB1_8BITS:inst5|full_adder:inst1|inst4        ; |MAIN|DATAPATH:inst|SUB1_8BITS:inst5|full_adder:inst1|inst4        ; out0             ;
+; |MAIN|DATAPATH:inst|SUB1_8BITS:inst5|full_adder:inst1|xor3:inst|1  ; |MAIN|DATAPATH:inst|SUB1_8BITS:inst5|full_adder:inst1|xor3:inst|1  ; out0             ;
+; |MAIN|DATAPATH:inst|SUB1_8BITS:inst5|full_adder:inst2|inst4        ; |MAIN|DATAPATH:inst|SUB1_8BITS:inst5|full_adder:inst2|inst4        ; out0             ;
+; |MAIN|DATAPATH:inst|SUB1_8BITS:inst5|full_adder:inst2|xor3:inst|1  ; |MAIN|DATAPATH:inst|SUB1_8BITS:inst5|full_adder:inst2|xor3:inst|1  ; out0             ;
+; |MAIN|DATAPATH:inst|SUB1_8BITS:inst5|full_adder:inst3|inst4        ; |MAIN|DATAPATH:inst|SUB1_8BITS:inst5|full_adder:inst3|inst4        ; out0             ;
+; |MAIN|DATAPATH:inst|SUB1_8BITS:inst5|full_adder:inst3|xor3:inst|1  ; |MAIN|DATAPATH:inst|SUB1_8BITS:inst5|full_adder:inst3|xor3:inst|1  ; out0             ;
+; |MAIN|DATAPATH:inst|SUB1_8BITS:inst5|full_adder:inst11|inst4       ; |MAIN|DATAPATH:inst|SUB1_8BITS:inst5|full_adder:inst11|inst4       ; out0             ;
+; |MAIN|DATAPATH:inst|SUB1_8BITS:inst5|full_adder:inst11|xor3:inst|1 ; |MAIN|DATAPATH:inst|SUB1_8BITS:inst5|full_adder:inst11|xor3:inst|1 ; out0             ;
+; |MAIN|DATAPATH:inst|SUB1_8BITS:inst5|full_adder:inst16|inst4       ; |MAIN|DATAPATH:inst|SUB1_8BITS:inst5|full_adder:inst16|inst4       ; out0             ;
+; |MAIN|DATAPATH:inst|SUB1_8BITS:inst5|full_adder:inst16|xor3:inst|1 ; |MAIN|DATAPATH:inst|SUB1_8BITS:inst5|full_adder:inst16|xor3:inst|1 ; out0             ;
+; |MAIN|DATAPATH:inst|SUB1_8BITS:inst5|full_adder:inst17|inst4       ; |MAIN|DATAPATH:inst|SUB1_8BITS:inst5|full_adder:inst17|inst4       ; out0             ;
+; |MAIN|DATAPATH:inst|SUB1_8BITS:inst5|full_adder:inst17|xor3:inst|1 ; |MAIN|DATAPATH:inst|SUB1_8BITS:inst5|full_adder:inst17|xor3:inst|1 ; out0             ;
+; |MAIN|DATAPATH:inst|SUB1_8BITS:inst5|full_adder:inst18|xor3:inst|1 ; |MAIN|DATAPATH:inst|SUB1_8BITS:inst5|full_adder:inst18|xor3:inst|1 ; out0             ;
+; |MAIN|DATAPATH:inst|MUX2_1_8BITS:inst2|mux2-1bit:inst1|5           ; |MAIN|DATAPATH:inst|MUX2_1_8BITS:inst2|mux2-1bit:inst1|5           ; out0             ;
+; |MAIN|DATAPATH:inst|MUX2_1_8BITS:inst2|mux2-1bit:inst1|6           ; |MAIN|DATAPATH:inst|MUX2_1_8BITS:inst2|mux2-1bit:inst1|6           ; out0             ;
+; |MAIN|DATAPATH:inst|MUX2_1_8BITS:inst2|mux2-1bit:inst|5            ; |MAIN|DATAPATH:inst|MUX2_1_8BITS:inst2|mux2-1bit:inst|5            ; out0             ;
+; |MAIN|DATAPATH:inst|MUX2_1_8BITS:inst2|mux2-1bit:inst|inst         ; |MAIN|DATAPATH:inst|MUX2_1_8BITS:inst2|mux2-1bit:inst|inst         ; out0             ;
+; |MAIN|DATAPATH:inst|RegSum:inst1|inst11                            ; |MAIN|DATAPATH:inst|RegSum:inst1|inst11                            ; regout           ;
+; |MAIN|DATAPATH:inst|RegSum:inst1|inst13                            ; |MAIN|DATAPATH:inst|RegSum:inst1|inst13                            ; regout           ;
+; |MAIN|DATAPATH:inst|RegSum:inst1|mux2-1bit:inst16|5                ; |MAIN|DATAPATH:inst|RegSum:inst1|mux2-1bit:inst16|5                ; out0             ;
+; |MAIN|DATAPATH:inst|RegSum:inst1|mux2-1bit:inst16|6                ; |MAIN|DATAPATH:inst|RegSum:inst1|mux2-1bit:inst16|6                ; out0             ;
+; |MAIN|DATAPATH:inst|RegSum:inst1|mux2-1bit:inst16|inst             ; |MAIN|DATAPATH:inst|RegSum:inst1|mux2-1bit:inst16|inst             ; out0             ;
+; |MAIN|DATAPATH:inst|RegSum:inst1|mux2-1bit:inst15|5                ; |MAIN|DATAPATH:inst|RegSum:inst1|mux2-1bit:inst15|5                ; out0             ;
+; |MAIN|DATAPATH:inst|RegSum:inst1|mux2-1bit:inst15|6                ; |MAIN|DATAPATH:inst|RegSum:inst1|mux2-1bit:inst15|6                ; out0             ;
+; |MAIN|DATAPATH:inst|RegSum:inst1|mux2-1bit:inst15|inst             ; |MAIN|DATAPATH:inst|RegSum:inst1|mux2-1bit:inst15|inst             ; out0             ;
++--------------------------------------------------------------------+--------------------------------------------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 1 during simulation.
++----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Missing 1-Value Coverage                                                                                                                                 ;
++-------------------------------------------------------------------+-------------------------------------------------------------------+------------------+
+; Node Name                                                         ; Output Port Name                                                  ; Output Port Type ;
++-------------------------------------------------------------------+-------------------------------------------------------------------+------------------+
+; |MAIN|START                                                       ; |MAIN|START                                                       ; out              ;
+; |MAIN|N[7]                                                        ; |MAIN|N[7]                                                        ; out              ;
+; |MAIN|N[6]                                                        ; |MAIN|N[6]                                                        ; out              ;
+; |MAIN|N[5]                                                        ; |MAIN|N[5]                                                        ; out              ;
+; |MAIN|N[4]                                                        ; |MAIN|N[4]                                                        ; out              ;
+; |MAIN|N[3]                                                        ; |MAIN|N[3]                                                        ; out              ;
+; |MAIN|N[2]                                                        ; |MAIN|N[2]                                                        ; out              ;
+; |MAIN|N[1]                                                        ; |MAIN|N[1]                                                        ; out              ;
+; |MAIN|N[0]                                                        ; |MAIN|N[0]                                                        ; out              ;
+; |MAIN|HEX0[1]                                                     ; |MAIN|HEX0[1]                                                     ; pin_out          ;
+; |MAIN|O[7]                                                        ; |MAIN|O[7]                                                        ; pin_out          ;
+; |MAIN|O[6]                                                        ; |MAIN|O[6]                                                        ; pin_out          ;
+; |MAIN|O[5]                                                        ; |MAIN|O[5]                                                        ; pin_out          ;
+; |MAIN|O[4]                                                        ; |MAIN|O[4]                                                        ; pin_out          ;
+; |MAIN|O[3]                                                        ; |MAIN|O[3]                                                        ; pin_out          ;
+; |MAIN|O[2]                                                        ; |MAIN|O[2]                                                        ; pin_out          ;
+; |MAIN|inst1[7]                                                    ; |MAIN|inst1[7]                                                    ; out              ;
+; |MAIN|inst1[6]                                                    ; |MAIN|inst1[6]                                                    ; out              ;
+; |MAIN|inst1[5]                                                    ; |MAIN|inst1[5]                                                    ; out              ;
+; |MAIN|inst1[4]                                                    ; |MAIN|inst1[4]                                                    ; out              ;
+; |MAIN|inst1[3]                                                    ; |MAIN|inst1[3]                                                    ; out              ;
+; |MAIN|inst1[2]                                                    ; |MAIN|inst1[2]                                                    ; out              ;
+; |MAIN|Q[7]                                                        ; |MAIN|Q[7]                                                        ; pin_out          ;
+; |MAIN|Q[6]                                                        ; |MAIN|Q[6]                                                        ; pin_out          ;
+; |MAIN|Q[5]                                                        ; |MAIN|Q[5]                                                        ; pin_out          ;
+; |MAIN|Q[4]                                                        ; |MAIN|Q[4]                                                        ; pin_out          ;
+; |MAIN|Q[3]                                                        ; |MAIN|Q[3]                                                        ; pin_out          ;
+; |MAIN|Q[2]                                                        ; |MAIN|Q[2]                                                        ; pin_out          ;
+; |MAIN|7447:inst2|1                                                ; |MAIN|7447:inst2|1                                                ; out0             ;
+; |MAIN|7447:inst2|3                                                ; |MAIN|7447:inst2|3                                                ; out0             ;
+; |MAIN|7447:inst2|82                                               ; |MAIN|7447:inst2|82                                               ; out0             ;
+; |MAIN|7447:inst2|7                                                ; |MAIN|7447:inst2|7                                                ; out0             ;
+; |MAIN|7447:inst2|8                                                ; |MAIN|7447:inst2|8                                                ; out0             ;
+; |MAIN|CONTROLLLER2:inst5|inst11                                   ; |MAIN|CONTROLLLER2:inst5|inst11                                   ; out0             ;
+; |MAIN|DATAPATH:inst|RegSum:inst|inst12                            ; |MAIN|DATAPATH:inst|RegSum:inst|inst12                            ; regout           ;
+; |MAIN|DATAPATH:inst|RegSum:inst|inst4                             ; |MAIN|DATAPATH:inst|RegSum:inst|inst4                             ; regout           ;
+; |MAIN|DATAPATH:inst|RegSum:inst|inst                              ; |MAIN|DATAPATH:inst|RegSum:inst|inst                              ; regout           ;
+; |MAIN|DATAPATH:inst|RegSum:inst|inst1                             ; |MAIN|DATAPATH:inst|RegSum:inst|inst1                             ; regout           ;
+; |MAIN|DATAPATH:inst|RegSum:inst|inst2                             ; |MAIN|DATAPATH:inst|RegSum:inst|inst2                             ; regout           ;
+; |MAIN|DATAPATH:inst|RegSum:inst|inst3                             ; |MAIN|DATAPATH:inst|RegSum:inst|inst3                             ; regout           ;
+; |MAIN|DATAPATH:inst|RegSum:inst|mux2-1bit:inst9|5                 ; |MAIN|DATAPATH:inst|RegSum:inst|mux2-1bit:inst9|5                 ; out0             ;
+; |MAIN|DATAPATH:inst|RegSum:inst|mux2-1bit:inst9|6                 ; |MAIN|DATAPATH:inst|RegSum:inst|mux2-1bit:inst9|6                 ; out0             ;
+; |MAIN|DATAPATH:inst|RegSum:inst|mux2-1bit:inst9|inst              ; |MAIN|DATAPATH:inst|RegSum:inst|mux2-1bit:inst9|inst              ; out0             ;
+; |MAIN|DATAPATH:inst|RegSum:inst|mux2-1bit:inst8|5                 ; |MAIN|DATAPATH:inst|RegSum:inst|mux2-1bit:inst8|5                 ; out0             ;
+; |MAIN|DATAPATH:inst|RegSum:inst|mux2-1bit:inst8|6                 ; |MAIN|DATAPATH:inst|RegSum:inst|mux2-1bit:inst8|6                 ; out0             ;
+; |MAIN|DATAPATH:inst|RegSum:inst|mux2-1bit:inst8|inst              ; |MAIN|DATAPATH:inst|RegSum:inst|mux2-1bit:inst8|inst              ; out0             ;
+; |MAIN|DATAPATH:inst|RegSum:inst|mux2-1bit:inst7|5                 ; |MAIN|DATAPATH:inst|RegSum:inst|mux2-1bit:inst7|5                 ; out0             ;
+; |MAIN|DATAPATH:inst|RegSum:inst|mux2-1bit:inst7|6                 ; |MAIN|DATAPATH:inst|RegSum:inst|mux2-1bit:inst7|6                 ; out0             ;
+; |MAIN|DATAPATH:inst|RegSum:inst|mux2-1bit:inst7|inst              ; |MAIN|DATAPATH:inst|RegSum:inst|mux2-1bit:inst7|inst              ; out0             ;
+; |MAIN|DATAPATH:inst|RegSum:inst|mux2-1bit:inst6|5                 ; |MAIN|DATAPATH:inst|RegSum:inst|mux2-1bit:inst6|5                 ; out0             ;
+; |MAIN|DATAPATH:inst|RegSum:inst|mux2-1bit:inst6|6                 ; |MAIN|DATAPATH:inst|RegSum:inst|mux2-1bit:inst6|6                 ; out0             ;
+; |MAIN|DATAPATH:inst|RegSum:inst|mux2-1bit:inst6|inst              ; |MAIN|DATAPATH:inst|RegSum:inst|mux2-1bit:inst6|inst              ; out0             ;
+; |MAIN|DATAPATH:inst|RegSum:inst|mux2-1bit:inst14|5                ; |MAIN|DATAPATH:inst|RegSum:inst|mux2-1bit:inst14|5                ; out0             ;
+; |MAIN|DATAPATH:inst|RegSum:inst|mux2-1bit:inst14|6                ; |MAIN|DATAPATH:inst|RegSum:inst|mux2-1bit:inst14|6                ; out0             ;
+; |MAIN|DATAPATH:inst|RegSum:inst|mux2-1bit:inst14|inst             ; |MAIN|DATAPATH:inst|RegSum:inst|mux2-1bit:inst14|inst             ; out0             ;
+; |MAIN|DATAPATH:inst|RegSum:inst|mux2-1bit:inst10|5                ; |MAIN|DATAPATH:inst|RegSum:inst|mux2-1bit:inst10|5                ; out0             ;
+; |MAIN|DATAPATH:inst|RegSum:inst|mux2-1bit:inst10|6                ; |MAIN|DATAPATH:inst|RegSum:inst|mux2-1bit:inst10|6                ; out0             ;
+; |MAIN|DATAPATH:inst|RegSum:inst|mux2-1bit:inst10|inst             ; |MAIN|DATAPATH:inst|RegSum:inst|mux2-1bit:inst10|inst             ; out0             ;
+; |MAIN|DATAPATH:inst|MUX2_1_8BITS:inst2|mux2-1bit:inst7|5          ; |MAIN|DATAPATH:inst|MUX2_1_8BITS:inst2|mux2-1bit:inst7|5          ; out0             ;
+; |MAIN|DATAPATH:inst|MUX2_1_8BITS:inst2|mux2-1bit:inst7|6          ; |MAIN|DATAPATH:inst|MUX2_1_8BITS:inst2|mux2-1bit:inst7|6          ; out0             ;
+; |MAIN|DATAPATH:inst|MUX2_1_8BITS:inst2|mux2-1bit:inst7|inst       ; |MAIN|DATAPATH:inst|MUX2_1_8BITS:inst2|mux2-1bit:inst7|inst       ; out0             ;
+; |MAIN|DATAPATH:inst|MUX2_1_8BITS:inst2|mux2-1bit:inst6|5          ; |MAIN|DATAPATH:inst|MUX2_1_8BITS:inst2|mux2-1bit:inst6|5          ; out0             ;
+; |MAIN|DATAPATH:inst|MUX2_1_8BITS:inst2|mux2-1bit:inst6|6          ; |MAIN|DATAPATH:inst|MUX2_1_8BITS:inst2|mux2-1bit:inst6|6          ; out0             ;
+; |MAIN|DATAPATH:inst|MUX2_1_8BITS:inst2|mux2-1bit:inst6|inst       ; |MAIN|DATAPATH:inst|MUX2_1_8BITS:inst2|mux2-1bit:inst6|inst       ; out0             ;
+; |MAIN|DATAPATH:inst|MUX2_1_8BITS:inst2|mux2-1bit:inst4|5          ; |MAIN|DATAPATH:inst|MUX2_1_8BITS:inst2|mux2-1bit:inst4|5          ; out0             ;
+; |MAIN|DATAPATH:inst|MUX2_1_8BITS:inst2|mux2-1bit:inst4|6          ; |MAIN|DATAPATH:inst|MUX2_1_8BITS:inst2|mux2-1bit:inst4|6          ; out0             ;
+; |MAIN|DATAPATH:inst|MUX2_1_8BITS:inst2|mux2-1bit:inst4|inst       ; |MAIN|DATAPATH:inst|MUX2_1_8BITS:inst2|mux2-1bit:inst4|inst       ; out0             ;
+; |MAIN|DATAPATH:inst|MUX2_1_8BITS:inst2|mux2-1bit:inst5|5          ; |MAIN|DATAPATH:inst|MUX2_1_8BITS:inst2|mux2-1bit:inst5|5          ; out0             ;
+; |MAIN|DATAPATH:inst|MUX2_1_8BITS:inst2|mux2-1bit:inst5|6          ; |MAIN|DATAPATH:inst|MUX2_1_8BITS:inst2|mux2-1bit:inst5|6          ; out0             ;
+; |MAIN|DATAPATH:inst|MUX2_1_8BITS:inst2|mux2-1bit:inst5|inst       ; |MAIN|DATAPATH:inst|MUX2_1_8BITS:inst2|mux2-1bit:inst5|inst       ; out0             ;
+; |MAIN|DATAPATH:inst|MUX2_1_8BITS:inst2|mux2-1bit:inst3|5          ; |MAIN|DATAPATH:inst|MUX2_1_8BITS:inst2|mux2-1bit:inst3|5          ; out0             ;
+; |MAIN|DATAPATH:inst|MUX2_1_8BITS:inst2|mux2-1bit:inst3|6          ; |MAIN|DATAPATH:inst|MUX2_1_8BITS:inst2|mux2-1bit:inst3|6          ; out0             ;
+; |MAIN|DATAPATH:inst|MUX2_1_8BITS:inst2|mux2-1bit:inst3|inst       ; |MAIN|DATAPATH:inst|MUX2_1_8BITS:inst2|mux2-1bit:inst3|inst       ; out0             ;
+; |MAIN|DATAPATH:inst|MUX2_1_8BITS:inst2|mux2-1bit:inst2|5          ; |MAIN|DATAPATH:inst|MUX2_1_8BITS:inst2|mux2-1bit:inst2|5          ; out0             ;
+; |MAIN|DATAPATH:inst|MUX2_1_8BITS:inst2|mux2-1bit:inst2|6          ; |MAIN|DATAPATH:inst|MUX2_1_8BITS:inst2|mux2-1bit:inst2|6          ; out0             ;
+; |MAIN|DATAPATH:inst|MUX2_1_8BITS:inst2|mux2-1bit:inst2|inst       ; |MAIN|DATAPATH:inst|MUX2_1_8BITS:inst2|mux2-1bit:inst2|inst       ; out0             ;
+; |MAIN|DATAPATH:inst|MUX2_1_8BITS:inst2|mux2-1bit:inst1|inst       ; |MAIN|DATAPATH:inst|MUX2_1_8BITS:inst2|mux2-1bit:inst1|inst       ; out0             ;
+; |MAIN|DATAPATH:inst|MUX2_1_8BITS:inst2|mux2-1bit:inst|6           ; |MAIN|DATAPATH:inst|MUX2_1_8BITS:inst2|mux2-1bit:inst|6           ; out0             ;
+; |MAIN|DATAPATH:inst|RegSum:inst1|inst12                           ; |MAIN|DATAPATH:inst|RegSum:inst1|inst12                           ; regout           ;
+; |MAIN|DATAPATH:inst|RegSum:inst1|inst4                            ; |MAIN|DATAPATH:inst|RegSum:inst1|inst4                            ; regout           ;
+; |MAIN|DATAPATH:inst|RegSum:inst1|inst                             ; |MAIN|DATAPATH:inst|RegSum:inst1|inst                             ; regout           ;
+; |MAIN|DATAPATH:inst|RegSum:inst1|inst1                            ; |MAIN|DATAPATH:inst|RegSum:inst1|inst1                            ; regout           ;
+; |MAIN|DATAPATH:inst|RegSum:inst1|inst2                            ; |MAIN|DATAPATH:inst|RegSum:inst1|inst2                            ; regout           ;
+; |MAIN|DATAPATH:inst|RegSum:inst1|inst3                            ; |MAIN|DATAPATH:inst|RegSum:inst1|inst3                            ; regout           ;
+; |MAIN|DATAPATH:inst|RegSum:inst1|mux2-1bit:inst9|5                ; |MAIN|DATAPATH:inst|RegSum:inst1|mux2-1bit:inst9|5                ; out0             ;
+; |MAIN|DATAPATH:inst|RegSum:inst1|mux2-1bit:inst9|6                ; |MAIN|DATAPATH:inst|RegSum:inst1|mux2-1bit:inst9|6                ; out0             ;
+; |MAIN|DATAPATH:inst|RegSum:inst1|mux2-1bit:inst9|inst             ; |MAIN|DATAPATH:inst|RegSum:inst1|mux2-1bit:inst9|inst             ; out0             ;
+; |MAIN|DATAPATH:inst|RegSum:inst1|mux2-1bit:inst8|5                ; |MAIN|DATAPATH:inst|RegSum:inst1|mux2-1bit:inst8|5                ; out0             ;
+; |MAIN|DATAPATH:inst|RegSum:inst1|mux2-1bit:inst8|6                ; |MAIN|DATAPATH:inst|RegSum:inst1|mux2-1bit:inst8|6                ; out0             ;
+; |MAIN|DATAPATH:inst|RegSum:inst1|mux2-1bit:inst8|inst             ; |MAIN|DATAPATH:inst|RegSum:inst1|mux2-1bit:inst8|inst             ; out0             ;
+; |MAIN|DATAPATH:inst|RegSum:inst1|mux2-1bit:inst7|5                ; |MAIN|DATAPATH:inst|RegSum:inst1|mux2-1bit:inst7|5                ; out0             ;
+; |MAIN|DATAPATH:inst|RegSum:inst1|mux2-1bit:inst7|6                ; |MAIN|DATAPATH:inst|RegSum:inst1|mux2-1bit:inst7|6                ; out0             ;
+; |MAIN|DATAPATH:inst|RegSum:inst1|mux2-1bit:inst7|inst             ; |MAIN|DATAPATH:inst|RegSum:inst1|mux2-1bit:inst7|inst             ; out0             ;
+; |MAIN|DATAPATH:inst|RegSum:inst1|mux2-1bit:inst6|5                ; |MAIN|DATAPATH:inst|RegSum:inst1|mux2-1bit:inst6|5                ; out0             ;
+; |MAIN|DATAPATH:inst|RegSum:inst1|mux2-1bit:inst6|6                ; |MAIN|DATAPATH:inst|RegSum:inst1|mux2-1bit:inst6|6                ; out0             ;
+; |MAIN|DATAPATH:inst|RegSum:inst1|mux2-1bit:inst6|inst             ; |MAIN|DATAPATH:inst|RegSum:inst1|mux2-1bit:inst6|inst             ; out0             ;
+; |MAIN|DATAPATH:inst|RegSum:inst1|mux2-1bit:inst14|5               ; |MAIN|DATAPATH:inst|RegSum:inst1|mux2-1bit:inst14|5               ; out0             ;
+; |MAIN|DATAPATH:inst|RegSum:inst1|mux2-1bit:inst14|6               ; |MAIN|DATAPATH:inst|RegSum:inst1|mux2-1bit:inst14|6               ; out0             ;
+; |MAIN|DATAPATH:inst|RegSum:inst1|mux2-1bit:inst14|inst            ; |MAIN|DATAPATH:inst|RegSum:inst1|mux2-1bit:inst14|inst            ; out0             ;
+; |MAIN|DATAPATH:inst|RegSum:inst1|mux2-1bit:inst10|5               ; |MAIN|DATAPATH:inst|RegSum:inst1|mux2-1bit:inst10|5               ; out0             ;
+; |MAIN|DATAPATH:inst|RegSum:inst1|mux2-1bit:inst10|6               ; |MAIN|DATAPATH:inst|RegSum:inst1|mux2-1bit:inst10|6               ; out0             ;
+; |MAIN|DATAPATH:inst|RegSum:inst1|mux2-1bit:inst10|inst            ; |MAIN|DATAPATH:inst|RegSum:inst1|mux2-1bit:inst10|inst            ; out0             ;
+; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst10|xor3:inst|1 ; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst10|xor3:inst|1 ; out0             ;
+; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst10|xor3:inst|3 ; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst10|xor3:inst|3 ; out0             ;
+; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst|inst1         ; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst|inst1         ; out0             ;
+; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst1|inst4        ; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst1|inst4        ; out0             ;
+; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst1|inst3        ; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst1|inst3        ; out0             ;
+; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst1|inst1        ; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst1|inst1        ; out0             ;
+; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst2|inst4        ; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst2|inst4        ; out0             ;
+; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst2|inst3        ; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst2|inst3        ; out0             ;
+; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst2|inst2        ; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst2|inst2        ; out0             ;
+; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst2|inst1        ; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst2|inst1        ; out0             ;
+; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst2|xor3:inst|1  ; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst2|xor3:inst|1  ; out0             ;
+; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst2|xor3:inst|3  ; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst2|xor3:inst|3  ; out0             ;
+; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst3|inst4        ; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst3|inst4        ; out0             ;
+; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst3|inst3        ; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst3|inst3        ; out0             ;
+; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst3|inst2        ; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst3|inst2        ; out0             ;
+; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst3|inst1        ; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst3|inst1        ; out0             ;
+; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst3|xor3:inst|1  ; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst3|xor3:inst|1  ; out0             ;
+; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst3|xor3:inst|3  ; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst3|xor3:inst|3  ; out0             ;
+; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst7|inst4        ; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst7|inst4        ; out0             ;
+; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst7|inst3        ; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst7|inst3        ; out0             ;
+; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst7|inst2        ; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst7|inst2        ; out0             ;
+; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst7|inst1        ; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst7|inst1        ; out0             ;
+; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst7|xor3:inst|1  ; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst7|xor3:inst|1  ; out0             ;
+; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst7|xor3:inst|3  ; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst7|xor3:inst|3  ; out0             ;
+; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst8|inst4        ; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst8|inst4        ; out0             ;
+; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst8|inst3        ; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst8|inst3        ; out0             ;
+; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst8|inst2        ; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst8|inst2        ; out0             ;
+; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst8|inst1        ; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst8|inst1        ; out0             ;
+; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst8|xor3:inst|1  ; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst8|xor3:inst|1  ; out0             ;
+; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst8|xor3:inst|3  ; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst8|xor3:inst|3  ; out0             ;
+; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst9|inst4        ; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst9|inst4        ; out0             ;
+; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst9|inst3        ; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst9|inst3        ; out0             ;
+; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst9|inst2        ; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst9|inst2        ; out0             ;
+; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst9|inst1        ; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst9|inst1        ; out0             ;
+; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst9|xor3:inst|1  ; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst9|xor3:inst|1  ; out0             ;
+; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst9|xor3:inst|3  ; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst9|xor3:inst|3  ; out0             ;
++-------------------------------------------------------------------+-------------------------------------------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 0 during simulation.
++----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Missing 0-Value Coverage                                                                                                                                 ;
++-------------------------------------------------------------------+-------------------------------------------------------------------+------------------+
+; Node Name                                                         ; Output Port Name                                                  ; Output Port Type ;
++-------------------------------------------------------------------+-------------------------------------------------------------------+------------------+
+; |MAIN|N[7]                                                        ; |MAIN|N[7]                                                        ; out              ;
+; |MAIN|N[6]                                                        ; |MAIN|N[6]                                                        ; out              ;
+; |MAIN|N[5]                                                        ; |MAIN|N[5]                                                        ; out              ;
+; |MAIN|N[4]                                                        ; |MAIN|N[4]                                                        ; out              ;
+; |MAIN|N[3]                                                        ; |MAIN|N[3]                                                        ; out              ;
+; |MAIN|N[2]                                                        ; |MAIN|N[2]                                                        ; out              ;
+; |MAIN|N[1]                                                        ; |MAIN|N[1]                                                        ; out              ;
+; |MAIN|N[0]                                                        ; |MAIN|N[0]                                                        ; out              ;
+; |MAIN|HEX0[1]                                                     ; |MAIN|HEX0[1]                                                     ; pin_out          ;
+; |MAIN|O[1]                                                        ; |MAIN|O[1]                                                        ; pin_out          ;
+; |MAIN|O[0]                                                        ; |MAIN|O[0]                                                        ; pin_out          ;
+; |MAIN|inst1[1]                                                    ; |MAIN|inst1[1]                                                    ; out              ;
+; |MAIN|inst1[0]                                                    ; |MAIN|inst1[0]                                                    ; out              ;
+; |MAIN|Q[7]                                                        ; |MAIN|Q[7]                                                        ; pin_out          ;
+; |MAIN|Q[6]                                                        ; |MAIN|Q[6]                                                        ; pin_out          ;
+; |MAIN|Q[5]                                                        ; |MAIN|Q[5]                                                        ; pin_out          ;
+; |MAIN|Q[4]                                                        ; |MAIN|Q[4]                                                        ; pin_out          ;
+; |MAIN|Q[3]                                                        ; |MAIN|Q[3]                                                        ; pin_out          ;
+; |MAIN|Q[2]                                                        ; |MAIN|Q[2]                                                        ; pin_out          ;
+; |MAIN|7447:inst2|1                                                ; |MAIN|7447:inst2|1                                                ; out0             ;
+; |MAIN|7447:inst2|3                                                ; |MAIN|7447:inst2|3                                                ; out0             ;
+; |MAIN|7447:inst2|82                                               ; |MAIN|7447:inst2|82                                               ; out0             ;
+; |MAIN|7447:inst2|7                                                ; |MAIN|7447:inst2|7                                                ; out0             ;
+; |MAIN|7447:inst2|8                                                ; |MAIN|7447:inst2|8                                                ; out0             ;
+; |MAIN|DATAPATH:inst|RegSum:inst|inst12                            ; |MAIN|DATAPATH:inst|RegSum:inst|inst12                            ; regout           ;
+; |MAIN|DATAPATH:inst|RegSum:inst|inst4                             ; |MAIN|DATAPATH:inst|RegSum:inst|inst4                             ; regout           ;
+; |MAIN|DATAPATH:inst|RegSum:inst|inst11                            ; |MAIN|DATAPATH:inst|RegSum:inst|inst11                            ; regout           ;
+; |MAIN|DATAPATH:inst|RegSum:inst|inst13                            ; |MAIN|DATAPATH:inst|RegSum:inst|inst13                            ; regout           ;
+; |MAIN|DATAPATH:inst|RegSum:inst|inst                              ; |MAIN|DATAPATH:inst|RegSum:inst|inst                              ; regout           ;
+; |MAIN|DATAPATH:inst|RegSum:inst|inst1                             ; |MAIN|DATAPATH:inst|RegSum:inst|inst1                             ; regout           ;
+; |MAIN|DATAPATH:inst|RegSum:inst|inst2                             ; |MAIN|DATAPATH:inst|RegSum:inst|inst2                             ; regout           ;
+; |MAIN|DATAPATH:inst|RegSum:inst|inst3                             ; |MAIN|DATAPATH:inst|RegSum:inst|inst3                             ; regout           ;
+; |MAIN|DATAPATH:inst|RegSum:inst|mux2-1bit:inst9|5                 ; |MAIN|DATAPATH:inst|RegSum:inst|mux2-1bit:inst9|5                 ; out0             ;
+; |MAIN|DATAPATH:inst|RegSum:inst|mux2-1bit:inst9|6                 ; |MAIN|DATAPATH:inst|RegSum:inst|mux2-1bit:inst9|6                 ; out0             ;
+; |MAIN|DATAPATH:inst|RegSum:inst|mux2-1bit:inst9|inst              ; |MAIN|DATAPATH:inst|RegSum:inst|mux2-1bit:inst9|inst              ; out0             ;
+; |MAIN|DATAPATH:inst|RegSum:inst|mux2-1bit:inst8|5                 ; |MAIN|DATAPATH:inst|RegSum:inst|mux2-1bit:inst8|5                 ; out0             ;
+; |MAIN|DATAPATH:inst|RegSum:inst|mux2-1bit:inst8|6                 ; |MAIN|DATAPATH:inst|RegSum:inst|mux2-1bit:inst8|6                 ; out0             ;
+; |MAIN|DATAPATH:inst|RegSum:inst|mux2-1bit:inst8|inst              ; |MAIN|DATAPATH:inst|RegSum:inst|mux2-1bit:inst8|inst              ; out0             ;
+; |MAIN|DATAPATH:inst|RegSum:inst|mux2-1bit:inst7|5                 ; |MAIN|DATAPATH:inst|RegSum:inst|mux2-1bit:inst7|5                 ; out0             ;
+; |MAIN|DATAPATH:inst|RegSum:inst|mux2-1bit:inst7|6                 ; |MAIN|DATAPATH:inst|RegSum:inst|mux2-1bit:inst7|6                 ; out0             ;
+; |MAIN|DATAPATH:inst|RegSum:inst|mux2-1bit:inst7|inst              ; |MAIN|DATAPATH:inst|RegSum:inst|mux2-1bit:inst7|inst              ; out0             ;
+; |MAIN|DATAPATH:inst|RegSum:inst|mux2-1bit:inst6|5                 ; |MAIN|DATAPATH:inst|RegSum:inst|mux2-1bit:inst6|5                 ; out0             ;
+; |MAIN|DATAPATH:inst|RegSum:inst|mux2-1bit:inst6|6                 ; |MAIN|DATAPATH:inst|RegSum:inst|mux2-1bit:inst6|6                 ; out0             ;
+; |MAIN|DATAPATH:inst|RegSum:inst|mux2-1bit:inst6|inst              ; |MAIN|DATAPATH:inst|RegSum:inst|mux2-1bit:inst6|inst              ; out0             ;
+; |MAIN|DATAPATH:inst|RegSum:inst|mux2-1bit:inst16|5                ; |MAIN|DATAPATH:inst|RegSum:inst|mux2-1bit:inst16|5                ; out0             ;
+; |MAIN|DATAPATH:inst|RegSum:inst|mux2-1bit:inst16|6                ; |MAIN|DATAPATH:inst|RegSum:inst|mux2-1bit:inst16|6                ; out0             ;
+; |MAIN|DATAPATH:inst|RegSum:inst|mux2-1bit:inst15|5                ; |MAIN|DATAPATH:inst|RegSum:inst|mux2-1bit:inst15|5                ; out0             ;
+; |MAIN|DATAPATH:inst|RegSum:inst|mux2-1bit:inst14|5                ; |MAIN|DATAPATH:inst|RegSum:inst|mux2-1bit:inst14|5                ; out0             ;
+; |MAIN|DATAPATH:inst|RegSum:inst|mux2-1bit:inst14|6                ; |MAIN|DATAPATH:inst|RegSum:inst|mux2-1bit:inst14|6                ; out0             ;
+; |MAIN|DATAPATH:inst|RegSum:inst|mux2-1bit:inst14|inst             ; |MAIN|DATAPATH:inst|RegSum:inst|mux2-1bit:inst14|inst             ; out0             ;
+; |MAIN|DATAPATH:inst|RegSum:inst|mux2-1bit:inst10|5                ; |MAIN|DATAPATH:inst|RegSum:inst|mux2-1bit:inst10|5                ; out0             ;
+; |MAIN|DATAPATH:inst|RegSum:inst|mux2-1bit:inst10|6                ; |MAIN|DATAPATH:inst|RegSum:inst|mux2-1bit:inst10|6                ; out0             ;
+; |MAIN|DATAPATH:inst|RegSum:inst|mux2-1bit:inst10|inst             ; |MAIN|DATAPATH:inst|RegSum:inst|mux2-1bit:inst10|inst             ; out0             ;
+; |MAIN|DATAPATH:inst|MUX2_1_8BITS:inst2|mux2-1bit:inst7|5          ; |MAIN|DATAPATH:inst|MUX2_1_8BITS:inst2|mux2-1bit:inst7|5          ; out0             ;
+; |MAIN|DATAPATH:inst|MUX2_1_8BITS:inst2|mux2-1bit:inst7|6          ; |MAIN|DATAPATH:inst|MUX2_1_8BITS:inst2|mux2-1bit:inst7|6          ; out0             ;
+; |MAIN|DATAPATH:inst|MUX2_1_8BITS:inst2|mux2-1bit:inst7|inst       ; |MAIN|DATAPATH:inst|MUX2_1_8BITS:inst2|mux2-1bit:inst7|inst       ; out0             ;
+; |MAIN|DATAPATH:inst|MUX2_1_8BITS:inst2|mux2-1bit:inst6|5          ; |MAIN|DATAPATH:inst|MUX2_1_8BITS:inst2|mux2-1bit:inst6|5          ; out0             ;
+; |MAIN|DATAPATH:inst|MUX2_1_8BITS:inst2|mux2-1bit:inst6|6          ; |MAIN|DATAPATH:inst|MUX2_1_8BITS:inst2|mux2-1bit:inst6|6          ; out0             ;
+; |MAIN|DATAPATH:inst|MUX2_1_8BITS:inst2|mux2-1bit:inst6|inst       ; |MAIN|DATAPATH:inst|MUX2_1_8BITS:inst2|mux2-1bit:inst6|inst       ; out0             ;
+; |MAIN|DATAPATH:inst|MUX2_1_8BITS:inst2|mux2-1bit:inst4|5          ; |MAIN|DATAPATH:inst|MUX2_1_8BITS:inst2|mux2-1bit:inst4|5          ; out0             ;
+; |MAIN|DATAPATH:inst|MUX2_1_8BITS:inst2|mux2-1bit:inst4|6          ; |MAIN|DATAPATH:inst|MUX2_1_8BITS:inst2|mux2-1bit:inst4|6          ; out0             ;
+; |MAIN|DATAPATH:inst|MUX2_1_8BITS:inst2|mux2-1bit:inst4|inst       ; |MAIN|DATAPATH:inst|MUX2_1_8BITS:inst2|mux2-1bit:inst4|inst       ; out0             ;
+; |MAIN|DATAPATH:inst|MUX2_1_8BITS:inst2|mux2-1bit:inst5|5          ; |MAIN|DATAPATH:inst|MUX2_1_8BITS:inst2|mux2-1bit:inst5|5          ; out0             ;
+; |MAIN|DATAPATH:inst|MUX2_1_8BITS:inst2|mux2-1bit:inst5|6          ; |MAIN|DATAPATH:inst|MUX2_1_8BITS:inst2|mux2-1bit:inst5|6          ; out0             ;
+; |MAIN|DATAPATH:inst|MUX2_1_8BITS:inst2|mux2-1bit:inst5|inst       ; |MAIN|DATAPATH:inst|MUX2_1_8BITS:inst2|mux2-1bit:inst5|inst       ; out0             ;
+; |MAIN|DATAPATH:inst|MUX2_1_8BITS:inst2|mux2-1bit:inst3|5          ; |MAIN|DATAPATH:inst|MUX2_1_8BITS:inst2|mux2-1bit:inst3|5          ; out0             ;
+; |MAIN|DATAPATH:inst|MUX2_1_8BITS:inst2|mux2-1bit:inst3|6          ; |MAIN|DATAPATH:inst|MUX2_1_8BITS:inst2|mux2-1bit:inst3|6          ; out0             ;
+; |MAIN|DATAPATH:inst|MUX2_1_8BITS:inst2|mux2-1bit:inst3|inst       ; |MAIN|DATAPATH:inst|MUX2_1_8BITS:inst2|mux2-1bit:inst3|inst       ; out0             ;
+; |MAIN|DATAPATH:inst|MUX2_1_8BITS:inst2|mux2-1bit:inst2|5          ; |MAIN|DATAPATH:inst|MUX2_1_8BITS:inst2|mux2-1bit:inst2|5          ; out0             ;
+; |MAIN|DATAPATH:inst|MUX2_1_8BITS:inst2|mux2-1bit:inst2|6          ; |MAIN|DATAPATH:inst|MUX2_1_8BITS:inst2|mux2-1bit:inst2|6          ; out0             ;
+; |MAIN|DATAPATH:inst|MUX2_1_8BITS:inst2|mux2-1bit:inst2|inst       ; |MAIN|DATAPATH:inst|MUX2_1_8BITS:inst2|mux2-1bit:inst2|inst       ; out0             ;
+; |MAIN|DATAPATH:inst|MUX2_1_8BITS:inst2|mux2-1bit:inst1|inst       ; |MAIN|DATAPATH:inst|MUX2_1_8BITS:inst2|mux2-1bit:inst1|inst       ; out0             ;
+; |MAIN|DATAPATH:inst|MUX2_1_8BITS:inst2|mux2-1bit:inst|6           ; |MAIN|DATAPATH:inst|MUX2_1_8BITS:inst2|mux2-1bit:inst|6           ; out0             ;
+; |MAIN|DATAPATH:inst|RegSum:inst1|inst12                           ; |MAIN|DATAPATH:inst|RegSum:inst1|inst12                           ; regout           ;
+; |MAIN|DATAPATH:inst|RegSum:inst1|inst4                            ; |MAIN|DATAPATH:inst|RegSum:inst1|inst4                            ; regout           ;
+; |MAIN|DATAPATH:inst|RegSum:inst1|inst                             ; |MAIN|DATAPATH:inst|RegSum:inst1|inst                             ; regout           ;
+; |MAIN|DATAPATH:inst|RegSum:inst1|inst1                            ; |MAIN|DATAPATH:inst|RegSum:inst1|inst1                            ; regout           ;
+; |MAIN|DATAPATH:inst|RegSum:inst1|inst2                            ; |MAIN|DATAPATH:inst|RegSum:inst1|inst2                            ; regout           ;
+; |MAIN|DATAPATH:inst|RegSum:inst1|inst3                            ; |MAIN|DATAPATH:inst|RegSum:inst1|inst3                            ; regout           ;
+; |MAIN|DATAPATH:inst|RegSum:inst1|mux2-1bit:inst9|5                ; |MAIN|DATAPATH:inst|RegSum:inst1|mux2-1bit:inst9|5                ; out0             ;
+; |MAIN|DATAPATH:inst|RegSum:inst1|mux2-1bit:inst9|6                ; |MAIN|DATAPATH:inst|RegSum:inst1|mux2-1bit:inst9|6                ; out0             ;
+; |MAIN|DATAPATH:inst|RegSum:inst1|mux2-1bit:inst9|inst             ; |MAIN|DATAPATH:inst|RegSum:inst1|mux2-1bit:inst9|inst             ; out0             ;
+; |MAIN|DATAPATH:inst|RegSum:inst1|mux2-1bit:inst8|5                ; |MAIN|DATAPATH:inst|RegSum:inst1|mux2-1bit:inst8|5                ; out0             ;
+; |MAIN|DATAPATH:inst|RegSum:inst1|mux2-1bit:inst8|6                ; |MAIN|DATAPATH:inst|RegSum:inst1|mux2-1bit:inst8|6                ; out0             ;
+; |MAIN|DATAPATH:inst|RegSum:inst1|mux2-1bit:inst8|inst             ; |MAIN|DATAPATH:inst|RegSum:inst1|mux2-1bit:inst8|inst             ; out0             ;
+; |MAIN|DATAPATH:inst|RegSum:inst1|mux2-1bit:inst7|5                ; |MAIN|DATAPATH:inst|RegSum:inst1|mux2-1bit:inst7|5                ; out0             ;
+; |MAIN|DATAPATH:inst|RegSum:inst1|mux2-1bit:inst7|6                ; |MAIN|DATAPATH:inst|RegSum:inst1|mux2-1bit:inst7|6                ; out0             ;
+; |MAIN|DATAPATH:inst|RegSum:inst1|mux2-1bit:inst7|inst             ; |MAIN|DATAPATH:inst|RegSum:inst1|mux2-1bit:inst7|inst             ; out0             ;
+; |MAIN|DATAPATH:inst|RegSum:inst1|mux2-1bit:inst6|5                ; |MAIN|DATAPATH:inst|RegSum:inst1|mux2-1bit:inst6|5                ; out0             ;
+; |MAIN|DATAPATH:inst|RegSum:inst1|mux2-1bit:inst6|6                ; |MAIN|DATAPATH:inst|RegSum:inst1|mux2-1bit:inst6|6                ; out0             ;
+; |MAIN|DATAPATH:inst|RegSum:inst1|mux2-1bit:inst6|inst             ; |MAIN|DATAPATH:inst|RegSum:inst1|mux2-1bit:inst6|inst             ; out0             ;
+; |MAIN|DATAPATH:inst|RegSum:inst1|mux2-1bit:inst14|5               ; |MAIN|DATAPATH:inst|RegSum:inst1|mux2-1bit:inst14|5               ; out0             ;
+; |MAIN|DATAPATH:inst|RegSum:inst1|mux2-1bit:inst14|6               ; |MAIN|DATAPATH:inst|RegSum:inst1|mux2-1bit:inst14|6               ; out0             ;
+; |MAIN|DATAPATH:inst|RegSum:inst1|mux2-1bit:inst14|inst            ; |MAIN|DATAPATH:inst|RegSum:inst1|mux2-1bit:inst14|inst            ; out0             ;
+; |MAIN|DATAPATH:inst|RegSum:inst1|mux2-1bit:inst10|5               ; |MAIN|DATAPATH:inst|RegSum:inst1|mux2-1bit:inst10|5               ; out0             ;
+; |MAIN|DATAPATH:inst|RegSum:inst1|mux2-1bit:inst10|6               ; |MAIN|DATAPATH:inst|RegSum:inst1|mux2-1bit:inst10|6               ; out0             ;
+; |MAIN|DATAPATH:inst|RegSum:inst1|mux2-1bit:inst10|inst            ; |MAIN|DATAPATH:inst|RegSum:inst1|mux2-1bit:inst10|inst            ; out0             ;
+; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst10|xor3:inst|1 ; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst10|xor3:inst|1 ; out0             ;
+; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst10|xor3:inst|3 ; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst10|xor3:inst|3 ; out0             ;
+; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst|inst1         ; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst|inst1         ; out0             ;
+; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst|xor3:inst|1   ; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst|xor3:inst|1   ; out0             ;
+; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst1|inst4        ; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst1|inst4        ; out0             ;
+; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst1|inst3        ; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst1|inst3        ; out0             ;
+; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst1|inst2        ; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst1|inst2        ; out0             ;
+; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst1|inst1        ; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst1|inst1        ; out0             ;
+; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst1|xor3:inst|1  ; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst1|xor3:inst|1  ; out0             ;
+; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst1|xor3:inst|3  ; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst1|xor3:inst|3  ; out0             ;
+; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst2|inst4        ; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst2|inst4        ; out0             ;
+; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst2|inst3        ; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst2|inst3        ; out0             ;
+; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst2|inst2        ; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst2|inst2        ; out0             ;
+; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst2|inst1        ; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst2|inst1        ; out0             ;
+; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst2|xor3:inst|1  ; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst2|xor3:inst|1  ; out0             ;
+; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst2|xor3:inst|3  ; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst2|xor3:inst|3  ; out0             ;
+; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst3|inst4        ; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst3|inst4        ; out0             ;
+; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst3|inst3        ; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst3|inst3        ; out0             ;
+; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst3|inst2        ; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst3|inst2        ; out0             ;
+; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst3|inst1        ; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst3|inst1        ; out0             ;
+; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst3|xor3:inst|1  ; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst3|xor3:inst|1  ; out0             ;
+; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst3|xor3:inst|3  ; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst3|xor3:inst|3  ; out0             ;
+; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst7|inst4        ; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst7|inst4        ; out0             ;
+; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst7|inst3        ; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst7|inst3        ; out0             ;
+; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst7|inst2        ; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst7|inst2        ; out0             ;
+; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst7|inst1        ; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst7|inst1        ; out0             ;
+; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst7|xor3:inst|1  ; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst7|xor3:inst|1  ; out0             ;
+; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst7|xor3:inst|3  ; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst7|xor3:inst|3  ; out0             ;
+; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst8|inst4        ; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst8|inst4        ; out0             ;
+; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst8|inst3        ; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst8|inst3        ; out0             ;
+; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst8|inst2        ; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst8|inst2        ; out0             ;
+; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst8|inst1        ; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst8|inst1        ; out0             ;
+; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst8|xor3:inst|1  ; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst8|xor3:inst|1  ; out0             ;
+; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst8|xor3:inst|3  ; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst8|xor3:inst|3  ; out0             ;
+; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst9|inst4        ; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst9|inst4        ; out0             ;
+; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst9|inst3        ; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst9|inst3        ; out0             ;
+; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst9|inst2        ; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst9|inst2        ; out0             ;
+; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst9|inst1        ; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst9|inst1        ; out0             ;
+; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst9|xor3:inst|1  ; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst9|xor3:inst|1  ; out0             ;
+; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst9|xor3:inst|3  ; |MAIN|DATAPATH:inst|FA_8BITS:inst11|full_adder:inst9|xor3:inst|3  ; out0             ;
++-------------------------------------------------------------------+-------------------------------------------------------------------+------------------+
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Simulator
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Thu Nov 13 10:17:38 2025
+Info: Command: quartus_sim --simulation_results_format=VWF lab4_5 -c lab4_5
+Info (324025): Using vector source file "D:/TKLLS/Lab4_5/output_files/Waveform4.vwf"
+Info (310003): Option to preserve fewer signal transitions to reduce memory requirements is enabled
+    Info (310004): Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
+Info (310002): Simulation partitioned into 1 sub-simulations
+Info (328053): Simulation coverage is      32.29 %
+Info (328052): Number of transitions in simulation is 488
+Info (324045): Vector file lab4_5.sim.vwf is saved in VWF text format. You can compress it into CVWF format in order to reduce file size. For more details please refer to the Quartus II Help.
+Info: Quartus II 64-Bit Simulator was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 4446 megabytes
+    Info: Processing ended: Thu Nov 13 10:17:38 2025
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:00
+
+

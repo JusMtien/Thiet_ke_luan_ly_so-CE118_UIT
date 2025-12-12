@@ -1,0 +1,27 @@
+INCLUDE "lpm_mux.inc";
+
+SUBDESIGN mux8x4
+(
+    data[31..0] : INPUT;    -- 8 ngõ vào, mỗi ngõ 4-bit => 8*4 = 32 bit
+    sel[2..0]   : INPUT;    -- 3-bit chọn
+    result[3..0]: OUTPUT;   -- ngõ ra 4-bit
+)
+VARIABLE
+    -- Mảng 2D: 8 hàng, mỗi hàng 4 bit
+    data_bus[7..0][3..0] : WIRE;
+
+    -- Khai báo instance cho megafunction lpm_mux
+    mux_inst : lpm_mux WITH (
+        LPM_WIDTH = 4,    -- mỗi ngõ 4-bit
+        LPM_SIZE = 8,     -- tổng 8 ngõ vào
+        LPM_WIDTHS = 3    -- 3-bit select
+    );
+BEGIN
+    -- Chuyển data 1D thành 2D để đưa vào lpm_mux
+    FOR i IN 0 TO 7 GENERATE
+        data_bus[i][3..0] = data[i*4+3..i*4];
+    END GENERATE;
+
+    -- Gọi megafunction lpm_mux
+    result[3..0] = mux_inst(.data = data_bus, .sel = sel);
+END;
