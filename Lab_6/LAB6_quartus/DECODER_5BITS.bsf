@@ -20,9 +20,9 @@ applicable agreement for further details.
 */
 (header "symbol" (version "1.2"))
 (symbol
-	(rect 16 16 128 144)
+	(rect 16 16 128 176)
 	(text "DECODER_5BITS" (rect 5 0 81 10)(font "Arial" (font_size 6)))
-	(text "inst" (rect 8 112 25 124)(font "Arial" ))
+	(text "inst" (rect 8 144 25 156)(font "Arial" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -72,7 +72,14 @@ applicable agreement for further details.
 		(text "5" (rect 84 91 91 105)(font "Arial" (font_size 8)))
 		(line (pt 112 96)(pt 96 96))
 	)
+	(port
+		(pt 112 112)
+		(output)
+		(text "0" (rect 0 0 7 14)(font "Arial" (font_size 8)))
+		(text "0" (rect 84 107 91 121)(font "Arial" (font_size 8)))
+		(line (pt 112 112)(pt 96 112))
+	)
 	(drawing
-		(rectangle (rect 16 16 96 112))
+		(rectangle (rect 16 16 96 144))
 	)
 )

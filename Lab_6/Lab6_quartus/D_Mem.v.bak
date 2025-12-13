@@ -1,0 +1,37 @@
+module data_memory (
+    input  wire        clk,
+    input  wire        MemRead,
+    input  wire        MemWrite,
+    input  wire [31:0] address,
+    input  wire [31:0] WriteData,
+    output reg  [31:0] ReadData
+);
+
+    // 50 ô nhớ, mỗi ô 32-bit
+    reg [31:0] mem [0:49];
+
+    // chuyển địa chỉ byte -> word index
+    wire [5:0] word_addr;  
+    assign word_addr = address[31:2];   // address / 4
+
+    // đọc (combinational - giống MIPS)
+    always @(*) begin
+        if (MemRead) begin
+            if (word_addr < 50)
+                ReadData = mem[word_addr];
+            else
+                ReadData = 32'h00000000;   // tránh out-of-range
+        end
+        else begin
+            ReadData = 32'h00000000;
+        end
+    end
+
+    // ghi (sequential, cạnh lên clock)
+    always @(posedge clk) begin
+        if (MemWrite && (word_addr < 50)) begin
+            mem[word_addr] <= WriteData;
+        end
+    end
+
+endmodule

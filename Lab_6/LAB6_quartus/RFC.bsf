@@ -20,9 +20,9 @@ applicable agreement for further details.
 */
 (header "symbol" (version "1.2"))
 (symbol
-	(rect 64 64 160 192)
-	(text "RFC" (rect 5 0 28 14)(font "Arial" (font_size 8)))
-	(text "inst" (rect 8 112 25 124)(font "Arial" ))
+	(rect 64 64 160 224)
+	(text "RFC" (rect 5 0 25 10)(font "Arial" (font_size 6)))
+	(text "inst" (rect 8 144 25 156)(font "Arial" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -31,18 +31,18 @@ applicable agreement for further details.
 		(line (pt 0 32)(pt 16 32))
 	)
 	(port
-		(pt 96 64)
+		(pt 96 72)
 		(input)
 		(text "RSA" (rect 0 0 25 14)(font "Arial" (font_size 8)))
-		(text "RSA" (rect 46 56 71 70)(font "Arial" (font_size 8)))
-		(line (pt 80 64)(pt 96 64))
+		(text "RSA" (rect 56 64 81 78)(font "Arial" (font_size 8)))
+		(line (pt 80 72)(pt 96 72))
 	)
 	(port
-		(pt 0 56)
+		(pt 0 64)
 		(input)
 		(text "In" (rect 0 0 9 14)(font "Arial" (font_size 8)))
-		(text "In" (rect 24 40 33 54)(font "Arial" (font_size 8)))
-		(line (pt 0 56)(pt 16 56))
+		(text "In" (rect 21 59 30 73)(font "Arial" (font_size 8)))
+		(line (pt 0 64)(pt 16 64))
 	)
 	(port
 		(pt 0 80)
@@ -52,11 +52,18 @@ applicable agreement for further details.
 		(line (pt 0 80)(pt 16 80))
 	)
 	(port
-		(pt 96 96)
+		(pt 0 96)
+		(input)
+		(text "CLR" (rect 0 0 23 14)(font "Arial" (font_size 8)))
+		(text "CLR" (rect 21 91 44 105)(font "Arial" (font_size 8)))
+		(line (pt 0 96)(pt 16 96))
+	)
+	(port
+		(pt 96 128)
 		(input)
 		(text "RSB" (rect 0 0 24 14)(font "Arial" (font_size 8)))
-		(text "RSB" (rect 47 88 71 102)(font "Arial" (font_size 8)))
-		(line (pt 80 96)(pt 96 96))
+		(text "RSB" (rect 56 112 80 126)(font "Arial" (font_size 8)))
+		(line (pt 80 128)(pt 96 128))
 	)
 	(port
 		(pt 96 32)
@@ -73,6 +80,6 @@ applicable agreement for further details.
 		(line (pt 96 48)(pt 80 48))
 	)
 	(drawing
-		(rectangle (rect 16 16 80 112))
+		(rectangle (rect 16 16 80 144))
 	)
 )

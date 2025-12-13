@@ -20,9 +20,9 @@ applicable agreement for further details.
 */
 (header "symbol" (version "1.2"))
 (symbol
-	(rect 16 16 176 336)
-	(text "RFILE_8BITS" (rect 5 0 76 14)(font "Arial" (font_size 8)))
-	(text "inst" (rect 8 304 25 316)(font "Arial" ))
+	(rect 16 16 176 400)
+	(text "RFILE_8BITS" (rect 5 0 60 10)(font "Arial" (font_size 6)))
+	(text "inst" (rect 8 368 25 380)(font "Arial" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -143,6 +143,34 @@ applicable agreement for further details.
 		(line (pt 0 288)(pt 16 288))
 	)
 	(port
+		(pt 0 304)
+		(input)
+		(text "CLR" (rect 0 0 23 14)(font "Arial" (font_size 8)))
+		(text "CLR" (rect 21 299 44 313)(font "Arial" (font_size 8)))
+		(line (pt 0 304)(pt 16 304))
+	)
+	(port
+		(pt 0 320)
+		(input)
+		(text "ENB_0" (rect 0 0 37 14)(font "Arial" (font_size 8)))
+		(text "ENB_0" (rect 21 315 58 329)(font "Arial" (font_size 8)))
+		(line (pt 0 320)(pt 16 320))
+	)
+	(port
+		(pt 0 336)
+		(input)
+		(text "RSA0" (rect 0 0 33 14)(font "Arial" (font_size 8)))
+		(text "RSA0" (rect 21 331 54 345)(font "Arial" (font_size 8)))
+		(line (pt 0 336)(pt 16 336))
+	)
+	(port
+		(pt 0 352)
+		(input)
+		(text "RSB0" (rect 0 0 31 14)(font "Arial" (font_size 8)))
+		(text "RSB0" (rect 21 347 52 361)(font "Arial" (font_size 8)))
+		(line (pt 0 352)(pt 16 352))
+	)
+	(port
 		(pt 160 32)
 		(output)
 		(text "AO[7..0]" (rect 0 0 47 14)(font "Arial" (font_size 8)))
@@ -191,7 +219,14 @@ applicable agreement for further details.
 		(text "OEN_5" (rect 101 123 139 137)(font "Arial" (font_size 8)))
 		(line (pt 160 128)(pt 144 128))
 	)
+	(port
+		(pt 160 144)
+		(output)
+		(text "OEN_0" (rect 0 0 38 14)(font "Arial" (font_size 8)))
+		(text "OEN_0" (rect 101 139 139 153)(font "Arial" (font_size 8)))
+		(line (pt 160 144)(pt 144 144))
+	)
 	(drawing
-		(rectangle (rect 16 16 144 304))
+		(rectangle (rect 16 16 144 368))
 	)
 )
