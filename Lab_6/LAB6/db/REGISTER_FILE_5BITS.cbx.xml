@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="REGISTER_FILE_5BITS">
+		<CBX_INST_ENTRY INSTANCE_NAME="|Mips|ALU_Control:inst5|lpm_constant4:inst2|lpm_constant:LPM_CONSTANT_component" CBX_FILE_NAME="lpm_constant_bh6.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Mips|ALU_Control:inst5|lpm_constant5:inst3|lpm_constant:LPM_CONSTANT_component" CBX_FILE_NAME="lpm_constant_qf6.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Mips|Control:inst6|lpm_constant0:inst4|lpm_constant:LPM_CONSTANT_component" CBX_FILE_NAME="lpm_constant_of6.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Mips|Control:inst6|lpm_constant1:inst6|lpm_constant:LPM_CONSTANT_component" CBX_FILE_NAME="lpm_constant_tf6.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Mips|Control:inst6|lpm_constant2:inst7|lpm_constant:LPM_CONSTANT_component" CBX_FILE_NAME="lpm_constant_ch6.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Mips|Control:inst6|lpm_constant3:inst8|lpm_constant:LPM_CONSTANT_component" CBX_FILE_NAME="lpm_constant_0g6.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

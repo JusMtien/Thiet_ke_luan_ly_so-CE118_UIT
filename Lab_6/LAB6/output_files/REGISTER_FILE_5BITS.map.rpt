@@ -1,0 +1,1029 @@
+Analysis & Synthesis report for REGISTER_FILE_5BITS
+Thu Dec 11 09:17:28 2025
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis IP Cores Summary
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for User Entity Instance: Control:inst6|lpm_constant2:inst7|lpm_constant:LPM_CONSTANT_component
+ 13. Parameter Settings for User Entity Instance: Control:inst6|lpm_constant1:inst6|lpm_constant:LPM_CONSTANT_component
+ 14. Parameter Settings for User Entity Instance: Control:inst6|lpm_constant0:inst4|lpm_constant:LPM_CONSTANT_component
+ 15. Parameter Settings for User Entity Instance: Control:inst6|lpm_constant3:inst8|lpm_constant:LPM_CONSTANT_component
+ 16. Parameter Settings for User Entity Instance: ALU_Control:inst5|lpm_constant5:inst3|lpm_constant:LPM_CONSTANT_component
+ 17. Parameter Settings for User Entity Instance: ALU_Control:inst5|lpm_constant4:inst2|lpm_constant:LPM_CONSTANT_component
+ 18. Elapsed Time Per Partition
+ 19. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                         ;
++------------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Thu Dec 11 09:17:28 2025           ;
+; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
+; Revision Name                      ; REGISTER_FILE_5BITS                             ;
+; Top-level Entity Name              ; Mips                                            ;
+; Family                             ; Cyclone II                                      ;
+; Total logic elements               ; 3,324                                           ;
+;     Total combinational functions  ; 1,630                                           ;
+;     Dedicated logic registers      ; 1,760                                           ;
+; Total registers                    ; 1760                                            ;
+; Total pins                         ; 151                                             ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0                                               ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total PLLs                         ; 0                                               ;
++------------------------------------+-------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                         ;
++----------------------------------------------------------------------------+--------------------+---------------------+
+; Option                                                                     ; Setting            ; Default Value       ;
++----------------------------------------------------------------------------+--------------------+---------------------+
+; Device                                                                     ; EP2C35F672C6       ;                     ;
+; Top-level entity name                                                      ; Mips               ; REGISTER_FILE_5BITS ;
+; Family name                                                                ; Cyclone II         ; Cyclone IV GX       ;
+; Use smart compilation                                                      ; Off                ; Off                 ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                  ;
+; Enable compact report table                                                ; Off                ; Off                 ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto                ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                 ;
+; Preserve fewer node names                                                  ; On                 ; On                  ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                 ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001        ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993           ;
+; State Machine Processing                                                   ; Auto               ; Auto                ;
+; Safe State Machine                                                         ; Off                ; Off                 ;
+; Extract Verilog State Machines                                             ; On                 ; On                  ;
+; Extract VHDL State Machines                                                ; On                 ; On                  ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                 ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000                ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                 ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                  ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                  ;
+; Parallel Synthesis                                                         ; On                 ; On                  ;
+; DSP Block Balancing                                                        ; Auto               ; Auto                ;
+; NOT Gate Push-Back                                                         ; On                 ; On                  ;
+; Power-Up Don't Care                                                        ; On                 ; On                  ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                 ;
+; Remove Duplicate Registers                                                 ; On                 ; On                  ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                 ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                 ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                 ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                 ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                 ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                  ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                 ;
+; Optimization Technique                                                     ; Balanced           ; Balanced            ;
+; Carry Chain Length                                                         ; 70                 ; 70                  ;
+; Auto Carry Chains                                                          ; On                 ; On                  ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                  ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                 ;
+; Auto ROM Replacement                                                       ; On                 ; On                  ;
+; Auto RAM Replacement                                                       ; On                 ; On                  ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto                ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto                ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                  ;
+; Strict RAM Replacement                                                     ; Off                ; Off                 ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                  ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                 ;
+; Auto Resource Sharing                                                      ; Off                ; Off                 ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                 ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                 ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                 ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                  ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                 ;
+; Timing-Driven Synthesis                                                    ; Off                ; Off                 ;
+; Report Parameter Settings                                                  ; On                 ; On                  ;
+; Report Source Assignments                                                  ; On                 ; On                  ;
+; Report Connectivity Checks                                                 ; On                 ; On                  ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                 ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                   ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation  ;
+; HDL message level                                                          ; Level2             ; Level2              ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                 ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000                ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000                ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                 ;
+; Clock MUX Protection                                                       ; On                 ; On                  ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                 ;
+; Block Design Naming                                                        ; Auto               ; Auto                ;
+; SDC constraint protection                                                  ; Off                ; Off                 ;
+; Synthesis Effort                                                           ; Auto               ; Auto                ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                  ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                 ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium              ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto                ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                  ;
+; Synthesis Seed                                                             ; 1                  ; 1                   ;
++----------------------------------------------------------------------------+--------------------+---------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 12     ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                       ;
++----------------------------------+-----------------+------------------------------------------+--------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                                ; File Name with Absolute Path                                       ; Library ;
++----------------------------------+-----------------+------------------------------------------+--------------------------------------------------------------------+---------+
+; DECODER_5BITS.bdf                ; yes             ; User Block Diagram/Schematic File        ; C:/Users/MINHTIEN/Downloads/LAB6_ALU/LAB6/DECODER_5BITS.bdf        ;         ;
+; RFILE_8BITS.bdf                  ; yes             ; User Block Diagram/Schematic File        ; C:/Users/MINHTIEN/Downloads/LAB6_ALU/LAB6/RFILE_8BITS.bdf          ;         ;
+; full_register_file.bdf           ; yes             ; User Block Diagram/Schematic File        ; C:/Users/MINHTIEN/Downloads/LAB6_ALU/LAB6/full_register_file.bdf   ;         ;
+; mux21_5bits.bdf                  ; yes             ; User Block Diagram/Schematic File        ; C:/Users/MINHTIEN/Downloads/LAB6_ALU/LAB6/mux21_5bits.bdf          ;         ;
+; mux21_32bits.v                   ; yes             ; User Verilog HDL File                    ; C:/Users/MINHTIEN/Downloads/LAB6_ALU/LAB6/mux21_32bits.v           ;         ;
+; sign_extend.bdf                  ; yes             ; User Block Diagram/Schematic File        ; C:/Users/MINHTIEN/Downloads/LAB6_ALU/LAB6/sign_extend.bdf          ;         ;
+; Equal_1bit.bdf                   ; yes             ; User Block Diagram/Schematic File        ; C:/Users/MINHTIEN/Downloads/LAB6_ALU/LAB6/Equal_1bit.bdf           ;         ;
+; Equal_5bits.bdf                  ; yes             ; User Block Diagram/Schematic File        ; C:/Users/MINHTIEN/Downloads/LAB6_ALU/LAB6/Equal_5bits.bdf          ;         ;
+; Control.bdf                      ; yes             ; User Block Diagram/Schematic File        ; C:/Users/MINHTIEN/Downloads/LAB6_ALU/LAB6/Control.bdf              ;         ;
+; ALU_Control.bdf                  ; yes             ; User Block Diagram/Schematic File        ; C:/Users/MINHTIEN/Downloads/LAB6_ALU/LAB6/ALU_Control.bdf          ;         ;
+; Mips.bdf                         ; yes             ; User Block Diagram/Schematic File        ; C:/Users/MINHTIEN/Downloads/LAB6_ALU/LAB6/Mips.bdf                 ;         ;
+; RFC.bdf                          ; yes             ; User Block Diagram/Schematic File        ; C:/Users/MINHTIEN/Downloads/LAB6_ALU/LAB6/RFC.bdf                  ;         ;
+; D_Mem.v                          ; yes             ; User Verilog HDL File                    ; C:/Users/MINHTIEN/Downloads/LAB6_ALU/LAB6/D_Mem.v                  ;         ;
+; lpm_constant2.v                  ; yes             ; Auto-Found Wizard-Generated File         ; C:/Users/MINHTIEN/Downloads/LAB6_ALU/LAB6/lpm_constant2.v          ;         ;
+; lpm_constant.tdf                 ; yes             ; Megafunction                             ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_constant.tdf ;         ;
+; lpm_constant1.v                  ; yes             ; Auto-Found Wizard-Generated File         ; C:/Users/MINHTIEN/Downloads/LAB6_ALU/LAB6/lpm_constant1.v          ;         ;
+; lpm_constant0.v                  ; yes             ; Auto-Found Wizard-Generated File         ; C:/Users/MINHTIEN/Downloads/LAB6_ALU/LAB6/lpm_constant0.v          ;         ;
+; lpm_constant3.v                  ; yes             ; Auto-Found Wizard-Generated File         ; C:/Users/MINHTIEN/Downloads/LAB6_ALU/LAB6/lpm_constant3.v          ;         ;
+; mux21_4bits.bdf                  ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/Users/MINHTIEN/Downloads/LAB6_ALU/LAB6/mux21_4bits.bdf          ;         ;
+; mux2-1bit.bdf                    ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/Users/MINHTIEN/Downloads/LAB6_ALU/LAB6/mux2-1bit.bdf            ;         ;
+; lpm_constant5.v                  ; yes             ; Auto-Found Wizard-Generated File         ; C:/Users/MINHTIEN/Downloads/LAB6_ALU/LAB6/lpm_constant5.v          ;         ;
+; lpm_constant4.v                  ; yes             ; Auto-Found Wizard-Generated File         ; C:/Users/MINHTIEN/Downloads/LAB6_ALU/LAB6/lpm_constant4.v          ;         ;
+; alu.bdf                          ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/Users/MINHTIEN/Downloads/LAB6_ALU/LAB6/alu.bdf                  ;         ;
+; test_32bit_adder.bdf             ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/Users/MINHTIEN/Downloads/LAB6_ALU/LAB6/test_32bit_adder.bdf     ;         ;
+; add_end_8bit.bdf                 ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/Users/MINHTIEN/Downloads/LAB6_ALU/LAB6/add_end_8bit.bdf         ;         ;
+; fulladder.bdf                    ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/Users/MINHTIEN/Downloads/LAB6_ALU/LAB6/fulladder.bdf            ;         ;
+; add_mid_8bit.bdf                 ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/Users/MINHTIEN/Downloads/LAB6_ALU/LAB6/add_mid_8bit.bdf         ;         ;
+; test_adder.bdf                   ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/Users/MINHTIEN/Downloads/LAB6_ALU/LAB6/test_adder.bdf           ;         ;
+; iszero.bdf                       ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/Users/MINHTIEN/Downloads/LAB6_ALU/LAB6/iszero.bdf               ;         ;
+; 4to1.bdf                         ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/Users/MINHTIEN/Downloads/LAB6_ALU/LAB6/4to1.bdf                 ;         ;
+; slt.bdf                          ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/Users/MINHTIEN/Downloads/LAB6_ALU/LAB6/slt.bdf                  ;         ;
+; test_8bit.bdf                    ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/Users/MINHTIEN/Downloads/LAB6_ALU/LAB6/test_8bit.bdf            ;         ;
+; 0doibitcuoi.bdf                  ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/Users/MINHTIEN/Downloads/LAB6_ALU/LAB6/0doibitcuoi.bdf          ;         ;
+; changebit.bdf                    ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/Users/MINHTIEN/Downloads/LAB6_ALU/LAB6/changebit.bdf            ;         ;
++----------------------------------+-----------------+------------------------------------------+--------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Estimated Total logic elements              ; 3,324 ;
+;                                             ;       ;
+; Total combinational functions               ; 1630  ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 1474  ;
+;     -- 3 input functions                    ; 112   ;
+;     -- <=2 input functions                  ; 44    ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 1630  ;
+;     -- arithmetic mode                      ; 0     ;
+;                                             ;       ;
+; Total registers                             ; 1760  ;
+;     -- Dedicated logic registers            ; 1760  ;
+;     -- I/O registers                        ; 0     ;
+;                                             ;       ;
+; I/O pins                                    ; 151   ;
+; Embedded Multiplier 9-bit elements          ; 0     ;
+; Maximum fan-out node                        ; CLK   ;
+; Maximum fan-out                             ; 1760  ;
+; Total fan-out                               ; 11744 ;
+; Average fan-out                             ; 3.32  ;
++---------------------------------------------+-------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                     ;
++---------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node      ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                        ; Library Name ;
++---------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------+--------------+
+; |Mips                           ; 1630 (0)          ; 1760 (0)     ; 0           ; 0            ; 0       ; 0         ; 151  ; 0            ; |Mips                                                                      ; work         ;
+;    |ALU:inst4|                  ; 127 (1)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU:inst4                                                            ; work         ;
+;       |TEST_8BIT:inst22|        ; 30 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU:inst4|TEST_8BIT:inst22                                           ; work         ;
+;          |0doibitcuoi:inst23|   ; 4 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU:inst4|TEST_8BIT:inst22|0doibitcuoi:inst23                        ; work         ;
+;             |FullAdder:inst4|   ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU:inst4|TEST_8BIT:inst22|0doibitcuoi:inst23|FullAdder:inst4        ; work         ;
+;             |FullAdder:inst5|   ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU:inst4|TEST_8BIT:inst22|0doibitcuoi:inst23|FullAdder:inst5        ; work         ;
+;             |FullAdder:inst6|   ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU:inst4|TEST_8BIT:inst22|0doibitcuoi:inst23|FullAdder:inst6        ; work         ;
+;             |FullAdder:inst|    ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU:inst4|TEST_8BIT:inst22|0doibitcuoi:inst23|FullAdder:inst         ; work         ;
+;          |0doibitcuoi:inst2|    ; 4 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU:inst4|TEST_8BIT:inst22|0doibitcuoi:inst2                         ; work         ;
+;             |FullAdder:inst4|   ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU:inst4|TEST_8BIT:inst22|0doibitcuoi:inst2|FullAdder:inst4         ; work         ;
+;             |FullAdder:inst5|   ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU:inst4|TEST_8BIT:inst22|0doibitcuoi:inst2|FullAdder:inst5         ; work         ;
+;             |FullAdder:inst6|   ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU:inst4|TEST_8BIT:inst22|0doibitcuoi:inst2|FullAdder:inst6         ; work         ;
+;             |FullAdder:inst|    ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU:inst4|TEST_8BIT:inst22|0doibitcuoi:inst2|FullAdder:inst          ; work         ;
+;          |0doibitcuoi:inst3|    ; 4 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU:inst4|TEST_8BIT:inst22|0doibitcuoi:inst3                         ; work         ;
+;             |FullAdder:inst4|   ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU:inst4|TEST_8BIT:inst22|0doibitcuoi:inst3|FullAdder:inst4         ; work         ;
+;             |FullAdder:inst5|   ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU:inst4|TEST_8BIT:inst22|0doibitcuoi:inst3|FullAdder:inst5         ; work         ;
+;             |FullAdder:inst6|   ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU:inst4|TEST_8BIT:inst22|0doibitcuoi:inst3|FullAdder:inst6         ; work         ;
+;             |FullAdder:inst|    ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU:inst4|TEST_8BIT:inst22|0doibitcuoi:inst3|FullAdder:inst          ; work         ;
+;          |0doibitcuoi:inst4|    ; 4 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU:inst4|TEST_8BIT:inst22|0doibitcuoi:inst4                         ; work         ;
+;             |FullAdder:inst4|   ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU:inst4|TEST_8BIT:inst22|0doibitcuoi:inst4|FullAdder:inst4         ; work         ;
+;             |FullAdder:inst5|   ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU:inst4|TEST_8BIT:inst22|0doibitcuoi:inst4|FullAdder:inst5         ; work         ;
+;             |FullAdder:inst6|   ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU:inst4|TEST_8BIT:inst22|0doibitcuoi:inst4|FullAdder:inst6         ; work         ;
+;             |FullAdder:inst|    ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU:inst4|TEST_8BIT:inst22|0doibitcuoi:inst4|FullAdder:inst          ; work         ;
+;          |0doibitcuoi:inst5|    ; 4 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU:inst4|TEST_8BIT:inst22|0doibitcuoi:inst5                         ; work         ;
+;             |FullAdder:inst4|   ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU:inst4|TEST_8BIT:inst22|0doibitcuoi:inst5|FullAdder:inst4         ; work         ;
+;             |FullAdder:inst5|   ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU:inst4|TEST_8BIT:inst22|0doibitcuoi:inst5|FullAdder:inst5         ; work         ;
+;             |FullAdder:inst6|   ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU:inst4|TEST_8BIT:inst22|0doibitcuoi:inst5|FullAdder:inst6         ; work         ;
+;             |FullAdder:inst|    ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU:inst4|TEST_8BIT:inst22|0doibitcuoi:inst5|FullAdder:inst          ; work         ;
+;          |0doibitcuoi:inst6|    ; 4 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU:inst4|TEST_8BIT:inst22|0doibitcuoi:inst6                         ; work         ;
+;             |FullAdder:inst4|   ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU:inst4|TEST_8BIT:inst22|0doibitcuoi:inst6|FullAdder:inst4         ; work         ;
+;             |FullAdder:inst5|   ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU:inst4|TEST_8BIT:inst22|0doibitcuoi:inst6|FullAdder:inst5         ; work         ;
+;             |FullAdder:inst6|   ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU:inst4|TEST_8BIT:inst22|0doibitcuoi:inst6|FullAdder:inst6         ; work         ;
+;             |FullAdder:inst|    ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU:inst4|TEST_8BIT:inst22|0doibitcuoi:inst6|FullAdder:inst          ; work         ;
+;          |0doibitcuoi:inst7|    ; 3 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU:inst4|TEST_8BIT:inst22|0doibitcuoi:inst7                         ; work         ;
+;             |FullAdder:inst4|   ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU:inst4|TEST_8BIT:inst22|0doibitcuoi:inst7|FullAdder:inst4         ; work         ;
+;             |FullAdder:inst5|   ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU:inst4|TEST_8BIT:inst22|0doibitcuoi:inst7|FullAdder:inst5         ; work         ;
+;             |FullAdder:inst|    ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU:inst4|TEST_8BIT:inst22|0doibitcuoi:inst7|FullAdder:inst          ; work         ;
+;          |ChangeBit:inst|       ; 3 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU:inst4|TEST_8BIT:inst22|ChangeBit:inst                            ; work         ;
+;             |FullAdder:inst4|   ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU:inst4|TEST_8BIT:inst22|ChangeBit:inst|FullAdder:inst4            ; work         ;
+;             |FullAdder:inst5|   ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU:inst4|TEST_8BIT:inst22|ChangeBit:inst|FullAdder:inst5            ; work         ;
+;             |FullAdder:inst6|   ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU:inst4|TEST_8BIT:inst22|ChangeBit:inst|FullAdder:inst6            ; work         ;
+;       |mux21_32bits:inst33221|  ; 6 (6)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU:inst4|mux21_32bits:inst33221                                     ; work         ;
+;       |test_32bit_adder:inst33| ; 28 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU:inst4|test_32bit_adder:inst33                                    ; work         ;
+;          |ADD_END_8BIT:inst1|   ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU:inst4|test_32bit_adder:inst33|ADD_END_8BIT:inst1                 ; work         ;
+;             |FullAdder:inst2|   ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU:inst4|test_32bit_adder:inst33|ADD_END_8BIT:inst1|FullAdder:inst2 ; work         ;
+;             |FullAdder:inst3|   ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU:inst4|test_32bit_adder:inst33|ADD_END_8BIT:inst1|FullAdder:inst3 ; work         ;
+;             |FullAdder:inst4|   ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU:inst4|test_32bit_adder:inst33|ADD_END_8BIT:inst1|FullAdder:inst4 ; work         ;
+;             |FullAdder:inst5|   ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU:inst4|test_32bit_adder:inst33|ADD_END_8BIT:inst1|FullAdder:inst5 ; work         ;
+;             |FullAdder:inst|    ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU:inst4|test_32bit_adder:inst33|ADD_END_8BIT:inst1|FullAdder:inst  ; work         ;
+;          |ADD_MID_8BIT:inst2|   ; 8 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU:inst4|test_32bit_adder:inst33|ADD_MID_8BIT:inst2                 ; work         ;
+;             |FullAdder:inst2|   ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU:inst4|test_32bit_adder:inst33|ADD_MID_8BIT:inst2|FullAdder:inst2 ; work         ;
+;             |FullAdder:inst3|   ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU:inst4|test_32bit_adder:inst33|ADD_MID_8BIT:inst2|FullAdder:inst3 ; work         ;
+;             |FullAdder:inst4|   ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU:inst4|test_32bit_adder:inst33|ADD_MID_8BIT:inst2|FullAdder:inst4 ; work         ;
+;             |FullAdder:inst5|   ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU:inst4|test_32bit_adder:inst33|ADD_MID_8BIT:inst2|FullAdder:inst5 ; work         ;
+;             |FullAdder:inst6|   ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU:inst4|test_32bit_adder:inst33|ADD_MID_8BIT:inst2|FullAdder:inst6 ; work         ;
+;             |FullAdder:inst7|   ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU:inst4|test_32bit_adder:inst33|ADD_MID_8BIT:inst2|FullAdder:inst7 ; work         ;
+;             |FullAdder:inst8|   ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU:inst4|test_32bit_adder:inst33|ADD_MID_8BIT:inst2|FullAdder:inst8 ; work         ;
+;             |FullAdder:inst|    ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU:inst4|test_32bit_adder:inst33|ADD_MID_8BIT:inst2|FullAdder:inst  ; work         ;
+;          |ADD_MID_8BIT:inst3|   ; 8 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU:inst4|test_32bit_adder:inst33|ADD_MID_8BIT:inst3                 ; work         ;
+;             |FullAdder:inst2|   ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU:inst4|test_32bit_adder:inst33|ADD_MID_8BIT:inst3|FullAdder:inst2 ; work         ;
+;             |FullAdder:inst3|   ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU:inst4|test_32bit_adder:inst33|ADD_MID_8BIT:inst3|FullAdder:inst3 ; work         ;
+;             |FullAdder:inst4|   ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU:inst4|test_32bit_adder:inst33|ADD_MID_8BIT:inst3|FullAdder:inst4 ; work         ;
+;             |FullAdder:inst5|   ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU:inst4|test_32bit_adder:inst33|ADD_MID_8BIT:inst3|FullAdder:inst5 ; work         ;
+;             |FullAdder:inst6|   ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU:inst4|test_32bit_adder:inst33|ADD_MID_8BIT:inst3|FullAdder:inst6 ; work         ;
+;             |FullAdder:inst7|   ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU:inst4|test_32bit_adder:inst33|ADD_MID_8BIT:inst3|FullAdder:inst7 ; work         ;
+;             |FullAdder:inst8|   ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU:inst4|test_32bit_adder:inst33|ADD_MID_8BIT:inst3|FullAdder:inst8 ; work         ;
+;             |FullAdder:inst|    ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU:inst4|test_32bit_adder:inst33|ADD_MID_8BIT:inst3|FullAdder:inst  ; work         ;
+;          |test_adder:inst|      ; 7 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU:inst4|test_32bit_adder:inst33|test_adder:inst                    ; work         ;
+;             |FullAdder:inst2|   ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU:inst4|test_32bit_adder:inst33|test_adder:inst|FullAdder:inst2    ; work         ;
+;             |FullAdder:inst3|   ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU:inst4|test_32bit_adder:inst33|test_adder:inst|FullAdder:inst3    ; work         ;
+;             |FullAdder:inst4|   ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU:inst4|test_32bit_adder:inst33|test_adder:inst|FullAdder:inst4    ; work         ;
+;             |FullAdder:inst5|   ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU:inst4|test_32bit_adder:inst33|test_adder:inst|FullAdder:inst5    ; work         ;
+;             |FullAdder:inst6|   ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU:inst4|test_32bit_adder:inst33|test_adder:inst|FullAdder:inst6    ; work         ;
+;             |FullAdder:inst7|   ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU:inst4|test_32bit_adder:inst33|test_adder:inst|FullAdder:inst7    ; work         ;
+;             |FullAdder:inst8|   ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU:inst4|test_32bit_adder:inst33|test_adder:inst|FullAdder:inst8    ; work         ;
+;       |test_32bit_adder:inst|   ; 62 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU:inst4|test_32bit_adder:inst                                      ; work         ;
+;          |ADD_END_8BIT:inst1|   ; 13 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU:inst4|test_32bit_adder:inst|ADD_END_8BIT:inst1                   ; work         ;
+;             |FullAdder:inst2|   ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU:inst4|test_32bit_adder:inst|ADD_END_8BIT:inst1|FullAdder:inst2   ; work         ;
+;             |FullAdder:inst3|   ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU:inst4|test_32bit_adder:inst|ADD_END_8BIT:inst1|FullAdder:inst3   ; work         ;
+;             |FullAdder:inst4|   ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU:inst4|test_32bit_adder:inst|ADD_END_8BIT:inst1|FullAdder:inst4   ; work         ;
+;             |FullAdder:inst5|   ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU:inst4|test_32bit_adder:inst|ADD_END_8BIT:inst1|FullAdder:inst5   ; work         ;
+;             |FullAdder:inst6|   ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU:inst4|test_32bit_adder:inst|ADD_END_8BIT:inst1|FullAdder:inst6   ; work         ;
+;             |FullAdder:inst8|   ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU:inst4|test_32bit_adder:inst|ADD_END_8BIT:inst1|FullAdder:inst8   ; work         ;
+;             |FullAdder:inst|    ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU:inst4|test_32bit_adder:inst|ADD_END_8BIT:inst1|FullAdder:inst    ; work         ;
+;          |ADD_MID_8BIT:inst2|   ; 16 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU:inst4|test_32bit_adder:inst|ADD_MID_8BIT:inst2                   ; work         ;
+;             |FullAdder:inst2|   ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU:inst4|test_32bit_adder:inst|ADD_MID_8BIT:inst2|FullAdder:inst2   ; work         ;
+;             |FullAdder:inst3|   ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU:inst4|test_32bit_adder:inst|ADD_MID_8BIT:inst2|FullAdder:inst3   ; work         ;
+;             |FullAdder:inst4|   ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU:inst4|test_32bit_adder:inst|ADD_MID_8BIT:inst2|FullAdder:inst4   ; work         ;
+;             |FullAdder:inst5|   ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU:inst4|test_32bit_adder:inst|ADD_MID_8BIT:inst2|FullAdder:inst5   ; work         ;
+;             |FullAdder:inst6|   ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU:inst4|test_32bit_adder:inst|ADD_MID_8BIT:inst2|FullAdder:inst6   ; work         ;
+;             |FullAdder:inst7|   ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU:inst4|test_32bit_adder:inst|ADD_MID_8BIT:inst2|FullAdder:inst7   ; work         ;
+;             |FullAdder:inst8|   ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU:inst4|test_32bit_adder:inst|ADD_MID_8BIT:inst2|FullAdder:inst8   ; work         ;
+;             |FullAdder:inst|    ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU:inst4|test_32bit_adder:inst|ADD_MID_8BIT:inst2|FullAdder:inst    ; work         ;
+;          |ADD_MID_8BIT:inst3|   ; 16 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU:inst4|test_32bit_adder:inst|ADD_MID_8BIT:inst3                   ; work         ;
+;             |FullAdder:inst2|   ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU:inst4|test_32bit_adder:inst|ADD_MID_8BIT:inst3|FullAdder:inst2   ; work         ;
+;             |FullAdder:inst3|   ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU:inst4|test_32bit_adder:inst|ADD_MID_8BIT:inst3|FullAdder:inst3   ; work         ;
+;             |FullAdder:inst4|   ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU:inst4|test_32bit_adder:inst|ADD_MID_8BIT:inst3|FullAdder:inst4   ; work         ;
+;             |FullAdder:inst5|   ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU:inst4|test_32bit_adder:inst|ADD_MID_8BIT:inst3|FullAdder:inst5   ; work         ;
+;             |FullAdder:inst6|   ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU:inst4|test_32bit_adder:inst|ADD_MID_8BIT:inst3|FullAdder:inst6   ; work         ;
+;             |FullAdder:inst7|   ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU:inst4|test_32bit_adder:inst|ADD_MID_8BIT:inst3|FullAdder:inst7   ; work         ;
+;             |FullAdder:inst8|   ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU:inst4|test_32bit_adder:inst|ADD_MID_8BIT:inst3|FullAdder:inst8   ; work         ;
+;             |FullAdder:inst|    ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU:inst4|test_32bit_adder:inst|ADD_MID_8BIT:inst3|FullAdder:inst    ; work         ;
+;          |test_adder:inst|      ; 17 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU:inst4|test_32bit_adder:inst|test_adder:inst                      ; work         ;
+;             |FullAdder:inst2|   ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU:inst4|test_32bit_adder:inst|test_adder:inst|FullAdder:inst2      ; work         ;
+;             |FullAdder:inst3|   ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU:inst4|test_32bit_adder:inst|test_adder:inst|FullAdder:inst3      ; work         ;
+;             |FullAdder:inst4|   ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU:inst4|test_32bit_adder:inst|test_adder:inst|FullAdder:inst4      ; work         ;
+;             |FullAdder:inst5|   ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU:inst4|test_32bit_adder:inst|test_adder:inst|FullAdder:inst5      ; work         ;
+;             |FullAdder:inst6|   ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU:inst4|test_32bit_adder:inst|test_adder:inst|FullAdder:inst6      ; work         ;
+;             |FullAdder:inst8|   ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU:inst4|test_32bit_adder:inst|test_adder:inst|FullAdder:inst8      ; work         ;
+;    |ALU_Control:inst5|          ; 2 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU_Control:inst5                                                    ; work         ;
+;       |Equal_5bits:inst|        ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU_Control:inst5|Equal_5bits:inst                                   ; work         ;
+;       |MUX21_4BITS:inst11|      ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU_Control:inst5|MUX21_4BITS:inst11                                 ; work         ;
+;          |mux2-1bit:inst4|      ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|ALU_Control:inst5|MUX21_4BITS:inst11|mux2-1bit:inst4                 ; work         ;
+;    |Control:inst6|              ; 6 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|Control:inst6                                                        ; work         ;
+;       |Equal_5bits:inst1|       ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|Control:inst6|Equal_5bits:inst1                                      ; work         ;
+;       |Equal_5bits:inst2|       ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|Control:inst6|Equal_5bits:inst2                                      ; work         ;
+;       |Equal_5bits:inst3|       ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|Control:inst6|Equal_5bits:inst3                                      ; work         ;
+;       |Equal_5bits:inst|        ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|Control:inst6|Equal_5bits:inst                                       ; work         ;
+;    |D_Mem:inst10|               ; 1126 (1126)       ; 1600 (1600)  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|D_Mem:inst10                                                         ; work         ;
+;    |full_register_file:inst|    ; 280 (0)           ; 160 (0)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst                                              ; work         ;
+;       |DECODER_5BITS:inst11|    ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|DECODER_5BITS:inst11                         ; work         ;
+;       |DECODER_5BITS:inst12|    ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|DECODER_5BITS:inst12                         ; work         ;
+;       |DECODER_5BITS:inst13|    ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|DECODER_5BITS:inst13                         ; work         ;
+;       |RFILE_8BITS:111|         ; 74 (28)           ; 40 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:111                              ; work         ;
+;          |RFC:inst1|            ; 6 (6)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:111|RFC:inst1                    ; work         ;
+;          |RFC:inst2|            ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:111|RFC:inst2                    ; work         ;
+;          |RFC:inst33|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:111|RFC:inst33                   ; work         ;
+;          |RFC:inst36|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:111|RFC:inst36                   ; work         ;
+;          |RFC:inst37|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:111|RFC:inst37                   ; work         ;
+;          |RFC:inst38|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:111|RFC:inst38                   ; work         ;
+;          |RFC:inst3|            ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:111|RFC:inst3                    ; work         ;
+;          |RFC:inst40|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:111|RFC:inst40                   ; work         ;
+;          |RFC:inst41|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:111|RFC:inst41                   ; work         ;
+;          |RFC:inst42|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:111|RFC:inst42                   ; work         ;
+;          |RFC:inst45|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:111|RFC:inst45                   ; work         ;
+;          |RFC:inst46|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:111|RFC:inst46                   ; work         ;
+;          |RFC:inst47|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:111|RFC:inst47                   ; work         ;
+;          |RFC:inst48|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:111|RFC:inst48                   ; work         ;
+;          |RFC:inst49|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:111|RFC:inst49                   ; work         ;
+;          |RFC:inst4|            ; 6 (6)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:111|RFC:inst4                    ; work         ;
+;          |RFC:inst50|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:111|RFC:inst50                   ; work         ;
+;          |RFC:inst51|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:111|RFC:inst51                   ; work         ;
+;          |RFC:inst52|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:111|RFC:inst52                   ; work         ;
+;          |RFC:inst53|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:111|RFC:inst53                   ; work         ;
+;          |RFC:inst54|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:111|RFC:inst54                   ; work         ;
+;          |RFC:inst55|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:111|RFC:inst55                   ; work         ;
+;          |RFC:inst57|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:111|RFC:inst57                   ; work         ;
+;          |RFC:inst58|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:111|RFC:inst58                   ; work         ;
+;          |RFC:inst59|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:111|RFC:inst59                   ; work         ;
+;          |RFC:inst5|            ; 6 (6)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:111|RFC:inst5                    ; work         ;
+;          |RFC:inst60|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:111|RFC:inst60                   ; work         ;
+;          |RFC:inst61|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:111|RFC:inst61                   ; work         ;
+;          |RFC:inst62|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:111|RFC:inst62                   ; work         ;
+;          |RFC:inst63|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:111|RFC:inst63                   ; work         ;
+;          |RFC:inst65|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:111|RFC:inst65                   ; work         ;
+;          |RFC:inst66|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:111|RFC:inst66                   ; work         ;
+;          |RFC:inst67|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:111|RFC:inst67                   ; work         ;
+;          |RFC:inst68|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:111|RFC:inst68                   ; work         ;
+;          |RFC:inst69|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:111|RFC:inst69                   ; work         ;
+;          |RFC:inst6|            ; 6 (6)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:111|RFC:inst6                    ; work         ;
+;          |RFC:inst71|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:111|RFC:inst71                   ; work         ;
+;          |RFC:inst72|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:111|RFC:inst72                   ; work         ;
+;          |RFC:inst73|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:111|RFC:inst73                   ; work         ;
+;          |RFC:inst74|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:111|RFC:inst74                   ; work         ;
+;          |RFC:inst75|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:111|RFC:inst75                   ; work         ;
+;          |RFC:inst76|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:111|RFC:inst76                   ; work         ;
+;          |RFC:inst77|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:111|RFC:inst77                   ; work         ;
+;          |RFC:inst78|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:111|RFC:inst78                   ; work         ;
+;          |RFC:inst79|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:111|RFC:inst79                   ; work         ;
+;          |RFC:inst7|            ; 6 (6)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:111|RFC:inst7                    ; work         ;
+;          |RFC:inst8|            ; 6 (6)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:111|RFC:inst8                    ; work         ;
+;          |RFC:inst|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:111|RFC:inst                     ; work         ;
+;       |RFILE_8BITS:inst14|      ; 64 (24)           ; 40 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst14                           ; work         ;
+;          |RFC:inst1|            ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst14|RFC:inst1                 ; work         ;
+;          |RFC:inst2|            ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst14|RFC:inst2                 ; work         ;
+;          |RFC:inst33|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst14|RFC:inst33                ; work         ;
+;          |RFC:inst36|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst14|RFC:inst36                ; work         ;
+;          |RFC:inst37|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst14|RFC:inst37                ; work         ;
+;          |RFC:inst38|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst14|RFC:inst38                ; work         ;
+;          |RFC:inst3|            ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst14|RFC:inst3                 ; work         ;
+;          |RFC:inst40|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst14|RFC:inst40                ; work         ;
+;          |RFC:inst41|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst14|RFC:inst41                ; work         ;
+;          |RFC:inst42|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst14|RFC:inst42                ; work         ;
+;          |RFC:inst45|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst14|RFC:inst45                ; work         ;
+;          |RFC:inst46|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst14|RFC:inst46                ; work         ;
+;          |RFC:inst47|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst14|RFC:inst47                ; work         ;
+;          |RFC:inst48|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst14|RFC:inst48                ; work         ;
+;          |RFC:inst49|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst14|RFC:inst49                ; work         ;
+;          |RFC:inst4|            ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst14|RFC:inst4                 ; work         ;
+;          |RFC:inst50|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst14|RFC:inst50                ; work         ;
+;          |RFC:inst51|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst14|RFC:inst51                ; work         ;
+;          |RFC:inst52|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst14|RFC:inst52                ; work         ;
+;          |RFC:inst53|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst14|RFC:inst53                ; work         ;
+;          |RFC:inst54|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst14|RFC:inst54                ; work         ;
+;          |RFC:inst55|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst14|RFC:inst55                ; work         ;
+;          |RFC:inst57|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst14|RFC:inst57                ; work         ;
+;          |RFC:inst58|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst14|RFC:inst58                ; work         ;
+;          |RFC:inst59|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst14|RFC:inst59                ; work         ;
+;          |RFC:inst5|            ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst14|RFC:inst5                 ; work         ;
+;          |RFC:inst60|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst14|RFC:inst60                ; work         ;
+;          |RFC:inst61|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst14|RFC:inst61                ; work         ;
+;          |RFC:inst62|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst14|RFC:inst62                ; work         ;
+;          |RFC:inst63|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst14|RFC:inst63                ; work         ;
+;          |RFC:inst65|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst14|RFC:inst65                ; work         ;
+;          |RFC:inst66|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst14|RFC:inst66                ; work         ;
+;          |RFC:inst67|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst14|RFC:inst67                ; work         ;
+;          |RFC:inst68|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst14|RFC:inst68                ; work         ;
+;          |RFC:inst69|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst14|RFC:inst69                ; work         ;
+;          |RFC:inst6|            ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst14|RFC:inst6                 ; work         ;
+;          |RFC:inst71|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst14|RFC:inst71                ; work         ;
+;          |RFC:inst72|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst14|RFC:inst72                ; work         ;
+;          |RFC:inst73|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst14|RFC:inst73                ; work         ;
+;          |RFC:inst74|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst14|RFC:inst74                ; work         ;
+;          |RFC:inst75|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst14|RFC:inst75                ; work         ;
+;          |RFC:inst76|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst14|RFC:inst76                ; work         ;
+;          |RFC:inst77|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst14|RFC:inst77                ; work         ;
+;          |RFC:inst78|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst14|RFC:inst78                ; work         ;
+;          |RFC:inst79|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst14|RFC:inst79                ; work         ;
+;          |RFC:inst7|            ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst14|RFC:inst7                 ; work         ;
+;          |RFC:inst8|            ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst14|RFC:inst8                 ; work         ;
+;          |RFC:inst|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst14|RFC:inst                  ; work         ;
+;       |RFILE_8BITS:inst9|       ; 64 (24)           ; 40 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst9                            ; work         ;
+;          |RFC:inst1|            ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst9|RFC:inst1                  ; work         ;
+;          |RFC:inst2|            ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst9|RFC:inst2                  ; work         ;
+;          |RFC:inst33|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst9|RFC:inst33                 ; work         ;
+;          |RFC:inst36|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst9|RFC:inst36                 ; work         ;
+;          |RFC:inst37|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst9|RFC:inst37                 ; work         ;
+;          |RFC:inst38|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst9|RFC:inst38                 ; work         ;
+;          |RFC:inst3|            ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst9|RFC:inst3                  ; work         ;
+;          |RFC:inst40|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst9|RFC:inst40                 ; work         ;
+;          |RFC:inst41|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst9|RFC:inst41                 ; work         ;
+;          |RFC:inst42|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst9|RFC:inst42                 ; work         ;
+;          |RFC:inst45|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst9|RFC:inst45                 ; work         ;
+;          |RFC:inst46|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst9|RFC:inst46                 ; work         ;
+;          |RFC:inst47|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst9|RFC:inst47                 ; work         ;
+;          |RFC:inst48|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst9|RFC:inst48                 ; work         ;
+;          |RFC:inst49|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst9|RFC:inst49                 ; work         ;
+;          |RFC:inst4|            ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst9|RFC:inst4                  ; work         ;
+;          |RFC:inst50|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst9|RFC:inst50                 ; work         ;
+;          |RFC:inst51|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst9|RFC:inst51                 ; work         ;
+;          |RFC:inst52|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst9|RFC:inst52                 ; work         ;
+;          |RFC:inst53|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst9|RFC:inst53                 ; work         ;
+;          |RFC:inst54|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst9|RFC:inst54                 ; work         ;
+;          |RFC:inst55|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst9|RFC:inst55                 ; work         ;
+;          |RFC:inst57|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst9|RFC:inst57                 ; work         ;
+;          |RFC:inst58|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst9|RFC:inst58                 ; work         ;
+;          |RFC:inst59|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst9|RFC:inst59                 ; work         ;
+;          |RFC:inst5|            ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst9|RFC:inst5                  ; work         ;
+;          |RFC:inst60|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst9|RFC:inst60                 ; work         ;
+;          |RFC:inst61|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst9|RFC:inst61                 ; work         ;
+;          |RFC:inst62|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst9|RFC:inst62                 ; work         ;
+;          |RFC:inst63|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst9|RFC:inst63                 ; work         ;
+;          |RFC:inst65|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst9|RFC:inst65                 ; work         ;
+;          |RFC:inst66|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst9|RFC:inst66                 ; work         ;
+;          |RFC:inst67|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst9|RFC:inst67                 ; work         ;
+;          |RFC:inst68|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst9|RFC:inst68                 ; work         ;
+;          |RFC:inst69|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst9|RFC:inst69                 ; work         ;
+;          |RFC:inst6|            ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst9|RFC:inst6                  ; work         ;
+;          |RFC:inst71|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst9|RFC:inst71                 ; work         ;
+;          |RFC:inst72|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst9|RFC:inst72                 ; work         ;
+;          |RFC:inst73|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst9|RFC:inst73                 ; work         ;
+;          |RFC:inst74|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst9|RFC:inst74                 ; work         ;
+;          |RFC:inst75|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst9|RFC:inst75                 ; work         ;
+;          |RFC:inst76|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst9|RFC:inst76                 ; work         ;
+;          |RFC:inst77|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst9|RFC:inst77                 ; work         ;
+;          |RFC:inst78|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst9|RFC:inst78                 ; work         ;
+;          |RFC:inst79|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst9|RFC:inst79                 ; work         ;
+;          |RFC:inst7|            ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst9|RFC:inst7                  ; work         ;
+;          |RFC:inst8|            ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst9|RFC:inst8                  ; work         ;
+;          |RFC:inst|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst9|RFC:inst                   ; work         ;
+;       |RFILE_8BITS:inst|        ; 64 (24)           ; 40 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst                             ; work         ;
+;          |RFC:inst1|            ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst|RFC:inst1                   ; work         ;
+;          |RFC:inst2|            ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst|RFC:inst2                   ; work         ;
+;          |RFC:inst33|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst|RFC:inst33                  ; work         ;
+;          |RFC:inst36|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst|RFC:inst36                  ; work         ;
+;          |RFC:inst37|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst|RFC:inst37                  ; work         ;
+;          |RFC:inst38|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst|RFC:inst38                  ; work         ;
+;          |RFC:inst3|            ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst|RFC:inst3                   ; work         ;
+;          |RFC:inst40|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst|RFC:inst40                  ; work         ;
+;          |RFC:inst41|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst|RFC:inst41                  ; work         ;
+;          |RFC:inst42|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst|RFC:inst42                  ; work         ;
+;          |RFC:inst45|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst|RFC:inst45                  ; work         ;
+;          |RFC:inst46|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst|RFC:inst46                  ; work         ;
+;          |RFC:inst47|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst|RFC:inst47                  ; work         ;
+;          |RFC:inst48|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst|RFC:inst48                  ; work         ;
+;          |RFC:inst49|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst|RFC:inst49                  ; work         ;
+;          |RFC:inst4|            ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst|RFC:inst4                   ; work         ;
+;          |RFC:inst50|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst|RFC:inst50                  ; work         ;
+;          |RFC:inst51|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst|RFC:inst51                  ; work         ;
+;          |RFC:inst52|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst|RFC:inst52                  ; work         ;
+;          |RFC:inst53|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst|RFC:inst53                  ; work         ;
+;          |RFC:inst54|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst|RFC:inst54                  ; work         ;
+;          |RFC:inst55|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst|RFC:inst55                  ; work         ;
+;          |RFC:inst57|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst|RFC:inst57                  ; work         ;
+;          |RFC:inst58|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst|RFC:inst58                  ; work         ;
+;          |RFC:inst59|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst|RFC:inst59                  ; work         ;
+;          |RFC:inst5|            ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst|RFC:inst5                   ; work         ;
+;          |RFC:inst60|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst|RFC:inst60                  ; work         ;
+;          |RFC:inst61|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst|RFC:inst61                  ; work         ;
+;          |RFC:inst62|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst|RFC:inst62                  ; work         ;
+;          |RFC:inst63|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst|RFC:inst63                  ; work         ;
+;          |RFC:inst65|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst|RFC:inst65                  ; work         ;
+;          |RFC:inst66|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst|RFC:inst66                  ; work         ;
+;          |RFC:inst67|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst|RFC:inst67                  ; work         ;
+;          |RFC:inst68|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst|RFC:inst68                  ; work         ;
+;          |RFC:inst69|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst|RFC:inst69                  ; work         ;
+;          |RFC:inst6|            ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst|RFC:inst6                   ; work         ;
+;          |RFC:inst71|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst|RFC:inst71                  ; work         ;
+;          |RFC:inst72|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst|RFC:inst72                  ; work         ;
+;          |RFC:inst73|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst|RFC:inst73                  ; work         ;
+;          |RFC:inst74|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst|RFC:inst74                  ; work         ;
+;          |RFC:inst75|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst|RFC:inst75                  ; work         ;
+;          |RFC:inst76|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst|RFC:inst76                  ; work         ;
+;          |RFC:inst77|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst|RFC:inst77                  ; work         ;
+;          |RFC:inst78|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst|RFC:inst78                  ; work         ;
+;          |RFC:inst79|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst|RFC:inst79                  ; work         ;
+;          |RFC:inst7|            ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst|RFC:inst7                   ; work         ;
+;          |RFC:inst8|            ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst|RFC:inst8                   ; work         ;
+;          |RFC:inst|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|full_register_file:inst|RFILE_8BITS:inst|RFC:inst                    ; work         ;
+;    |mux21_32bits:inst3|         ; 32 (32)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|mux21_32bits:inst3                                                   ; work         ;
+;    |mux21_32bits:inst7|         ; 54 (54)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|mux21_32bits:inst7                                                   ; work         ;
+;    |mux21_5bits:inst1|          ; 3 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|mux21_5bits:inst1                                                    ; work         ;
+;       |mux2-1bit:inst2|         ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|mux21_5bits:inst1|mux2-1bit:inst2                                    ; work         ;
+;       |mux2-1bit:inst3|         ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|mux21_5bits:inst1|mux2-1bit:inst3                                    ; work         ;
+;       |mux2-1bit:inst4|         ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mips|mux21_5bits:inst1|mux2-1bit:inst4                                    ; work         ;
++---------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis IP Cores Summary                                                                                                                                   ;
++--------+--------------+---------+--------------+--------------+---------------------------------------------+-----------------------------------------------------------+
+; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance                             ; IP Include File                                           ;
++--------+--------------+---------+--------------+--------------+---------------------------------------------+-----------------------------------------------------------+
+; Altera ; LPM_CONSTANT ; N/A     ; N/A          ; N/A          ; |Mips|ALU_Control:inst5|lpm_constant4:inst2 ; C:/Users/MINHTIEN/Downloads/LAB6_ALU/LAB6/lpm_constant4.v ;
+; Altera ; LPM_CONSTANT ; N/A     ; N/A          ; N/A          ; |Mips|ALU_Control:inst5|lpm_constant5:inst3 ; C:/Users/MINHTIEN/Downloads/LAB6_ALU/LAB6/lpm_constant5.v ;
+; Altera ; LPM_CONSTANT ; N/A     ; N/A          ; N/A          ; |Mips|Control:inst6|lpm_constant0:inst4     ; C:/Users/MINHTIEN/Downloads/LAB6_ALU/LAB6/lpm_constant0.v ;
+; Altera ; LPM_CONSTANT ; N/A     ; N/A          ; N/A          ; |Mips|Control:inst6|lpm_constant1:inst6     ; C:/Users/MINHTIEN/Downloads/LAB6_ALU/LAB6/lpm_constant1.v ;
+; Altera ; LPM_CONSTANT ; N/A     ; N/A          ; N/A          ; |Mips|Control:inst6|lpm_constant2:inst7     ; C:/Users/MINHTIEN/Downloads/LAB6_ALU/LAB6/lpm_constant2.v ;
+; Altera ; LPM_CONSTANT ; N/A     ; N/A          ; N/A          ; |Mips|Control:inst6|lpm_constant3:inst8     ; C:/Users/MINHTIEN/Downloads/LAB6_ALU/LAB6/lpm_constant3.v ;
++--------+--------------+---------+--------------+--------------+---------------------------------------------+-----------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                               ;
++-----------------------------------------------------------+----------------------------------------------------------------------+
+; Register name                                             ; Reason for Removal                                                   ;
++-----------------------------------------------------------+----------------------------------------------------------------------+
+; full_register_file:inst|RFILE_8BITS:inst9|RFC:inst3|inst  ; Merged with full_register_file:inst|RFILE_8BITS:inst9|RFC:inst8|inst ;
+; full_register_file:inst|RFILE_8BITS:inst9|RFC:inst4|inst  ; Merged with full_register_file:inst|RFILE_8BITS:inst9|RFC:inst8|inst ;
+; full_register_file:inst|RFILE_8BITS:111|RFC:inst3|inst    ; Merged with full_register_file:inst|RFILE_8BITS:inst9|RFC:inst8|inst ;
+; full_register_file:inst|RFILE_8BITS:111|RFC:inst7|inst    ; Merged with full_register_file:inst|RFILE_8BITS:inst9|RFC:inst8|inst ;
+; full_register_file:inst|RFILE_8BITS:111|RFC:inst2|inst    ; Merged with full_register_file:inst|RFILE_8BITS:inst9|RFC:inst8|inst ;
+; full_register_file:inst|RFILE_8BITS:inst14|RFC:inst2|inst ; Merged with full_register_file:inst|RFILE_8BITS:inst9|RFC:inst8|inst ;
+; full_register_file:inst|RFILE_8BITS:inst9|RFC:inst2|inst  ; Merged with full_register_file:inst|RFILE_8BITS:inst9|RFC:inst8|inst ;
+; full_register_file:inst|RFILE_8BITS:inst14|RFC:inst7|inst ; Merged with full_register_file:inst|RFILE_8BITS:inst9|RFC:inst8|inst ;
+; full_register_file:inst|RFILE_8BITS:inst9|RFC:inst5|inst  ; Merged with full_register_file:inst|RFILE_8BITS:inst9|RFC:inst8|inst ;
+; full_register_file:inst|RFILE_8BITS:111|RFC:inst4|inst    ; Merged with full_register_file:inst|RFILE_8BITS:inst9|RFC:inst8|inst ;
+; full_register_file:inst|RFILE_8BITS:inst14|RFC:inst1|inst ; Merged with full_register_file:inst|RFILE_8BITS:inst9|RFC:inst8|inst ;
+; full_register_file:inst|RFILE_8BITS:inst14|RFC:inst6|inst ; Merged with full_register_file:inst|RFILE_8BITS:inst9|RFC:inst8|inst ;
+; full_register_file:inst|RFILE_8BITS:111|RFC:inst1|inst    ; Merged with full_register_file:inst|RFILE_8BITS:inst9|RFC:inst8|inst ;
+; full_register_file:inst|RFILE_8BITS:inst9|RFC:inst1|inst  ; Merged with full_register_file:inst|RFILE_8BITS:inst9|RFC:inst8|inst ;
+; full_register_file:inst|RFILE_8BITS:111|RFC:inst5|inst    ; Merged with full_register_file:inst|RFILE_8BITS:inst9|RFC:inst8|inst ;
+; full_register_file:inst|RFILE_8BITS:111|RFC:inst8|inst    ; Merged with full_register_file:inst|RFILE_8BITS:inst9|RFC:inst8|inst ;
+; full_register_file:inst|RFILE_8BITS:inst9|RFC:inst6|inst  ; Merged with full_register_file:inst|RFILE_8BITS:inst9|RFC:inst8|inst ;
+; full_register_file:inst|RFILE_8BITS:inst14|RFC:inst5|inst ; Merged with full_register_file:inst|RFILE_8BITS:inst9|RFC:inst8|inst ;
+; full_register_file:inst|RFILE_8BITS:inst14|RFC:inst8|inst ; Merged with full_register_file:inst|RFILE_8BITS:inst9|RFC:inst8|inst ;
+; full_register_file:inst|RFILE_8BITS:111|RFC:inst6|inst    ; Merged with full_register_file:inst|RFILE_8BITS:inst9|RFC:inst8|inst ;
+; full_register_file:inst|RFILE_8BITS:inst14|RFC:inst4|inst ; Merged with full_register_file:inst|RFILE_8BITS:inst9|RFC:inst8|inst ;
+; full_register_file:inst|RFILE_8BITS:inst9|RFC:inst7|inst  ; Merged with full_register_file:inst|RFILE_8BITS:inst9|RFC:inst8|inst ;
+; full_register_file:inst|RFILE_8BITS:inst14|RFC:inst3|inst ; Merged with full_register_file:inst|RFILE_8BITS:inst9|RFC:inst8|inst ;
+; full_register_file:inst|RFILE_8BITS:inst|RFC:inst4|inst   ; Merged with full_register_file:inst|RFILE_8BITS:inst|RFC:inst8|inst  ;
+; full_register_file:inst|RFILE_8BITS:inst|RFC:inst6|inst   ; Merged with full_register_file:inst|RFILE_8BITS:inst|RFC:inst8|inst  ;
+; full_register_file:inst|RFILE_8BITS:inst|RFC:inst1|inst   ; Merged with full_register_file:inst|RFILE_8BITS:inst|RFC:inst8|inst  ;
+; full_register_file:inst|RFILE_8BITS:inst|RFC:inst5|inst   ; Merged with full_register_file:inst|RFILE_8BITS:inst|RFC:inst8|inst  ;
+; full_register_file:inst|RFILE_8BITS:inst|RFC:inst7|inst   ; Merged with full_register_file:inst|RFILE_8BITS:inst|RFC:inst8|inst  ;
+; full_register_file:inst|RFILE_8BITS:inst|RFC:inst3|inst   ; Merged with full_register_file:inst|RFILE_8BITS:inst|RFC:inst8|inst  ;
+; full_register_file:inst|RFILE_8BITS:inst|RFC:inst2|inst   ; Merged with full_register_file:inst|RFILE_8BITS:inst|RFC:inst8|inst  ;
+; full_register_file:inst|RFILE_8BITS:inst|RFC:inst8|inst   ; Merged with full_register_file:inst|RFILE_8BITS:inst9|RFC:inst8|inst ;
+; full_register_file:inst|RFILE_8BITS:inst9|RFC:inst8|inst  ; Stuck at GND due to stuck port data_in                               ;
+; Total Number of Removed Registers = 32                    ;                                                                      ;
++-----------------------------------------------------------+----------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 1760  ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 1760  ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------+
+; 3:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |Mips|mux21_32bits:inst7|out[3]                       ;
+; 4:1                ; 25 bits   ; 50 LEs        ; 50 LEs               ; 0 LEs                  ; No         ; |Mips|mux21_32bits:inst7|out[13]                      ;
+; 6:1                ; 32 bits   ; 128 LEs       ; 128 LEs              ; 0 LEs                  ; No         ; |Mips|full_register_file:inst|RFILE_8BITS:inst9|BO[6] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Control:inst6|lpm_constant2:inst7|lpm_constant:LPM_CONSTANT_component ;
++--------------------+------------------+----------------------------------------------------------------------------+
+; Parameter Name     ; Value            ; Type                                                                       ;
++--------------------+------------------+----------------------------------------------------------------------------+
+; LPM_WIDTH          ; 6                ; Signed Integer                                                             ;
+; LPM_CVALUE         ; 43               ; Signed Integer                                                             ;
+; ENABLE_RUNTIME_MOD ; NO               ; Untyped                                                                    ;
+; CBXI_PARAMETER     ; lpm_constant_ch6 ; Untyped                                                                    ;
++--------------------+------------------+----------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Control:inst6|lpm_constant1:inst6|lpm_constant:LPM_CONSTANT_component ;
++--------------------+------------------+----------------------------------------------------------------------------+
+; Parameter Name     ; Value            ; Type                                                                       ;
++--------------------+------------------+----------------------------------------------------------------------------+
+; LPM_WIDTH          ; 6                ; Signed Integer                                                             ;
+; LPM_CVALUE         ; 35               ; Signed Integer                                                             ;
+; ENABLE_RUNTIME_MOD ; NO               ; Untyped                                                                    ;
+; CBXI_PARAMETER     ; lpm_constant_tf6 ; Untyped                                                                    ;
++--------------------+------------------+----------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Control:inst6|lpm_constant0:inst4|lpm_constant:LPM_CONSTANT_component ;
++--------------------+------------------+----------------------------------------------------------------------------+
+; Parameter Name     ; Value            ; Type                                                                       ;
++--------------------+------------------+----------------------------------------------------------------------------+
+; LPM_WIDTH          ; 6                ; Signed Integer                                                             ;
+; LPM_CVALUE         ; 0                ; Signed Integer                                                             ;
+; ENABLE_RUNTIME_MOD ; NO               ; Untyped                                                                    ;
+; CBXI_PARAMETER     ; lpm_constant_of6 ; Untyped                                                                    ;
++--------------------+------------------+----------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Control:inst6|lpm_constant3:inst8|lpm_constant:LPM_CONSTANT_component ;
++--------------------+------------------+----------------------------------------------------------------------------+
+; Parameter Name     ; Value            ; Type                                                                       ;
++--------------------+------------------+----------------------------------------------------------------------------+
+; LPM_WIDTH          ; 6                ; Signed Integer                                                             ;
+; LPM_CVALUE         ; 8                ; Signed Integer                                                             ;
+; ENABLE_RUNTIME_MOD ; NO               ; Untyped                                                                    ;
+; CBXI_PARAMETER     ; lpm_constant_0g6 ; Untyped                                                                    ;
++--------------------+------------------+----------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ALU_Control:inst5|lpm_constant5:inst3|lpm_constant:LPM_CONSTANT_component ;
++--------------------+------------------+--------------------------------------------------------------------------------+
+; Parameter Name     ; Value            ; Type                                                                           ;
++--------------------+------------------+--------------------------------------------------------------------------------+
+; LPM_WIDTH          ; 6                ; Signed Integer                                                                 ;
+; LPM_CVALUE         ; 32               ; Signed Integer                                                                 ;
+; ENABLE_RUNTIME_MOD ; NO               ; Untyped                                                                        ;
+; CBXI_PARAMETER     ; lpm_constant_qf6 ; Untyped                                                                        ;
++--------------------+------------------+--------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ALU_Control:inst5|lpm_constant4:inst2|lpm_constant:LPM_CONSTANT_component ;
++--------------------+------------------+--------------------------------------------------------------------------------+
+; Parameter Name     ; Value            ; Type                                                                           ;
++--------------------+------------------+--------------------------------------------------------------------------------+
+; LPM_WIDTH          ; 6                ; Signed Integer                                                                 ;
+; LPM_CVALUE         ; 42               ; Signed Integer                                                                 ;
+; ENABLE_RUNTIME_MOD ; NO               ; Untyped                                                                        ;
+; CBXI_PARAMETER     ; lpm_constant_bh6 ; Untyped                                                                        ;
++--------------------+------------------+--------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:03     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Thu Dec 11 09:17:22 2025
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off REGISTER_FILE_5BITS -c REGISTER_FILE_5BITS
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 1 design units, including 1 entities, in source file decoder_5bits.bdf
+    Info (12023): Found entity 1: DECODER_5BITS
+Info (12021): Found 1 design units, including 1 entities, in source file rfile_8bits.bdf
+    Info (12023): Found entity 1: RFILE_8BITS
+Info (12021): Found 1 design units, including 1 entities, in source file full_register_file.bdf
+    Info (12023): Found entity 1: full_register_file
+Info (12021): Found 1 design units, including 1 entities, in source file mux21_5bits.bdf
+    Info (12023): Found entity 1: mux21_5bits
+Info (12021): Found 1 design units, including 1 entities, in source file mux21_32bits.v
+    Info (12023): Found entity 1: mux21_32bits
+Info (12021): Found 1 design units, including 1 entities, in source file sign_extend.bdf
+    Info (12023): Found entity 1: sign_extend
+Info (12021): Found 1 design units, including 1 entities, in source file equal_1bit.bdf
+    Info (12023): Found entity 1: Equal_1bit
+Info (12021): Found 1 design units, including 1 entities, in source file equal_5bits.bdf
+    Info (12023): Found entity 1: Equal_5bits
+Info (12021): Found 1 design units, including 1 entities, in source file control.bdf
+    Info (12023): Found entity 1: Control
+Info (12021): Found 1 design units, including 1 entities, in source file alu_control.bdf
+    Info (12023): Found entity 1: ALU_Control
+Info (12021): Found 1 design units, including 1 entities, in source file mips.bdf
+    Info (12023): Found entity 1: Mips
+Info (12021): Found 1 design units, including 1 entities, in source file rfc.bdf
+    Info (12023): Found entity 1: RFC
+Info (12021): Found 1 design units, including 1 entities, in source file d_mem.v
+    Info (12023): Found entity 1: D_Mem
+Info (12127): Elaborating entity "Mips" for the top level hierarchy
+Info (12128): Elaborating entity "Control" for hierarchy "Control:inst6"
+Info (12128): Elaborating entity "Equal_5bits" for hierarchy "Control:inst6|Equal_5bits:inst1"
+Info (12128): Elaborating entity "Equal_1bit" for hierarchy "Control:inst6|Equal_5bits:inst1|Equal_1bit:inst2"
+Warning (12125): Using design file lpm_constant2.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: lpm_constant2
+Info (12128): Elaborating entity "lpm_constant2" for hierarchy "Control:inst6|lpm_constant2:inst7"
+Info (12128): Elaborating entity "lpm_constant" for hierarchy "Control:inst6|lpm_constant2:inst7|lpm_constant:LPM_CONSTANT_component"
+Info (12130): Elaborated megafunction instantiation "Control:inst6|lpm_constant2:inst7|lpm_constant:LPM_CONSTANT_component"
+Info (12133): Instantiated megafunction "Control:inst6|lpm_constant2:inst7|lpm_constant:LPM_CONSTANT_component" with the following parameter:
+    Info (12134): Parameter "lpm_cvalue" = "43"
+    Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
+    Info (12134): Parameter "lpm_type" = "LPM_CONSTANT"
+    Info (12134): Parameter "lpm_width" = "6"
+Warning (12125): Using design file lpm_constant1.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: lpm_constant1
+Info (12128): Elaborating entity "lpm_constant1" for hierarchy "Control:inst6|lpm_constant1:inst6"
+Info (12128): Elaborating entity "lpm_constant" for hierarchy "Control:inst6|lpm_constant1:inst6|lpm_constant:LPM_CONSTANT_component"
+Info (12130): Elaborated megafunction instantiation "Control:inst6|lpm_constant1:inst6|lpm_constant:LPM_CONSTANT_component"
+Info (12133): Instantiated megafunction "Control:inst6|lpm_constant1:inst6|lpm_constant:LPM_CONSTANT_component" with the following parameter:
+    Info (12134): Parameter "lpm_cvalue" = "35"
+    Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
+    Info (12134): Parameter "lpm_type" = "LPM_CONSTANT"
+    Info (12134): Parameter "lpm_width" = "6"
+Warning (12125): Using design file lpm_constant0.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: lpm_constant0
+Info (12128): Elaborating entity "lpm_constant0" for hierarchy "Control:inst6|lpm_constant0:inst4"
+Info (12128): Elaborating entity "lpm_constant" for hierarchy "Control:inst6|lpm_constant0:inst4|lpm_constant:LPM_CONSTANT_component"
+Info (12130): Elaborated megafunction instantiation "Control:inst6|lpm_constant0:inst4|lpm_constant:LPM_CONSTANT_component"
+Info (12133): Instantiated megafunction "Control:inst6|lpm_constant0:inst4|lpm_constant:LPM_CONSTANT_component" with the following parameter:
+    Info (12134): Parameter "lpm_cvalue" = "0"
+    Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
+    Info (12134): Parameter "lpm_type" = "LPM_CONSTANT"
+    Info (12134): Parameter "lpm_width" = "6"
+Warning (12125): Using design file lpm_constant3.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: lpm_constant3
+Info (12128): Elaborating entity "lpm_constant3" for hierarchy "Control:inst6|lpm_constant3:inst8"
+Info (12128): Elaborating entity "lpm_constant" for hierarchy "Control:inst6|lpm_constant3:inst8|lpm_constant:LPM_CONSTANT_component"
+Info (12130): Elaborated megafunction instantiation "Control:inst6|lpm_constant3:inst8|lpm_constant:LPM_CONSTANT_component"
+Info (12133): Instantiated megafunction "Control:inst6|lpm_constant3:inst8|lpm_constant:LPM_CONSTANT_component" with the following parameter:
+    Info (12134): Parameter "lpm_cvalue" = "8"
+    Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
+    Info (12134): Parameter "lpm_type" = "LPM_CONSTANT"
+    Info (12134): Parameter "lpm_width" = "6"
+Info (12128): Elaborating entity "ALU_Control" for hierarchy "ALU_Control:inst5"
+Warning (275083): Bus "O1[3]" found using same base name as "O", which might lead to a name conflict.
+Warning (275083): Bus "O1[2]" found using same base name as "O", which might lead to a name conflict.
+Warning (275083): Bus "O1[1]" found using same base name as "O", which might lead to a name conflict.
+Warning (275083): Bus "O1[0]" found using same base name as "O", which might lead to a name conflict.
+Warning (275083): Bus "O1[3..0]" found using same base name as "O", which might lead to a name conflict.
+Warning (275080): Converted elements in bus name "O" using legacy naming rules. Make any assignments on the new names, not on the original names.
+    Warning (275081): Converted element name(s) from "O[1]" to "O1"
+    Warning (275081): Converted element name(s) from "O[0]" to "O0"
+    Warning (275081): Converted element name(s) from "O[2]" to "O2"
+    Warning (275081): Converted element name(s) from "O[3]" to "O3"
+    Warning (275081): Converted element name(s) from "O[3..0]" to "O3..0"
+    Warning (275081): Converted element name(s) from "O[3..0]" to "O3..0"
+Warning (275080): Converted elements in bus name "O1" using legacy naming rules. Make any assignments on the new names, not on the original names.
+    Warning (275081): Converted element name(s) from "O1[3]" to "O13"
+    Warning (275081): Converted element name(s) from "O1[2]" to "O12"
+    Warning (275081): Converted element name(s) from "O1[1]" to "O11"
+    Warning (275081): Converted element name(s) from "O1[0]" to "O10"
+    Warning (275081): Converted element name(s) from "O1[3..0]" to "O13..0"
+Warning (12125): Using design file mux21_4bits.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: MUX21_4BITS
+Info (12128): Elaborating entity "MUX21_4BITS" for hierarchy "ALU_Control:inst5|MUX21_4BITS:inst11"
+Warning (12125): Using design file mux2-1bit.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: mux2-1bit
+Info (12128): Elaborating entity "mux2-1bit" for hierarchy "ALU_Control:inst5|MUX21_4BITS:inst11|mux2-1bit:inst1"
+Warning (12125): Using design file lpm_constant5.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: lpm_constant5
+Info (12128): Elaborating entity "lpm_constant5" for hierarchy "ALU_Control:inst5|lpm_constant5:inst3"
+Info (12128): Elaborating entity "lpm_constant" for hierarchy "ALU_Control:inst5|lpm_constant5:inst3|lpm_constant:LPM_CONSTANT_component"
+Info (12130): Elaborated megafunction instantiation "ALU_Control:inst5|lpm_constant5:inst3|lpm_constant:LPM_CONSTANT_component"
+Info (12133): Instantiated megafunction "ALU_Control:inst5|lpm_constant5:inst3|lpm_constant:LPM_CONSTANT_component" with the following parameter:
+    Info (12134): Parameter "lpm_cvalue" = "32"
+    Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
+    Info (12134): Parameter "lpm_type" = "LPM_CONSTANT"
+    Info (12134): Parameter "lpm_width" = "6"
+Warning (12125): Using design file lpm_constant4.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: lpm_constant4
+Info (12128): Elaborating entity "lpm_constant4" for hierarchy "ALU_Control:inst5|lpm_constant4:inst2"
+Info (12128): Elaborating entity "lpm_constant" for hierarchy "ALU_Control:inst5|lpm_constant4:inst2|lpm_constant:LPM_CONSTANT_component"
+Info (12130): Elaborated megafunction instantiation "ALU_Control:inst5|lpm_constant4:inst2|lpm_constant:LPM_CONSTANT_component"
+Info (12133): Instantiated megafunction "ALU_Control:inst5|lpm_constant4:inst2|lpm_constant:LPM_CONSTANT_component" with the following parameter:
+    Info (12134): Parameter "lpm_cvalue" = "42"
+    Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
+    Info (12134): Parameter "lpm_type" = "LPM_CONSTANT"
+    Info (12134): Parameter "lpm_width" = "6"
+Info (12128): Elaborating entity "mux21_32bits" for hierarchy "mux21_32bits:inst7"
+Warning (12125): Using design file alu.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: ALU
+Info (12128): Elaborating entity "ALU" for hierarchy "ALU:inst4"
+Warning (12125): Using design file test_32bit_adder.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: test_32bit_adder
+Info (12128): Elaborating entity "test_32bit_adder" for hierarchy "ALU:inst4|test_32bit_adder:inst"
+Warning (12125): Using design file add_end_8bit.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: ADD_END_8BIT
+Info (12128): Elaborating entity "ADD_END_8BIT" for hierarchy "ALU:inst4|test_32bit_adder:inst|ADD_END_8BIT:inst1"
+Warning (12125): Using design file fulladder.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: FullAdder
+Info (12128): Elaborating entity "FullAdder" for hierarchy "ALU:inst4|test_32bit_adder:inst|ADD_END_8BIT:inst1|FullAdder:inst8"
+Warning (12125): Using design file add_mid_8bit.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: ADD_MID_8BIT
+Info (12128): Elaborating entity "ADD_MID_8BIT" for hierarchy "ALU:inst4|test_32bit_adder:inst|ADD_MID_8BIT:inst3"
+Warning (12125): Using design file test_adder.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: test_adder
+Info (12128): Elaborating entity "test_adder" for hierarchy "ALU:inst4|test_32bit_adder:inst|test_adder:inst"
+Warning (12125): Using design file iszero.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: IsZero
+Info (12128): Elaborating entity "ISzero" for hierarchy "ALU:inst4|ISzero:inst12"
+Warning (12125): Using design file 4to1.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: 4TO1
+Info (12128): Elaborating entity "4TO1" for hierarchy "ALU:inst4|4TO1:inst1"
+Warning (12125): Using design file slt.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: slt
+Info (12128): Elaborating entity "slt" for hierarchy "ALU:inst4|slt:inst332"
+Warning (275011): Block or symbol "GND" of instance "inst14" overlaps another block or symbol
+Warning (275011): Block or symbol "GND" of instance "inst17" overlaps another block or symbol
+Warning (275011): Block or symbol "GND" of instance "inst20" overlaps another block or symbol
+Warning (275011): Block or symbol "GND" of instance "inst23" overlaps another block or symbol
+Warning (275011): Block or symbol "GND" of instance "inst26" overlaps another block or symbol
+Warning (275011): Block or symbol "GND" of instance "inst29" overlaps another block or symbol
+Warning (275011): Block or symbol "GND" of instance "inst32" overlaps another block or symbol
+Warning (275011): Block or symbol "GND" of instance "inst35" overlaps another block or symbol
+Warning (275011): Block or symbol "GND" of instance "inst38" overlaps another block or symbol
+Warning (275011): Block or symbol "GND" of instance "inst41" overlaps another block or symbol
+Warning (275011): Block or symbol "GND" of instance "inst44" overlaps another block or symbol
+Warning (275011): Block or symbol "GND" of instance "inst47" overlaps another block or symbol
+Warning (275011): Block or symbol "GND" of instance "inst50" overlaps another block or symbol
+Warning (275011): Block or symbol "GND" of instance "inst53" overlaps another block or symbol
+Warning (275011): Block or symbol "GND" of instance "inst56" overlaps another block or symbol
+Warning (275011): Block or symbol "GND" of instance "inst59" overlaps another block or symbol
+Warning (275011): Block or symbol "GND" of instance "inst61" overlaps another block or symbol
+Warning (275011): Block or symbol "GND" of instance "inst65" overlaps another block or symbol
+Warning (275011): Block or symbol "GND" of instance "inst68" overlaps another block or symbol
+Warning (275011): Block or symbol "GND" of instance "inst71" overlaps another block or symbol
+Warning (275011): Block or symbol "GND" of instance "inst74" overlaps another block or symbol
+Warning (275011): Block or symbol "GND" of instance "inst77" overlaps another block or symbol
+Warning (275011): Block or symbol "GND" of instance "inst80" overlaps another block or symbol
+Warning (275011): Block or symbol "GND" of instance "inst83" overlaps another block or symbol
+Warning (275011): Block or symbol "GND" of instance "inst86" overlaps another block or symbol
+Warning (275011): Block or symbol "GND" of instance "inst89" overlaps another block or symbol
+Warning (275011): Block or symbol "GND" of instance "inst92" overlaps another block or symbol
+Warning (275011): Block or symbol "GND" of instance "inst95" overlaps another block or symbol
+Warning (275011): Block or symbol "GND" of instance "inst98" overlaps another block or symbol
+Warning (275011): Block or symbol "GND" of instance "inst101" overlaps another block or symbol
+Warning (275011): Block or symbol "GND" of instance "inst104" overlaps another block or symbol
+Warning (12125): Using design file test_8bit.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: TEST_8BIT
+Info (12128): Elaborating entity "TEST_8BIT" for hierarchy "ALU:inst4|TEST_8BIT:inst22"
+Warning (12125): Using design file 0doibitcuoi.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: 0doibitcuoi
+Info (12128): Elaborating entity "0doibitcuoi" for hierarchy "ALU:inst4|TEST_8BIT:inst22|0doibitcuoi:inst2"
+Warning (12125): Using design file changebit.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: ChangeBit
+Info (12128): Elaborating entity "ChangeBit" for hierarchy "ALU:inst4|TEST_8BIT:inst22|ChangeBit:inst"
+Info (12128): Elaborating entity "full_register_file" for hierarchy "full_register_file:inst"
+Warning (275011): Block or symbol "DECODER_5BITS" of instance "inst12" overlaps another block or symbol
+Info (12128): Elaborating entity "RFILE_8BITS" for hierarchy "full_register_file:inst|RFILE_8BITS:inst"
+Info (12128): Elaborating entity "RFC" for hierarchy "full_register_file:inst|RFILE_8BITS:inst|RFC:inst"
+Info (12128): Elaborating entity "DECODER_5BITS" for hierarchy "full_register_file:inst|DECODER_5BITS:inst11"
+Warning (275011): Block or symbol "AND4" of instance "inst" overlaps another block or symbol
+Warning (275011): Block or symbol "AND4" of instance "inst2" overlaps another block or symbol
+Info (12128): Elaborating entity "mux21_5bits" for hierarchy "mux21_5bits:inst1"
+Info (12128): Elaborating entity "sign_extend" for hierarchy "sign_extend:inst2"
+Info (12128): Elaborating entity "D_Mem" for hierarchy "D_Mem:inst10"
+Warning (10230): Verilog HDL assignment warning at D_Mem.v(15): truncated value with size 30 to match size of target (6)
+Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
+    Warning (13048): Converted tri-state node "full_register_file:inst|RFILE_8BITS:inst9|BO[7]" into a selector
+    Warning (13048): Converted tri-state node "full_register_file:inst|RFILE_8BITS:inst9|BO[6]" into a selector
+    Warning (13048): Converted tri-state node "full_register_file:inst|RFILE_8BITS:inst9|BO[5]" into a selector
+    Warning (13048): Converted tri-state node "full_register_file:inst|RFILE_8BITS:inst9|BO[4]" into a selector
+    Warning (13048): Converted tri-state node "full_register_file:inst|RFILE_8BITS:inst9|BO[3]" into a selector
+    Warning (13048): Converted tri-state node "full_register_file:inst|RFILE_8BITS:inst9|BO[2]" into a selector
+    Warning (13048): Converted tri-state node "full_register_file:inst|RFILE_8BITS:inst9|BO[1]" into a selector
+    Warning (13048): Converted tri-state node "full_register_file:inst|RFILE_8BITS:inst9|BO[0]" into a selector
+    Warning (13048): Converted tri-state node "full_register_file:inst|RFILE_8BITS:111|BO[7]" into a selector
+    Warning (13048): Converted tri-state node "full_register_file:inst|RFILE_8BITS:111|BO[6]" into a selector
+    Warning (13048): Converted tri-state node "full_register_file:inst|RFILE_8BITS:111|BO[5]" into a selector
+    Warning (13048): Converted tri-state node "full_register_file:inst|RFILE_8BITS:111|BO[4]" into a selector
+    Warning (13048): Converted tri-state node "full_register_file:inst|RFILE_8BITS:111|BO[3]" into a selector
+    Warning (13048): Converted tri-state node "full_register_file:inst|RFILE_8BITS:111|BO[2]" into a selector
+    Warning (13048): Converted tri-state node "full_register_file:inst|RFILE_8BITS:111|BO[1]" into a selector
+    Warning (13048): Converted tri-state node "full_register_file:inst|RFILE_8BITS:111|BO[0]" into a selector
+    Warning (13048): Converted tri-state node "full_register_file:inst|RFILE_8BITS:inst14|BO[7]" into a selector
+    Warning (13048): Converted tri-state node "full_register_file:inst|RFILE_8BITS:inst14|BO[6]" into a selector
+    Warning (13048): Converted tri-state node "full_register_file:inst|RFILE_8BITS:inst14|BO[5]" into a selector
+    Warning (13048): Converted tri-state node "full_register_file:inst|RFILE_8BITS:inst14|BO[4]" into a selector
+    Warning (13048): Converted tri-state node "full_register_file:inst|RFILE_8BITS:inst14|BO[3]" into a selector
+    Warning (13048): Converted tri-state node "full_register_file:inst|RFILE_8BITS:inst14|BO[2]" into a selector
+    Warning (13048): Converted tri-state node "full_register_file:inst|RFILE_8BITS:inst14|BO[1]" into a selector
+    Warning (13048): Converted tri-state node "full_register_file:inst|RFILE_8BITS:inst14|BO[0]" into a selector
+    Warning (13048): Converted tri-state node "full_register_file:inst|RFILE_8BITS:inst|BO[7]" into a selector
+    Warning (13048): Converted tri-state node "full_register_file:inst|RFILE_8BITS:inst|BO[6]" into a selector
+    Warning (13048): Converted tri-state node "full_register_file:inst|RFILE_8BITS:inst|BO[5]" into a selector
+    Warning (13048): Converted tri-state node "full_register_file:inst|RFILE_8BITS:inst|BO[4]" into a selector
+    Warning (13048): Converted tri-state node "full_register_file:inst|RFILE_8BITS:inst|BO[3]" into a selector
+    Warning (13048): Converted tri-state node "full_register_file:inst|RFILE_8BITS:inst|BO[2]" into a selector
+    Warning (13048): Converted tri-state node "full_register_file:inst|RFILE_8BITS:inst|BO[1]" into a selector
+    Warning (13048): Converted tri-state node "full_register_file:inst|RFILE_8BITS:inst|BO[0]" into a selector
+Info (276014): Found 1 instances of uninferred RAM logic
+    Info (276007): RAM logic "D_Mem:inst10|mem" is uninferred due to asynchronous read logic
+Critical Warning (127005): Memory depth (64) in the design file differs from memory depth (50) in the Memory Initialization File "C:/Users/MINHTIEN/Downloads/LAB6_ALU/LAB6/db/REGISTER_FILE_5BITS.ram0_D_Mem_457f8bc.hdl.mif" -- setting initial value for remaining addresses to 0
+Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
+    Warning (13047): Converted the fan-out from the tri-state buffer "full_register_file:inst|RFILE_8BITS:111|RFC:inst1|inst2" to the node "ALU:inst4|test_32bit_adder:inst33|test_adder:inst|FullAdder:inst8|inst4" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "full_register_file:inst|RFILE_8BITS:111|RFC:inst2|inst2" to the node "ALU:inst4|test_32bit_adder:inst33|test_adder:inst|FullAdder:inst7|inst4" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "full_register_file:inst|RFILE_8BITS:111|RFC:inst4|inst2" to the node "ALU:inst4|test_32bit_adder:inst33|test_adder:inst|FullAdder:inst5|inst4" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "full_register_file:inst|RFILE_8BITS:111|RFC:inst6|inst2" to the node "ALU:inst4|test_32bit_adder:inst33|test_adder:inst|FullAdder:inst3|inst4" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "full_register_file:inst|RFILE_8BITS:111|RFC:inst8|inst2" to the node "ALU:inst4|test_32bit_adder:inst|test_adder:inst|FullAdder:inst|inst" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "full_register_file:inst|RFILE_8BITS:111|RFC:inst7|inst2" to the node "ALU:inst4|test_32bit_adder:inst33|test_adder:inst|FullAdder:inst2|inst4" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "full_register_file:inst|RFILE_8BITS:111|RFC:inst5|inst2" to the node "ALU:inst4|test_32bit_adder:inst33|test_adder:inst|FullAdder:inst4|inst4" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "full_register_file:inst|RFILE_8BITS:111|RFC:inst3|inst2" to the node "ALU:inst4|test_32bit_adder:inst33|test_adder:inst|FullAdder:inst6|inst4" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "full_register_file:inst|RFILE_8BITS:inst9|RFC:inst1|inst2" to the node "ALU:inst4|test_32bit_adder:inst33|ADD_END_8BIT:inst1|FullAdder:inst8|inst4" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "full_register_file:inst|RFILE_8BITS:inst9|RFC:inst2|inst2" to the node "ALU:inst4|test_32bit_adder:inst33|ADD_END_8BIT:inst1|FullAdder:inst7|inst4" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "full_register_file:inst|RFILE_8BITS:inst9|RFC:inst4|inst2" to the node "ALU:inst4|test_32bit_adder:inst33|ADD_END_8BIT:inst1|FullAdder:inst5|inst4" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "full_register_file:inst|RFILE_8BITS:inst9|RFC:inst6|inst2" to the node "ALU:inst4|test_32bit_adder:inst33|ADD_END_8BIT:inst1|FullAdder:inst3|inst4" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "full_register_file:inst|RFILE_8BITS:inst9|RFC:inst8|inst2" to the node "ALU:inst4|test_32bit_adder:inst33|ADD_END_8BIT:inst1|FullAdder:inst|inst4" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "full_register_file:inst|RFILE_8BITS:inst|RFC:inst2|inst2" to the node "ALU:inst4|test_32bit_adder:inst33|ADD_MID_8BIT:inst3|FullAdder:inst7|inst4" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "full_register_file:inst|RFILE_8BITS:inst|RFC:inst4|inst2" to the node "ALU:inst4|test_32bit_adder:inst33|ADD_MID_8BIT:inst3|FullAdder:inst5|inst4" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "full_register_file:inst|RFILE_8BITS:inst|RFC:inst6|inst2" to the node "ALU:inst4|test_32bit_adder:inst33|ADD_MID_8BIT:inst3|FullAdder:inst3|inst4" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "full_register_file:inst|RFILE_8BITS:inst|RFC:inst8|inst2" to the node "ALU:inst4|test_32bit_adder:inst33|ADD_MID_8BIT:inst3|FullAdder:inst|inst4" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "full_register_file:inst|RFILE_8BITS:inst14|RFC:inst2|inst2" to the node "ALU:inst4|test_32bit_adder:inst33|ADD_MID_8BIT:inst2|FullAdder:inst7|inst4" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "full_register_file:inst|RFILE_8BITS:inst14|RFC:inst4|inst2" to the node "ALU:inst4|test_32bit_adder:inst33|ADD_MID_8BIT:inst2|FullAdder:inst5|inst4" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "full_register_file:inst|RFILE_8BITS:inst14|RFC:inst6|inst2" to the node "ALU:inst4|test_32bit_adder:inst33|ADD_MID_8BIT:inst2|FullAdder:inst3|inst4" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "full_register_file:inst|RFILE_8BITS:inst14|RFC:inst8|inst2" to the node "ALU:inst4|test_32bit_adder:inst33|ADD_MID_8BIT:inst2|FullAdder:inst|inst4" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "full_register_file:inst|RFILE_8BITS:inst14|RFC:inst7|inst2" to the node "ALU:inst4|test_32bit_adder:inst33|ADD_MID_8BIT:inst2|FullAdder:inst2|inst4" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "full_register_file:inst|RFILE_8BITS:inst14|RFC:inst5|inst2" to the node "ALU:inst4|test_32bit_adder:inst33|ADD_MID_8BIT:inst2|FullAdder:inst4|inst4" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "full_register_file:inst|RFILE_8BITS:inst14|RFC:inst3|inst2" to the node "ALU:inst4|test_32bit_adder:inst33|ADD_MID_8BIT:inst2|FullAdder:inst6|inst4" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "full_register_file:inst|RFILE_8BITS:inst14|RFC:inst1|inst2" to the node "ALU:inst4|test_32bit_adder:inst33|ADD_MID_8BIT:inst2|FullAdder:inst8|inst4" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "full_register_file:inst|RFILE_8BITS:inst|RFC:inst7|inst2" to the node "ALU:inst4|test_32bit_adder:inst33|ADD_MID_8BIT:inst3|FullAdder:inst2|inst4" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "full_register_file:inst|RFILE_8BITS:inst|RFC:inst5|inst2" to the node "ALU:inst4|test_32bit_adder:inst33|ADD_MID_8BIT:inst3|FullAdder:inst4|inst4" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "full_register_file:inst|RFILE_8BITS:inst|RFC:inst3|inst2" to the node "ALU:inst4|test_32bit_adder:inst33|ADD_MID_8BIT:inst3|FullAdder:inst6|inst4" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "full_register_file:inst|RFILE_8BITS:inst|RFC:inst1|inst2" to the node "ALU:inst4|test_32bit_adder:inst33|ADD_MID_8BIT:inst3|FullAdder:inst8|inst4" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "full_register_file:inst|RFILE_8BITS:inst9|RFC:inst7|inst2" to the node "ALU:inst4|test_32bit_adder:inst33|ADD_END_8BIT:inst1|FullAdder:inst2|inst4" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "full_register_file:inst|RFILE_8BITS:inst9|RFC:inst5|inst2" to the node "ALU:inst4|test_32bit_adder:inst33|ADD_END_8BIT:inst1|FullAdder:inst4|inst4" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "full_register_file:inst|RFILE_8BITS:inst9|RFC:inst3|inst2" to the node "ALU:inst4|test_32bit_adder:inst33|ADD_END_8BIT:inst1|FullAdder:inst6|inst4" into an OR gate
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "ALU_Control[3]" is stuck at GND
+    Warning (13410): Pin "ALU_Control[2]" is stuck at GND
+    Warning (13410): Pin "ALU_Control[1]" is stuck at VCC
+    Warning (13410): Pin "ALUOp[0]" is stuck at GND
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 3539 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 33 input pins
+    Info (21059): Implemented 118 output pins
+    Info (21061): Implemented 3388 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 146 warnings
+    Info: Peak virtual memory: 4620 megabytes
+    Info: Processing ended: Thu Dec 11 09:17:28 2025
+    Info: Elapsed time: 00:00:06
+    Info: Total CPU time (on all processors): 00:00:05
+
+

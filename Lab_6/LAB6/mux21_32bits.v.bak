@@ -1,0 +1,12 @@
+module mux21_32bit (
+    input [31:0] ALU_result,    // Ngõ vào số 0 (chọn khi sel = 0)
+    input [31:0] Read_data,    // Ngõ vào số 1 (chọn khi sel = 1)
+    input sel,           // Tín hiệu chọn (Selector)
+    output [31:0] out    // Ngõ ra kết quả
+);
+
+    // Logic chọn kênh dùng toán tử 3 ngôi (ternary operator)
+    // Nếu sel = 1 thì out = in1, ngược lại out = in0
+    assign out = (sel == 1'b1) ? Read_data :  ALU_result;
+
+endmodule
